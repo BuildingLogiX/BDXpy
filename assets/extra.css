@@ -4,3 +4,6 @@
     background-color: #000; /* Ensure it's black, if needed */
     text-align: right;
 }
+.md-logo {
+    height: 40px; /* Adjust height as needed */
+}

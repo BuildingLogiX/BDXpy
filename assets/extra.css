@@ -1,0 +1,6 @@
+.md-footer {
+    padding-top: 20px; /* Increase the top padding */
+    padding-bottom: 20px; /* Increase the bottom padding */
+    background-color: #000; /* Ensure it's black, if needed */
+    text-align: right;
+}

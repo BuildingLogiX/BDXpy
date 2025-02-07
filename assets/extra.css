@@ -7,3 +7,12 @@
 .md-logo {
     height: 40px; /* Adjust height as needed */
 }
+.md-header__links a {
+    text-decoration: none;
+    color: #0078D7; /* Adjust color to match your theme */
+    font-weight: bold;
+}
+
+.md-header__links a:hover {
+    text-decoration: underline;
+}

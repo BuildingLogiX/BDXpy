@@ -20,7 +20,7 @@
     
     
       
-        <title>Reference - TEST MODE - BDXPy (BuildingLogiX Data eXchange Python Hub)</title>
+        <title>Reference - BDXpy</title>
       
     
     
@@ -76,11 +76,9 @@
     
       
 
-  
-
-<header class="md-header md-header--shadow" data-md-component="header">
+<header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="TEST MODE - BDXPy (BuildingLogiX Data eXchange Python Hub)" class="md-header__button md-logo" aria-label="TEST MODE - BDXPy (BuildingLogiX Data eXchange Python Hub)" data-md-component="logo">
+    <a href=".." title="BDXpy" class="md-header__button md-logo" aria-label="BDXpy" data-md-component="logo">
       
   <img src="../assets/blx white.svg" alt="logo">
 
@@ -93,7 +91,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            TEST MODE - BDXPy (BuildingLogiX Data eXchange Python Hub)
+            BDXpy
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -134,6 +132,8 @@
         </button>
       </nav>
       
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
@@ -158,6 +158,120 @@
       
         
           
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../getting-started/" class="md-tabs__link">
+        
+  
+    
+  
+  Getting Started
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../examples/example1/" class="md-tabs__link">
+          
+  
+  Examples
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+    
+  
+  Reference
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../faq/" class="md-tabs__link">
+        
+  
+    
+  
+  FAQ
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../contributing/" class="md-tabs__link">
+        
+  
+    
+  
+  Contributing
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -171,15 +285,17 @@
                     
 
 
+  
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="TEST MODE - BDXPy (BuildingLogiX Data eXchange Python Hub)" class="md-nav__button md-logo" aria-label="TEST MODE - BDXPy (BuildingLogiX Data eXchange Python Hub)" data-md-component="logo">
+    <a href=".." title="BDXpy" class="md-nav__button md-logo" aria-label="BDXpy" data-md-component="logo">
       
   <img src="../assets/blx white.svg" alt="logo">
 
     </a>
-    TEST MODE - BDXPy (BuildingLogiX Data eXchange Python Hub)
+    BDXpy
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -233,12 +349,19 @@
     
     
     
+      
+      
+        
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -361,18 +484,408 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#bdxpydataloader" class="md-nav__link">
+  <a href="#authentication-and-session-setup" class="md-nav__link">
     <span class="md-ellipsis">
-      bdxpy.DataLoader
+      Authentication and Session Setup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Authentication and Session Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-a-env-file-for-credentials" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using a .env File for Credentials
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#credentials-in-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      Credentials in script
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#important-notes-on-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Important Notes on Authentication
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#component-retrieval-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Component Retrieval Structure
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Component Retrieval Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#component-structure-analogy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Component Structure Analogy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defining-devices-for-data-retrieval" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defining Devices for Data Retrieval
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Defining Devices for Data Retrieval">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#methods-to-lookup-componentpathid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Methods to Lookup componentPathId
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#overview-of-methods-to-get-componentpathid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview of Methods to Get componentPathId
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Overview of Methods to Get componentPathId">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-retrieve-a-component-by-instance-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: Retrieve a Component by Instance ID
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-building-id-retrieval" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: Building ID Retrieval
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manage-device-information-in-bdx" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manage Device Information in BDX
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-query-tool-lookup-in-bdx" class="md-nav__link">
+    <span class="md-ellipsis">
+      Custom Query Tool lookup in BDX
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Custom Query Tool lookup in BDX">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#building-lookup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Building lookup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raw-assigned-point-id-lookups" class="md-nav__link">
+    <span class="md-ellipsis">
+      "Raw" assigned point ID lookups
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#built-in-component-filtering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Built-in Component Filtering
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Built-in Component Filtering">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Attributes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usage-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#filtering-by-template-type-alone" class="md-nav__link">
+    <span class="md-ellipsis">
+      Filtering by Template Type Alone
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retrieving-only-subscribed-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retrieving Only Subscribed Components
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-retrieval" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Retrieval
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Retrieval">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#methods-for-data-retrieval" class="md-nav__link">
+    <span class="md-ellipsis">
+      Methods for Data Retrieval
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Methods for Data Retrieval">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#method-1-retrieve-data-using-component-pathproperty-combinations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Method 1 - retrieve data using component path/property combinations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-2-retrieve-a-pre-defined-trend-then-get-its-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Method 2 - retrieve a pre-defined trend, then get its data
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Method 2 - retrieve a pre-defined trend, then get its data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#finding-trendview-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      Finding Trendview ID
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#names-and-labels" class="md-nav__link">
+    <span class="md-ellipsis">
+      Names and Labels
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Names and Labels">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#renaming-labels-in-bdxpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Renaming Labels in BDXpy
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Renaming Labels in BDXpy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1-displayname-and-property-as-column-labels" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example 1: displayName and Property as column labels
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2-modifying-labels-from-a-trendview-id-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example 2: Modifying Labels from a Trendview ID function
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#replace-labels-manually-in-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      Replace Labels Manually in Python
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timeframes-and-aggregations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Timeframes and Aggregations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Timeframes and Aggregations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#timeframes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Timeframes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aggregations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aggregations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Aggregations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-retrieve-trend-data-with-timeframes-and-aggregations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: Retrieve Trend Data with Timeframes and Aggregations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python-exception-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python Exception Errors
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#bdxpyanalyzer" class="md-nav__link">
+  <a href="#bdxpy-modules-user-facing-only" class="md-nav__link">
     <span class="md-ellipsis">
-      bdxpy.Analyzer
+      BDXpy Modules (User-Facing Only)
     </span>
   </a>
   
@@ -453,18 +966,408 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#bdxpydataloader" class="md-nav__link">
+  <a href="#authentication-and-session-setup" class="md-nav__link">
     <span class="md-ellipsis">
-      bdxpy.DataLoader
+      Authentication and Session Setup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Authentication and Session Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-a-env-file-for-credentials" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using a .env File for Credentials
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#credentials-in-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      Credentials in script
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#important-notes-on-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Important Notes on Authentication
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#component-retrieval-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Component Retrieval Structure
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Component Retrieval Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#component-structure-analogy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Component Structure Analogy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defining-devices-for-data-retrieval" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defining Devices for Data Retrieval
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Defining Devices for Data Retrieval">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#methods-to-lookup-componentpathid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Methods to Lookup componentPathId
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#overview-of-methods-to-get-componentpathid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview of Methods to Get componentPathId
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Overview of Methods to Get componentPathId">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-retrieve-a-component-by-instance-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: Retrieve a Component by Instance ID
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-building-id-retrieval" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: Building ID Retrieval
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manage-device-information-in-bdx" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manage Device Information in BDX
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-query-tool-lookup-in-bdx" class="md-nav__link">
+    <span class="md-ellipsis">
+      Custom Query Tool lookup in BDX
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Custom Query Tool lookup in BDX">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#building-lookup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Building lookup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raw-assigned-point-id-lookups" class="md-nav__link">
+    <span class="md-ellipsis">
+      "Raw" assigned point ID lookups
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#built-in-component-filtering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Built-in Component Filtering
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Built-in Component Filtering">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Attributes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usage-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#filtering-by-template-type-alone" class="md-nav__link">
+    <span class="md-ellipsis">
+      Filtering by Template Type Alone
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retrieving-only-subscribed-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retrieving Only Subscribed Components
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-retrieval" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Retrieval
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Retrieval">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#methods-for-data-retrieval" class="md-nav__link">
+    <span class="md-ellipsis">
+      Methods for Data Retrieval
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Methods for Data Retrieval">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#method-1-retrieve-data-using-component-pathproperty-combinations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Method 1 - retrieve data using component path/property combinations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-2-retrieve-a-pre-defined-trend-then-get-its-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Method 2 - retrieve a pre-defined trend, then get its data
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Method 2 - retrieve a pre-defined trend, then get its data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#finding-trendview-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      Finding Trendview ID
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#names-and-labels" class="md-nav__link">
+    <span class="md-ellipsis">
+      Names and Labels
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Names and Labels">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#renaming-labels-in-bdxpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Renaming Labels in BDXpy
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Renaming Labels in BDXpy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1-displayname-and-property-as-column-labels" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example 1: displayName and Property as column labels
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2-modifying-labels-from-a-trendview-id-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example 2: Modifying Labels from a Trendview ID function
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#replace-labels-manually-in-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      Replace Labels Manually in Python
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timeframes-and-aggregations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Timeframes and Aggregations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Timeframes and Aggregations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#timeframes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Timeframes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aggregations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aggregations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Aggregations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-retrieve-trend-data-with-timeframes-and-aggregations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: Retrieve Trend Data with Timeframes and Aggregations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#python-exception-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python Exception Errors
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#bdxpyanalyzer" class="md-nav__link">
+  <a href="#bdxpy-modules-user-facing-only" class="md-nav__link">
     <span class="md-ellipsis">
-      bdxpy.Analyzer
+      BDXpy Modules (User-Facing Only)
     </span>
   </a>
   
@@ -486,34 +1389,681 @@
 
 
 <h1 id="reference">Reference</h1>
-<h2 id="bdxpydataloader"><code>bdxpy.DataLoader</code></h2>
+<h2 id="authentication-and-session-setup">Authentication and Session Setup</h2>
+<h3 id="using-a-env-file-for-credentials">Using a .env File for Credentials</h3>
+<p>To enhance security, you can store the username and password in a .env file rather than hardcoding them into your python code. 
+Note: Files containing the credentials should have appropriate security practices in place such as user/server permissions so they cannot be accessed/stolen/or compromised. 
+Below are the examples to set up and use a .env file for authentication. More on this process and security can also be found online.</p>
+<ol>
+<li>Create a .env File
+In your project directory, create a file named .env with the following content:
+<div class="highlight"><pre><span></span><code>BDX_USERNAME=your_username
+BDX_PASSWORD=your_password
+</code></pre></div></li>
+<li>Install the python-dotenv Library
+Install the library to load environment variables from the .env file:
+<div class="highlight"><pre><span></span><code><span class="n">pip</span> <span class="n">install</span> <span class="n">python</span><span class="o">-</span><span class="n">dotenv</span>
+</code></pre></div></li>
+<li>Load Environment Variables in Your Script
+Use the following code to load the .env file and authenticate with BDX:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">bdxpy.bdx.auth</span> <span class="kn">import</span> <span class="n">UsernameAndPasswordAuthenticator</span>
+<span class="kn">from</span> <span class="nn">bdxpy.bdx.core</span> <span class="kn">import</span> <span class="n">BDX</span>
+
+<span class="c1"># Specify the path to the environment variable file</span>
+<span class="n">load_dotenv</span><span class="p">(</span><span class="n">dotenv_path</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;C:\Users\your-path\.env&quot;</span><span class="p">)</span>
+
+<span class="n">username</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;BDX_USERNAME&quot;</span><span class="p">)</span>
+<span class="n">password</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;BDX_PASSWORD&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">username</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">password</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="ne">EnvironmentError</span><span class="p">(</span><span class="s2">&quot;Environment variables BDX_USERNAME and BDX_PASSWORD must be set in the .env file&quot;</span><span class="p">)</span>
+
+<span class="n">authenticator</span> <span class="o">=</span> <span class="n">UsernameAndPasswordAuthenticator</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">)</span>
+<span class="k">with</span> <span class="n">BDX</span><span class="p">(</span><span class="s2">&quot;http://yourBDXURL.com&quot;</span><span class="p">,</span> <span class="n">authenticator</span><span class="p">)</span> <span class="k">as</span> <span class="n">bdx_instance</span><span class="p">:</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Connection successful!&quot;</span><span class="p">)</span> 
+</code></pre></div>
+<h3 id="credentials-in-script">Credentials in script</h3>
+<p>For testing purposes the BDX_USERNAME and BDX_PASSWORD can also be copied into the authentication in python.</p>
+<div class="highlight"><pre><span></span><code><span class="k">with</span> <span class="n">BDX</span><span class="p">(</span><span class="s2">&quot;http://yourBDXURL.com&quot;</span><span class="p">,</span> <span class="n">UsernameAndPasswordAuthenticator</span><span class="p">(</span>
+  <span class="s2">&quot;BDX_USERNAME&quot;</span><span class="p">,</span> <span class="s2">&quot;BDX_PASSWORD&quot;</span><span class="p">))</span> <span class="k">as</span> <span class="n">bdx_instance</span><span class="p">:</span>
+</code></pre></div>
+<h3 id="important-notes-on-authentication">Important Notes on Authentication</h3>
 <ul>
-<li><strong><code>load(file_path: str) -&gt; DataFrame</code></strong><br />
-  Load building data from a file.</li>
+<li>Currently, the authentication method requires the user to be a BDX local user or an LDAP user. Users authenticated via Single Sign-On (SSO) or Multi-Factor Authentication (MFA) are not supported or applicable by BDXpy.</li>
+<li>Ensure you have a local BDX username and password for successful authentication that is dedicated to BDXpy. Do not use regular usernames or admin credentials for reoccurring scripts.</li>
+<li>The credentials used for BDXpy must have BDX security permissions to access the data you are requesting as well as the BDX permissions listed below:<ul>
+<li><strong>BDXUser</strong></li>
+<li><strong>TrendViewDataAccess</strong></li>
 </ul>
-<h2 id="bdxpyanalyzer"><code>bdxpy.Analyzer</code></h2>
+</li>
+</ul>
+<p><img alt="Roles" src="../assets/bdx%20roles.png" /></p>
 <ul>
-<li><strong><code>run()</code></strong><br />
-  Perform data analysis.</li>
+<li>And any device/building/system read permissions necessary found under <strong>Manage Path Access</strong> if Object Level Security is enabled in BDX.</li>
+<li>BDXpy is generally intended for use by advanced power users and admin users  even with basic permissions in the BDX app its important to secure your credentials and appoint a BDXpy lead to ensure all uses of the product are being authorized and managed properly.</li>
+<li>From an authentication perspective BDXpy should be limited in the users BDXpy calls from for audit log and tracking practices. (aka a limited number of users of a single BDX instance and not for mass use by basic security users).</li>
 </ul>
-<pre><code class="language-python">from bdxpy.bdx.auth import UsernameAndPasswordAuthenticator
-from bdxpy.bdx.core import BDX
-from bdxpy.bdx.types import TimeFrame
-from bdxpy.bdx.components import Components
-from datetime import datetime, timedelta
-import os
-import pandas as pd
-import numpy as np
+<h2 id="component-retrieval-structure">Component Retrieval Structure</h2>
+<p>BDXpy uses <code>componentPathId</code> to call devices and properties. This applies to buildings and all child devices in BDX. <code>componentPathId</code> is the unique identifier path from the source data agent or parent BDX properties in the hierarchy of devices.</p>
+<blockquote>
+<p><strong>Note:</strong> <code>componentPathId != componentInstanceID</code></p>
+</blockquote>
+<h3 id="component-structure-analogy">Component Structure Analogy</h3>
+<ul>
+<li><strong>Component path</strong>: "File path" of a component.</li>
+<li><strong>Component path ID</strong>: "File inode number."</li>
+<li>This is what BDXpy will use in component retrieval.</li>
+<li><strong>Component instance ID</strong>: File version.</li>
+</ul>
+<h3 id="defining-devices-for-data-retrieval">Defining Devices for Data Retrieval</h3>
+<p>Before retrieving data, a user needs to define a set of devices to pull properties from, which will require outlining the <code>componentPathId</code>s of these devices.</p>
+<h4 id="methods-to-lookup-componentpathid">Methods to Lookup <code>componentPathId</code></h4>
+<ol>
+<li>Use methods in BDXpy to lookup or call <code>componentPathId</code>.</li>
+<li>Manually find the <code>componentPathId</code> under <strong>Manage Device Information</strong> in BDX.</li>
+<li>Lookup information in the <strong>Custom Query Tool</strong> in BDX.</li>
+</ol>
+<hr />
+<h3 id="overview-of-methods-to-get-componentpathid">Overview of Methods to Get <code>componentPathId</code></h3>
+<p>In its simplest form, a <code>componentPathId</code> can be found if you know the <code>componentInstanceId</code>.</p>
+<h4 id="example-retrieve-a-component-by-instance-id">Example: Retrieve a Component by Instance ID</h4>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">bdx.auth</span> <span class="kn">import</span> <span class="n">UsernameAndPasswordAuthenticator</span>
+<span class="kn">from</span> <span class="nn">bdx.core</span> <span class="kn">import</span> <span class="n">BDX</span>
+
+<span class="c1"># Specify the path to the environment variable file</span>
+<span class="n">load_dotenv</span><span class="p">(</span><span class="n">dotenv_path</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;C:\Users\your-path\.env&quot;</span><span class="p">)</span>
+
+<span class="n">username</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;BDX_USERNAME&quot;</span><span class="p">)</span>
+<span class="n">password</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;BDX_PASSWORD&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">username</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">password</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="ne">EnvironmentError</span><span class="p">(</span><span class="s2">&quot;Environment variables BDX_USERNAME and BDX_PASSWORD must be set in the .env file&quot;</span><span class="p">)</span>
+
+<span class="n">authenticator</span> <span class="o">=</span> <span class="n">UsernameAndPasswordAuthenticator</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">)</span>
+<span class="k">with</span> <span class="n">BDX</span><span class="p">(</span><span class="s2">&quot;http://yourBDXURL.com&quot;</span><span class="p">,</span> <span class="n">authenticator</span><span class="p">)</span> <span class="k">as</span> <span class="n">bdx_instance</span><span class="p">:</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Authenticated successfully!&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Retrieve component by ID</span>
+    <span class="n">component_instance_id</span> <span class="o">=</span> <span class="mi">8590005002</span>
+
+    <span class="n">component</span> <span class="o">=</span> <span class="n">bdx_instance</span><span class="o">.</span><span class="n">components</span><span class="o">.</span><span class="n">by_id</span><span class="p">(</span><span class="n">component_instance_id</span><span class="p">)</span>
+
+    <span class="c1"># Extract component details</span>
+    <span class="n">component_name</span> <span class="o">=</span> <span class="n">component</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">displayName</span>
+    <span class="n">full_path</span> <span class="o">=</span> <span class="n">component</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">displayFullPath</span>
+    <span class="n">component_path_id</span> <span class="o">=</span> <span class="n">component</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">componentPathId</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Component Name: </span><span class="si">{</span><span class="n">component_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Component Inst ID: </span><span class="si">{</span><span class="n">component_instance_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Component Full Path: </span><span class="si">{</span><span class="n">full_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Component Path ID: </span><span class="si">{</span><span class="n">component_path_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>Output:
+<div class="highlight"><pre><span></span><code>Authenticated successfully!
+Component Name: BuildingLogiX Campus
+Component Inst ID: 4294967534
+Component Full Path: /Buildings/BuildingLogiX Campus
+Component Path ID: 4294967534
+</code></pre></div></p>
+<p>If you know a building ID you can then print out all its components and their IDs:</p>
+<p><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">bdx.auth</span> <span class="kn">import</span> <span class="n">UsernameAndPasswordAuthenticator</span>
+<span class="kn">from</span> <span class="nn">bdx.core</span> <span class="kn">import</span> <span class="n">BDX</span>
+<span class="kn">from</span> <span class="nn">bdx.types</span> <span class="kn">import</span> <span class="n">TimeFrame</span><span class="p">,</span> <span class="n">AggregationLevel</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="k">def</span> <span class="nf">get_component_table</span><span class="p">(</span><span class="n">bdx_instance</span><span class="p">,</span> <span class="n">building_id</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># Retrieve components by building ID</span>
+        <span class="n">components</span> <span class="o">=</span> <span class="n">bdx_instance</span><span class="o">.</span><span class="n">components</span><span class="o">.</span><span class="n">by_building</span><span class="p">(</span><span class="n">building_id</span><span class="p">)</span>
+
+        <span class="c1"># Create a list to hold the component details</span>
+        <span class="n">component_data</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="c1"># Loop through the components and collect the details</span>
+        <span class="k">for</span> <span class="n">component</span> <span class="ow">in</span> <span class="n">components</span><span class="p">:</span>
+            <span class="c1"># Extract component details</span>
+            <span class="n">component_name</span> <span class="o">=</span> <span class="n">component</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">displayName</span>
+            <span class="n">full_path</span> <span class="o">=</span> <span class="n">component</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">displayFullPath</span>
+            <span class="n">component_path_id</span> <span class="o">=</span> <span class="n">component</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">componentPathId</span>
+            <span class="n">component_instance_id</span> <span class="o">=</span> <span class="n">component</span><span class="o">.</span><span class="n">componentInstanceId</span>  <span class="c1"># Add component instance ID</span>
+            <span class="n">entity_type</span> <span class="o">=</span> <span class="n">component</span><span class="o">.</span><span class="n">entityTypeName</span>  <span class="c1"># Component type</span>
+            <span class="n">template_type</span> <span class="o">=</span> <span class="n">component</span><span class="o">.</span><span class="n">templateType</span>  <span class="c1"># Template type</span>
+
+            <span class="c1"># Append to the component_data list</span>
+            <span class="n">component_data</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+                <span class="s1">&#39;Component Name&#39;</span><span class="p">:</span> <span class="n">component_name</span><span class="p">,</span>
+                <span class="s1">&#39;Full Path&#39;</span><span class="p">:</span> <span class="n">full_path</span><span class="p">,</span>
+                <span class="s1">&#39;Component Path ID&#39;</span><span class="p">:</span> <span class="n">component_path_id</span><span class="p">,</span>
+                <span class="s1">&#39;Component Instance ID&#39;</span><span class="p">:</span> <span class="n">component_instance_id</span><span class="p">,</span>  <span class="c1"># New column</span>
+                <span class="s1">&#39;Entity Type&#39;</span><span class="p">:</span> <span class="n">entity_type</span><span class="p">,</span>  <span class="c1"># Add component type</span>
+                <span class="s1">&#39;Template Type&#39;</span><span class="p">:</span> <span class="n">template_type</span>  <span class="c1"># Add template type</span>
+            <span class="p">})</span>
+
+        <span class="c1"># Convert the list into a Pandas DataFrame</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">component_data</span><span class="p">)</span>
+
+        <span class="c1"># Write DataFrame to CSV</span>
+        <span class="n">file_path</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;C:yourPath\BDXpy\component_data.csv&#39;</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">df</span>  <span class="c1"># Return the DataFrame</span>
+
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error retrieving components: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+<span class="c1"># Use this function in the run method like this:</span>
+<span class="k">def</span> <span class="nf">run</span><span class="p">():</span>
+    <span class="k">with</span> <span class="n">BDX</span><span class="p">(</span><span class="s2">&quot;https://yourBDXURL.com&quot;</span><span class="p">,</span> <span class="n">UsernameAndPasswordAuthenticator</span><span class="p">(</span><span class="s2">&quot;BDX_USERNAME&quot;</span><span class="p">,</span> <span class="s2">&quot;BDX_PASSWORD&quot;</span><span class="p">))</span> <span class="k">as</span> <span class="n">bdx_instance</span><span class="p">:</span>
+
+        <span class="c1"># Retrieve components by building ID</span>
+        <span class="n">building_id</span> <span class="o">=</span> <span class="mi">4294967302</span>  <span class="c1"># Replace with your actual Building ID</span>
+
+        <span class="c1"># Get the table of components</span>
+        <span class="n">component_table</span> <span class="o">=</span> <span class="n">get_component_table</span><span class="p">(</span><span class="n">bdx_instance</span><span class="p">,</span> <span class="n">building_id</span><span class="p">)</span>
+
+        <span class="c1"># Display the table</span>
+        <span class="k">if</span> <span class="n">component_table</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">component_table</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">run</span><span class="p">()</span>
+</code></pre></div>
+CSV output:<br />
+<img alt="output" src="../assets/bdx%20comp%20output.png" /></p>
+<h4 id="example-building-id-retrieval">Example: Building ID Retrieval</h4>
+<p>To retrieve building data, use the buildings module. The list() method retrieves summaries of all accessible buildings.</p>
+<p><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">bdx.auth</span> <span class="kn">import</span> <span class="n">UsernameAndPasswordAuthenticator</span>
+<span class="kn">from</span> <span class="nn">bdx.core</span> <span class="kn">import</span> <span class="n">BDX</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Specify the path to the environment variable file</span>
+<span class="n">load_dotenv</span><span class="p">(</span><span class="n">dotenv_path</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;C:\Users\your-path\.env&quot;</span><span class="p">)</span>
+
+<span class="n">username</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;BDX_USERNAME&quot;</span><span class="p">)</span>
+<span class="n">password</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;BDX_PASSWORD&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">username</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">password</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="ne">EnvironmentError</span><span class="p">(</span><span class="s2">&quot;Environment variables BDX_USERNAME and BDX_PASSWORD must be set in the .env file&quot;</span><span class="p">)</span>
+
+<span class="n">authenticator</span> <span class="o">=</span> <span class="n">UsernameAndPasswordAuthenticator</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">)</span>
+<span class="k">with</span> <span class="n">BDX</span><span class="p">(</span><span class="s2">&quot;http://yourBDXURL.com&quot;</span><span class="p">,</span> <span class="n">authenticator</span><span class="p">)</span> <span class="k">as</span> <span class="n">bdx_instance</span><span class="p">:</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Authenticated successfully!&quot;</span><span class="p">)</span>
+
+<span class="c1">###### Retrieve building summaries for all buildings in your BDX site ######</span>
+<span class="n">building_summaries</span> <span class="o">=</span> <span class="n">bdx_instance</span><span class="o">.</span><span class="n">buildings</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
+
+<span class="c1"># Convert building summaries to a DataFrame</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;Building Name&quot;</span><span class="p">:</span> <span class="n">building</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+        <span class="s2">&quot;Building ID&quot;</span><span class="p">:</span> <span class="n">building</span><span class="o">.</span><span class="n">componentInstanceId</span><span class="p">,</span>
+        <span class="s2">&quot;Square Footage&quot;</span><span class="p">:</span> <span class="n">building</span><span class="o">.</span><span class="n">sqft</span><span class="p">,</span>
+        <span class="s2">&quot;Address&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">building</span><span class="o">.</span><span class="n">address</span><span class="o">.</span><span class="n">addr1</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">building</span><span class="o">.</span><span class="n">address</span><span class="o">.</span><span class="n">city</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">building</span><span class="o">.</span><span class="n">address</span><span class="o">.</span><span class="n">state</span><span class="si">}</span><span class="s2">&quot;</span>
+
+    <span class="p">}</span>
+    <span class="k">for</span> <span class="n">building</span> <span class="ow">in</span> <span class="n">building_summaries</span>
+<span class="p">]</span>
+<span class="n">building_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="c1"># Display the first few rows of the DataFrame</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">building_df</span><span class="p">)</span>
+</code></pre></div>
+Output:<br />
+<img alt="output" src="../assets/bld%20id%20print.png" /></p>
+<h3 id="manage-device-information-in-bdx">Manage Device Information in BDX</h3>
+<p>Within BDX, users can navigate to Manage Device Information in the upper left navigation. There user can navigate the BDX buildings, hierarchy, and device to look information. This includes the ability to get <code>componentInstanceId</code> which can then be translated with BDXpy to <code>componentPathId</code> per the code below.</p>
+<p><img alt="device info" src="../assets/manage%20device%20info.png" /></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Retrieve component by ID</span>
+<span class="n">compInstID</span> <span class="o">=</span> <span class="mi">4294967535</span>
+<span class="n">component</span> <span class="o">=</span> <span class="n">bdx</span><span class="o">.</span><span class="n">components</span><span class="o">.</span><span class="n">by_id</span><span class="p">(</span><span class="n">compInstID</span><span class="p">)</span>
+<span class="c1"># Extract component details</span>
+<span class="n">component_name</span> <span class="o">=</span> <span class="n">component</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">displayName</span>
+<span class="n">full_path</span> <span class="o">=</span> <span class="n">component</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">displayFullPath</span>
+<span class="n">component_path_id</span> <span class="o">=</span> <span class="n">component</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">componentPathId</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Component Name: </span><span class="si">{</span><span class="n">component_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Component Inst ID: </span><span class="si">{</span><span class="n">compInstID</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Component Full Path: </span><span class="si">{</span><span class="n">full_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Component Path ID: </span><span class="si">{</span><span class="n">component_path_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="custom-query-tool-lookup-in-bdx">Custom Query Tool lookup in BDX</h3>
+<p>Navigate to the Custom Query Tool in your BDX instance. In the Advanced Query Mode the various query text below can be pasted and run to retrieve <code>componentPathId</code>.</p>
+<h4 id="building-lookup">Building lookup</h4>
+<p>This is an example advanced query that can be run from BDX to return values.</p>
+<p>`select b.name, b.componentInstanceId, b.path.componentPathId 
+from Building b```</p>
+<p><img alt="query" src="../assets/custom%20query%20id%20lookup.png" /></p>
+<h4 id="raw-assigned-point-id-lookups">"Raw" assigned point ID lookups</h4>
+<p>The query below looks up any assigned folder or raw points listed under the building (see <strong>Manage Buildings &gt; Assigned Point Folders List</strong> in BDX). Users can specify/filter the building name in the BDX query below.</p>
+<p><code>select pf.folderPathAlias,  pf.folderPath.fullPath, pf.folderPath.componentPathId, pf.folderPath.currentComponent.componentInstanceId
+from Building b 
+join b.assignedPointFolders pf 
+where b.name = 'BuildingLogiX Campus'</code></p>
+<p><img alt="query" src="../assets/custom%20query%20id%20lookup%202.png" /></p>
+<h3 id="built-in-component-filtering">Built-in Component Filtering</h3>
+<p><code>ComponentFilter</code> is a filtering mechanism used in <strong>BDXpy</strong> to refine searches when retrieving building components. It allows filtering by specific attributes like template type, path keyword, and subscription status.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">bdx.core</span> <span class="kn">import</span> <span class="n">BDX</span>
+<span class="kn">from</span> <span class="nn">bdx.components</span> <span class="kn">import</span> <span class="n">ComponentFilter</span>
+</code></pre></div>
+<h4 id="attributes">Attributes</h4>
+<ul>
+<li><code>template_type</code> <em>(str, optional)</em> – The template type of the component, such as "VAV" for Variable Air Volume boxes.</li>
+<li><code>path_keyword</code> <em>(str, optional)</em> – A keyword to search for within the component’s path. If filtering by template type alone, this must be set to an empty string (""), otherwise, a 500 error will occur.</li>
+<li><code>only_subscribed</code> <em>(bool, default False)</em> – If True, filters only components that are subscribed.</li>
+</ul>
+<h4 id="usage-examples">Usage Examples</h4>
+<p>Retrieving VAV Components by Path Keyword
+To retrieve all VAV components assigned to a building, filtering by a specific keyword in the path:</p>
+<p><div class="highlight"><pre><span></span><code><span class="nb">filter</span> <span class="o">=</span> <span class="n">ComponentFilter</span><span class="p">()</span>
+<span class="nb">filter</span><span class="o">.</span><span class="n">template_type</span> <span class="o">=</span> <span class="s2">&quot;VAV&quot;</span>
+<span class="nb">filter</span><span class="o">.</span><span class="n">path_keyword</span> <span class="o">=</span> <span class="s2">&quot;AHU_1_VAVs&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">components</span><span class="o">.</span><span class="n">by_building</span><span class="p">(</span><span class="mi">4294967304</span><span class="p">,</span> <span class="nb">filter</span><span class="p">))</span>
+</code></pre></div>
+This retrieves all VAV components associated with the building ID 4294967304 that contain "AHU_1_VAVs" anywhere in their path.</p>
+<h5 id="filtering-by-template-type-alone">Filtering by Template Type Alone</h5>
+<p>If filtering by template type only, the path_keyword must be set to an empty string:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">filter</span> <span class="o">=</span> <span class="n">ComponentFilter</span><span class="p">()</span>
+<span class="nb">filter</span><span class="o">.</span><span class="n">template_type</span> <span class="o">=</span> <span class="s2">&quot;VAV&quot;</span>
+<span class="nb">filter</span><span class="o">.</span><span class="n">path_keyword</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>  <span class="c1"># Must be explicitly set to avoid error</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">components</span><span class="o">.</span><span class="n">by_building</span><span class="p">(</span><span class="mi">4294967304</span><span class="p">,</span> <span class="nb">filter</span><span class="p">))</span>
+</code></pre></div>
+<h5 id="retrieving-only-subscribed-components">Retrieving Only Subscribed Components</h5>
+<p>To fetch only subscribed components, set only_subscribed to True:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">filter</span> <span class="o">=</span> <span class="n">ComponentFilter</span><span class="p">()</span>
+<span class="nb">filter</span><span class="o">.</span><span class="n">template_type</span> <span class="o">=</span> <span class="s2">&quot;VAV&quot;</span>
+<span class="nb">filter</span><span class="o">.</span><span class="n">path_keyword</span> <span class="o">=</span> <span class="s2">&quot;AHU_1_VAVs&quot;</span>
+<span class="nb">filter</span><span class="o">.</span><span class="n">only_subscribed</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">components</span><span class="o">.</span><span class="n">by_building</span><span class="p">(</span><span class="mi">4294967304</span><span class="p">,</span> <span class="nb">filter</span><span class="p">))</span>
+<span class="n">This</span> <span class="n">will</span> <span class="k">return</span> <span class="n">only</span> <span class="n">components</span> <span class="n">that</span> <span class="n">meet</span> <span class="n">the</span> <span class="n">filtering</span> <span class="n">criteria</span> <span class="ow">and</span> <span class="n">are</span> <span class="n">subscribed</span><span class="o">.</span>
+<span class="n">Searching</span> <span class="n">All</span> <span class="n">Buildings</span> <span class="k">for</span> <span class="n">a</span> <span class="n">Filter</span>
+<span class="n">To</span> <span class="n">can</span> <span class="n">search</span> <span class="n">the</span> <span class="n">entire</span> <span class="n">BDX</span> <span class="n">site</span> <span class="k">for</span> <span class="n">components</span> <span class="k">with</span> <span class="n">a</span> <span class="n">certain</span> <span class="n">name</span> <span class="n">by</span> <span class="n">looping</span> <span class="n">through</span> <span class="nb">all</span> <span class="n">buildings</span> <span class="ow">and</span> <span class="n">applying</span> <span class="n">filters</span> <span class="n">to</span> <span class="n">the</span> <span class="n">components</span> <span class="n">assigned</span> <span class="n">to</span> <span class="n">each</span> <span class="n">building</span><span class="o">.</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">bdx.core</span> <span class="kn">import</span> <span class="n">BDX</span>
+<span class="kn">from</span> <span class="nn">bdx.auth</span> <span class="kn">import</span> <span class="n">UsernameAndPasswordAuthenticator</span>
+<span class="kn">from</span> <span class="nn">bdx.components</span> <span class="kn">import</span> <span class="n">ComponentFilter</span>
+
+<span class="c1"># Authenticate and initialize BDX</span>
+<span class="n">auth</span> <span class="o">=</span> <span class="n">UsernameAndPasswordAuthenticator</span><span class="p">(</span><span class="s2">&quot;your_username&quot;</span><span class="p">,</span> <span class="s2">&quot;your_password&quot;</span><span class="p">)</span>
+<span class="n">bdx_instance</span> <span class="o">=</span> <span class="n">BDX</span><span class="p">(</span><span class="s2">&quot;https://your-bdx-instance.com&quot;</span><span class="p">,</span> <span class="n">auth</span><span class="p">)</span>
+
+<span class="c1"># Get a list of all buildings</span>
+<span class="n">building_summaries</span> <span class="o">=</span> <span class="n">bdx_instance</span><span class="o">.</span><span class="n">buildings</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
+
+<span class="c1"># Create a filter to search for components</span>
+<span class="nb">filter</span> <span class="o">=</span> <span class="n">ComponentFilter</span><span class="p">()</span>
+<span class="nb">filter</span><span class="o">.</span><span class="n">template_type</span> <span class="o">=</span> <span class="s2">&quot;VAV&quot;</span>
+<span class="nb">filter</span><span class="o">.</span><span class="n">path_keyword</span> <span class="o">=</span> <span class="s2">&quot;AHU_1_VAVs&quot;</span>  <span class="c1"># Adjust search term</span>
+
+<span class="c1"># Store results in a list</span>
+<span class="n">all_components</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">building</span> <span class="ow">in</span> <span class="n">building_summaries</span><span class="p">:</span>
+    <span class="n">building_id</span> <span class="o">=</span> <span class="n">building</span><span class="o">.</span><span class="n">componentInstanceId</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Searching in building: </span><span class="si">{</span><span class="n">building</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> (ID: </span><span class="si">{</span><span class="n">building_id</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Retrieve components matching the filter in this building</span>
+    <span class="n">components</span> <span class="o">=</span> <span class="n">bdx_instance</span><span class="o">.</span><span class="n">components</span><span class="o">.</span><span class="n">by_building</span><span class="p">(</span><span class="n">building_id</span><span class="p">,</span> <span class="nb">filter</span><span class="p">)</span>
+
+    <span class="c1"># Add retrieved components to the list</span>
+    <span class="k">for</span> <span class="n">comp</span> <span class="ow">in</span> <span class="n">components</span><span class="p">:</span>
+        <span class="n">all_components</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+            <span class="s2">&quot;Building Name&quot;</span><span class="p">:</span> <span class="n">building</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+            <span class="s2">&quot;Building ID&quot;</span><span class="p">:</span> <span class="n">building_id</span><span class="p">,</span>
+            <span class="s2">&quot;Component ID&quot;</span><span class="p">:</span> <span class="n">comp</span><span class="o">.</span><span class="n">componentInstanceId</span><span class="p">,</span>
+            <span class="s2">&quot;Component Path ID&quot;</span><span class="p">:</span> <span class="n">comp</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">componentPathId</span> <span class="k">if</span> <span class="n">comp</span><span class="o">.</span><span class="n">path</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="s2">&quot;Template Type&quot;</span><span class="p">:</span> <span class="n">comp</span><span class="o">.</span><span class="n">templateType</span><span class="p">,</span>
+            <span class="s2">&quot;Path&quot;</span><span class="p">:</span> <span class="n">comp</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">fullPath</span> <span class="k">if</span> <span class="n">comp</span><span class="o">.</span><span class="n">path</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="s2">&quot;Display Name&quot;</span><span class="p">:</span> <span class="n">comp</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">displayName</span> <span class="k">if</span> <span class="n">comp</span><span class="o">.</span><span class="n">path</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="s2">&quot;Data Collection ID&quot;</span><span class="p">:</span> <span class="n">comp</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">clientDataCollectionId</span> <span class="k">if</span> <span class="n">comp</span><span class="o">.</span><span class="n">path</span> <span class="k">else</span> <span class="kc">None</span>
+        <span class="p">})</span>
+
+<span class="c1"># Convert to DataFrame</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">all_components</span><span class="p">)</span>
+
+<span class="c1"># Display the results</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+
+<span class="c1"># Save to CSV for analysis (optional)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;filtered_components_across_buildings.csv&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="data-retrieval">Data Retrieval</h2>
+<p>Now that you have components, you can select properties of components and retrieve data. The Trending module and function in BDXpy allows you to retrieve time series data for various properties of components. Once the timeseries data is in a data frame in python various filters, transformations, analysis, etc. can be applied.
+There are several methods in which to call data. Data can be called right from a Trendview ID or by <code>componentPathId</code>. After retrieving data the names/column labels a user might desire modifications as BDXpy returns the <code>componentPathId</code> in the column header. This can be revised to a custom-user defined label or if calling view Trendview ID inherit the trend labels.</p>
+<h3 id="methods-for-data-retrieval">Methods for Data Retrieval</h3>
+<h4 id="method-1-retrieve-data-using-component-pathproperty-combinations">Method 1 - retrieve data using component path/property combinations</h4>
+<p><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">bdx.auth</span> <span class="kn">import</span> <span class="n">UsernameAndPasswordAuthenticator</span>
+<span class="kn">from</span> <span class="nn">bdx.core</span> <span class="kn">import</span> <span class="n">BDX</span>
+<span class="kn">from</span> <span class="nn">bdx.types</span> <span class="kn">import</span> <span class="n">TimeFrame</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="k">with</span> <span class="n">BDX</span><span class="p">(</span><span class="s2">&quot;http://yourBDXURL.com&quot;</span><span class="p">,</span> <span class="n">UsernameAndPasswordAuthenticator</span><span class="p">(</span><span class="s2">&quot;BDX_USERNAME&quot;</span><span class="p">,</span> <span class="s2">&quot;BDX_PASSWORD&quot;</span><span class="p">))</span> <span class="k">as</span> <span class="n">bdx_instance</span><span class="p">:</span>
+
+<span class="c1"># 21474864282 is an example ID of an AHU. Below calls that AHU and some properties</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">bdx_instance</span><span class="o">.</span><span class="n">trending</span><span class="o">.</span><span class="n">retrieve_data</span><span class="p">([</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;propertyName&quot;</span><span class="p">:</span> <span class="s2">&quot;coolOutput&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;componentPathId&quot;</span><span class="p">:</span> <span class="mi">21474864282</span><span class="p">,</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;propertyName&quot;</span><span class="p">:</span> <span class="s2">&quot;ductStaticPressure&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;componentPathId&quot;</span><span class="p">:</span> <span class="mi">21474864282</span><span class="p">,</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;propertyName&quot;</span><span class="p">:</span> <span class="s2">&quot;ductStaticPressureSetpoint&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;componentPathId&quot;</span><span class="p">:</span> <span class="mi">21474864282</span><span class="p">,</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;propertyName&quot;</span><span class="p">:</span> <span class="s2">&quot;heatOutput&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;componentPathId&quot;</span><span class="p">:</span> <span class="mi">21474864282</span><span class="p">,</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;propertyName&quot;</span><span class="p">:</span> <span class="s2">&quot;mixedAirTemp&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;componentPathId&quot;</span><span class="p">:</span> <span class="mi">21474864282</span><span class="p">,</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;propertyName&quot;</span><span class="p">:</span> <span class="s2">&quot;outdoorAirDamperPos&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;componentPathId&quot;</span><span class="p">:</span> <span class="mi">21474864282</span><span class="p">,</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;propertyName&quot;</span><span class="p">:</span> <span class="s2">&quot;outdoorAirTemp&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;componentPathId&quot;</span><span class="p">:</span> <span class="mi">21474864282</span><span class="p">,</span>
+            <span class="p">}])</span>
+
+ <span class="c1"># Output the first few rows and variables of data        </span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">dataframe</span><span class="p">)</span>
+
+<span class="c1"># Information about the columns can also be printed to help see things like ‘deviceType’ or ‘displayName’        </span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">column_information</span><span class="p">)</span>
+<span class="n">main</span><span class="p">()</span>
+</code></pre></div>
+Outputs:<br />
+<div class="highlight"><pre><span></span><code>time  21474864282_coolOutput  ...  21474864282_outdoorAirDamperPos  21474864282_outdoorAirTemp
+0   2024-12-27 00:00:00-05:00                     0.0  ...                              0.0                   42.300949
+1   2024-12-27 00:15:00-05:00                     0.0  ...                              0.0                   42.148983
+2   2024-12-27 00:30:00-05:00                     0.0  ...                              0.0                   42.351444
+3   2024-12-27 00:45:00-05:00                     0.0  ...                              0.0                   42.401859
+4   2024-12-27 01:00:00-05:00                     0.0  ...                              0.0                   42.602707
+
+[716 rows x 8 columns]
+{&#39;21474864282_coolOutput&#39;: {&#39;propertyName&#39;: &#39;coolOutput&#39;, &#39;componentPathId&#39;: 21474864282, &#39;virtualPath&#39;: None, &#39;lineStyle&#39;: &#39;normal&#39;, &#39;dataTableOnly&#39;: False, &#39;glyphStyle&#39;: &#39;Circle&#39;, &#39;deviceInfo&#39;: {&#39;deviceDto&#39;: {&#39;id&#39;: 470987, &#39;deviceType&#39;: &#39;ErwDrawThrough&#39;, &#39;nativeDeviceId&#39;: 21474836486}, &#39;displayName&#39;: &#39;AHU1&#39;}}, &#39;21474864282_ductStaticPressure&#39;: {&#39;propertyName&#39;: &#39;ductStaticPressure&#39;, &#39;componentPathId&#39;: 21474864282, &#39;virtualPath&#39;: None, &#39;lineStyle&#39;: &#39;normal&#39;, &#39;dataTableOnly&#39;: False, &#39;glyphStyle&#39;: &#39;Circle&#39;, &#39;deviceInfo&#39;: {&#39;deviceDto&#39;: {&#39;id&#39;: 470987, &#39;deviceType&#39;: &#39;ErwDrawThrough&#39;, &#39;nativeDeviceId&#39;: 21474836486}, &#39;displayName&#39;: &#39;AHU1&#39;}}, &#39;21474864282_ductStaticPressureSetpoint&#39;: {&#39;propertyName&#39;: &#39;ductStaticPressureSetpoint&#39;, &#39;componentPathId&#39;: 21474864282, &#39;virtualPath&#39;: None, &#39;lineStyle&#39;: &#39;normal&#39;, &#39;dataTableOnly&#39;: False, &#39;glyphStyle&#39;: &#39;Circle&#39;, &#39;deviceInfo&#39;: {&#39;deviceDto&#39;: {&#39;id&#39;: 470987, &#39;deviceType&#39;: &#39;ErwDrawThrough&#39;, &#39;nativeDeviceId&#39;: 21474836486}, &#39;displayName&#39;: &#39;AHU1&#39;}}, &#39;21474864282_heatOutput&#39;: {&#39;propertyName&#39;: &#39;heatOutput&#39;, &#39;componentPathId&#39;: 21474864282, &#39;virtualPath&#39;: None, &#39;lineStyle&#39;: &#39;normal&#39;, &#39;dataTableOnly&#39;: False, &#39;glyphStyle&#39;: &#39;Circle&#39;, &#39;deviceInfo&#39;: {&#39;deviceDto&#39;: {&#39;id&#39;: 470987, &#39;deviceType&#39;: &#39;ErwDrawThrough&#39;, &#39;nativeDeviceId&#39;: 21474836486}, &#39;displayName&#39;: &#39;AHU1&#39;}}, &#39;21474864282_mixedAirTemp&#39;: {&#39;propertyName&#39;: &#39;mixedAirTemp&#39;, &#39;componentPathId&#39;: 21474864282, &#39;virtualPath&#39;: None, &#39;lineStyle&#39;: &#39;normal&#39;, &#39;dataTableOnly&#39;: False, &#39;glyphStyle&#39;: &#39;Circle&#39;, &#39;deviceInfo&#39;: {&#39;deviceDto&#39;: {&#39;id&#39;: 470987, &#39;deviceType&#39;: &#39;ErwDrawThrough&#39;, &#39;nativeDeviceId&#39;: 21474836486}, &#39;displayName&#39;: &#39;AHU1&#39;}}, &#39;21474864282_outdoorAirDamperPos&#39;: {&#39;propertyName&#39;: &#39;outdoorAirDamperPos&#39;, &#39;componentPathId&#39;: 21474864282, &#39;virtualPath&#39;: None, &#39;lineStyle&#39;: &#39;normal&#39;, &#39;dataTableOnly&#39;: False, &#39;glyphStyle&#39;: &#39;Circle&#39;, &#39;deviceInfo&#39;: {&#39;deviceDto&#39;: {&#39;id&#39;: 470987, &#39;deviceType&#39;: &#39;ErwDrawThrough&#39;, &#39;nativeDeviceId&#39;: 21474836486}, &#39;displayName&#39;: &#39;AHU1&#39;}}, &#39;21474864282_outdoorAirTemp&#39;: {&#39;propertyName&#39;: &#39;outdoorAirTemp&#39;, &#39;componentPathId&#39;: 21474864282, &#39;virtualPath&#39;: None, &#39;lineStyle&#39;: &#39;normal&#39;, &#39;dataTableOnly&#39;: False, &#39;glyphStyle&#39;: &#39;Circle&#39;, &#39;deviceInfo&#39;: {&#39;deviceDto&#39;: {&#39;id&#39;: 470987, &#39;deviceType&#39;: &#39;ErwDrawThrough&#39;, &#39;nativeDeviceId&#39;: 21474836486}, &#39;displayName&#39;: &#39;AHU1&#39;}}}
+</code></pre></div></p>
+<h4 id="method-2-retrieve-a-pre-defined-trend-then-get-its-data">Method 2 - retrieve a pre-defined trend, then get its data</h4>
+<p><div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">bdx.auth</span> <span class="kn">import</span> <span class="n">UsernameAndPasswordAuthenticator</span>
+<span class="kn">from</span> <span class="nn">bdx.core</span> <span class="kn">import</span> <span class="n">BDX</span>
+<span class="kn">from</span> <span class="nn">bdx.types</span> <span class="kn">import</span> <span class="n">TimeFrame</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="k">with</span> <span class="n">BDX</span><span class="p">(</span><span class="s2">&quot;http://yourBDXURL.com&quot;</span><span class="p">,</span> <span class="n">UsernameAndPasswordAuthenticator</span><span class="p">(</span><span class="s2">&quot;BDX_USERNAME&quot;</span><span class="p">,</span> <span class="s2">&quot;BDX_PASSWORD&quot;</span><span class="p">))</span> <span class="k">as</span> <span class="n">bdx_instance</span><span class="p">:</span>
+
+<span class="c1"># 635 is the trend ID which can be found in trendview</span>
+
+        <span class="n">t</span> <span class="o">=</span> <span class="n">bdx_instance</span><span class="o">.</span><span class="n">trending</span><span class="o">.</span><span class="n">trends</span><span class="p">(</span><span class="mi">635</span><span class="p">)</span>
+        <span class="n">d</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">retrieve_data</span><span class="p">(</span><span class="n">TimeFrame</span><span class="o">.</span><span class="n">last_7_days</span><span class="p">())</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">dataframe</span><span class="p">)</span>
 
 
-def get_dates():
-    # Get the current date
-    today = datetime.now()
+<span class="n">main</span><span class="p">()</span>
+</code></pre></div>
+Outputs:<br />
+<div class="highlight"><pre><span></span><code>time  73014470773_realPowerDemand  73014470744_realPowerDemand  fbaaca38439e857f939d395d7948c5510c8d05f7_totalDemand
+0   2024-12-30 11:30:00-05:00                  1180.125122                   944.100098                                        2124.225220
+1   2024-12-30 11:45:00-05:00                  1314.464478                  3286.161133                                        4600.625610
+2   2024-12-30 12:00:00-05:00                  1321.848755                  3304.621826                                        4626.470581
+3   2024-12-30 12:15:00-05:00                  1330.281860                  3325.704590                                        4655.986450
+4   2024-12-30 12:30:00-05:00                  1434.879639                  3874.174805                                        5309.054443
+</code></pre></div></p>
+<h6 id="finding-trendview-id">Finding Trendview ID</h6>
+<p>A list of all saved trends can be called in BDXpy. A hyperlink of a saved trend can be referenced like in the image below.<br />
+<img alt="trend id" src="../assets/trendview%20id.png" /></p>
+<p>Pasted hyperlink with highlighted trend ID <strong>635</strong>:<br />
+<code>http://yourBDXURL.com/trendview/index.html?open=635&amp;timeframe=last7Days&amp;aggregationLevel=Point</code></p>
+<h3 id="names-and-labels">Names and Labels</h3>
+<p>Now that you have data lets rename the labels by replacing the <code>componentPathId</code> in the column headers with the TrendView label or the equipment display name.</p>
+<h4 id="renaming-labels-in-bdxpy">Renaming Labels in BDXpy</h4>
+<h5 id="example-1-displayname-and-property-as-column-labels">Example 1: displayName and Property as column labels</h5>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">bdx.auth</span> <span class="kn">import</span> <span class="n">UsernameAndPasswordAuthenticator</span>
+<span class="kn">from</span> <span class="nn">bdx.core</span> <span class="kn">import</span> <span class="n">BDX</span>
+<span class="kn">from</span> <span class="nn">bdx.types</span> <span class="kn">import</span> <span class="n">TimeFrame</span>
 
-    return today
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="k">with</span> <span class="n">BDX</span><span class="p">(</span><span class="s2">&quot;http://yourBDXURL.com&quot;</span><span class="p">,</span> <span class="n">UsernameAndPasswordAuthenticator</span><span class="p">(</span><span class="s2">&quot;BDX_USERNAME&quot;</span><span class="p">,</span> <span class="s2">&quot;BDX_PASSWORD&quot;</span><span class="p">))</span> <span class="k">as</span> <span class="n">bdx_instance</span><span class="p">:</span>
 
-</code></pre>
-<p>For a full list of classes and methods, visit the <a href="https://example.com/api">official API docs</a>.</p>
+<span class="c1"># 21474864282 is an example ID of an AHU. Below calls that AHU and some properties</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">bdx_instance</span><span class="o">.</span><span class="n">trending</span><span class="o">.</span><span class="n">retrieve_data</span><span class="p">([</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;propertyName&quot;</span><span class="p">:</span> <span class="s2">&quot;coolOutput&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;componentPathId&quot;</span><span class="p">:</span> <span class="mi">21474864282</span><span class="p">,</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;propertyName&quot;</span><span class="p">:</span> <span class="s2">&quot;ductStaticPressure&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;componentPathId&quot;</span><span class="p">:</span> <span class="mi">21474864282</span><span class="p">,</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;propertyName&quot;</span><span class="p">:</span> <span class="s2">&quot;ductStaticPressureSetpoint&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;componentPathId&quot;</span><span class="p">:</span> <span class="mi">21474864282</span><span class="p">,</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;propertyName&quot;</span><span class="p">:</span> <span class="s2">&quot;heatOutput&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;componentPathId&quot;</span><span class="p">:</span> <span class="mi">21474864282</span><span class="p">,</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;propertyName&quot;</span><span class="p">:</span> <span class="s2">&quot;mixedAirTemp&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;componentPathId&quot;</span><span class="p">:</span> <span class="mi">21474864282</span><span class="p">,</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;propertyName&quot;</span><span class="p">:</span> <span class="s2">&quot;outdoorAirDamperPos&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;componentPathId&quot;</span><span class="p">:</span> <span class="mi">21474864282</span><span class="p">,</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;propertyName&quot;</span><span class="p">:</span> <span class="s2">&quot;outdoorAirTemp&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;componentPathId&quot;</span><span class="p">:</span> <span class="mi">21474864282</span><span class="p">,</span>
+            <span class="p">}])</span>
+
+<span class="c1"># Extract the dataframe from the response</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">dataframe</span>  <span class="c1"># Now &#39;df&#39; holds the DataFrame with your data</span>
+
+    <span class="c1"># &#39;r.column_information&#39; contains the metadata for the columns</span>
+    <span class="n">column_information</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">column_information</span>
+
+    <span class="n">new_column_names</span> <span class="o">=</span> <span class="p">{}</span>  <span class="c1"># Create an empty dictionary to store the new column names.</span>
+
+    <span class="c1"># Loop through each column and its associated metadata in the column_information dictionary.</span>
+    <span class="k">for</span> <span class="n">col</span><span class="p">,</span> <span class="n">info</span> <span class="ow">in</span> <span class="n">column_information</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="c1"># Try to get the &#39;label&#39; from the metadata. If no label is provided, it will return None.</span>
+        <span class="n">label</span> <span class="o">=</span> <span class="n">info</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;label&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">label</span><span class="p">:</span>
+            <span class="c1"># If a &#39;label&#39; exists, use it as the new column name.</span>
+            <span class="n">new_column_names</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">label</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># If no &#39;label&#39; is available, we fall back to constructing a column name</span>
+            <span class="c1"># based on the device&#39;s display name and the property name.</span>
+            <span class="n">device_name</span> <span class="o">=</span> <span class="n">info</span><span class="p">[</span><span class="s1">&#39;deviceInfo&#39;</span><span class="p">][</span><span class="s1">&#39;displayName&#39;</span><span class="p">]</span>
+            <span class="n">property_name</span> <span class="o">=</span> <span class="n">info</span><span class="p">[</span><span class="s1">&#39;propertyName&#39;</span><span class="p">]</span>
+            <span class="n">new_column_names</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">device_name</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">property_name</span><span class="si">}</span><span class="s2">&quot;</span>
+
+    <span class="c1"># Apply the new column names to the DataFrame.</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">new_column_names</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+
+<span class="n">main</span><span class="p">()</span>
+</code></pre></div>
+<p>Notice how in the outputs the <code>componentPathId</code> is replaced with the <code>displayName</code> of the device and columns are labeled <code>AHU1_ductStaticPressure</code> instead of <code>21474864282 ductStaticPressure</code></p>
+<p>Output:<br />
+<div class="highlight"><pre><span></span><code>time  AHU1_coolOutput  AHU1_ductStaticPressure  ...  AHU1_mixedAirTemp  AHU1_outdoorAirDamperPos  AHU1_outdoorAirTemp
+0 2024-12-27 00:00:00-05:00              0.0                 -0.02514  ...          66.657455                       0.0            42.300949
+1 2024-12-27 00:15:00-05:00              0.0                 -0.02514  ...          66.688950                       0.0            42.148983
+2 2024-12-27 00:30:00-05:00              0.0                 -0.02514  ...          66.688950                       0.0            42.351444
+3 2024-12-27 00:45:00-05:00              0.0                 -0.02514  ...          66.657455                       0.0            42.401859
+4 2024-12-27 01:00:00-05:00              0.0                 -0.02514  ...          66.625923                       0.0            42.602707
+</code></pre></div></p>
+<h5 id="example-2-modifying-labels-from-a-trendview-id-function">Example 2: Modifying Labels from a Trendview ID function</h5>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">bdx.auth</span> <span class="kn">import</span> <span class="n">UsernameAndPasswordAuthenticator</span>
+<span class="kn">from</span> <span class="nn">bdx.core</span> <span class="kn">import</span> <span class="n">BDX</span>
+<span class="kn">from</span> <span class="nn">bdx.types</span> <span class="kn">import</span> <span class="n">TimeFrame</span>
+
+<span class="c1"># Function to call the BDX API and retrieve data</span>
+<span class="k">def</span> <span class="nf">api_call</span><span class="p">(</span><span class="n">trend_id</span><span class="p">,</span> <span class="n">timeframe</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">with</span> <span class="n">BDX</span><span class="p">(</span><span class="s2">&quot;http://yourBDXURL.com&quot;</span><span class="p">,</span> <span class="n">UsernameAndPasswordAuthenticator</span><span class="p">(</span><span class="s2">&quot;BDX_USERNAME&quot;</span><span class="p">,</span> <span class="s2">&quot;BDX_PASSWORD&quot;</span><span class="p">))</span> <span class="k">as</span> <span class="n">bdx_instance</span><span class="p">:</span>
+            <span class="n">trend</span> <span class="o">=</span> <span class="n">bdx_instance</span><span class="o">.</span><span class="n">trending</span><span class="o">.</span><span class="n">trends</span><span class="p">(</span><span class="n">trend_id</span><span class="p">)</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">trend</span><span class="o">.</span><span class="n">retrieve_data</span><span class="p">(</span><span class="n">timeframe</span><span class="p">)</span>
+            <span class="n">df</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">dataframe</span>
+
+            <span class="c1"># Use true column names from displayName if available</span>
+            <span class="n">true_column_names</span> <span class="o">=</span> <span class="p">[</span><span class="n">value</span><span class="p">[</span><span class="s1">&#39;deviceInfo&#39;</span><span class="p">][</span><span class="s1">&#39;displayName&#39;</span><span class="p">]</span> <span class="k">if</span> <span class="s1">&#39;deviceInfo&#39;</span> <span class="ow">in</span> <span class="n">value</span> <span class="ow">and</span> <span class="s1">&#39;displayName&#39;</span> <span class="ow">in</span> <span class="n">value</span><span class="p">[</span><span class="s1">&#39;deviceInfo&#39;</span><span class="p">]</span> <span class="k">else</span> <span class="n">key</span> 
+                                 <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">column_information</span><span class="o">.</span><span class="n">items</span><span class="p">()]</span>
+            <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">true_column_names</span><span class="p">[:</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> 
+            <span class="k">return</span> <span class="n">df</span>
+
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error fetching data from API: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">trend_ids</span> <span class="o">=</span> <span class="mi">597</span>
+        <span class="n">timeframe</span> <span class="o">=</span> <span class="n">TimeFrame</span><span class="o">.</span><span class="n">last_n_days</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">api_call</span><span class="p">(</span><span class="n">trend_ids</span><span class="p">,</span> <span class="n">timeframe</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">df</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No data returned from API.&quot;</span><span class="p">)</span>
+            <span class="k">return</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;An error occurred: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">main</span> <span class="p">()</span>
+</code></pre></div>
+<p>Output:<br />
+<div class="highlight"><pre><span></span><code>time  N_Street_Elec  N_Hill_Elec  BuildingLogiX Campus
+0   2024-12-30 11:30:00-05:00    1180.125122   944.100098           2124.225220
+1   2024-12-30 11:45:00-05:00    1314.464478  3286.161133           4600.625610
+2   2024-12-30 12:00:00-05:00    1321.848755  3304.621826           4626.470581
+3   2024-12-30 12:15:00-05:00    1330.281860  3325.704590           4655.986450
+</code></pre></div></p>
+<h4 id="replace-labels-manually-in-python">Replace Labels Manually in Python</h4>
+<p>If you manually want to create a list to rename a data frame columns by matching on IDs, something like these functions can be added to your code:</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">get_custom_display_names</span><span class="p">(</span><span class="n">data_response</span><span class="p">,</span> <span class="n">custom_display_names</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Renames DataFrame columns based on custom display names and &#39;propertyName&#39; from component metadata.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">    data_response: The response object containing both the DataFrame and column metadata.</span>
+<span class="sd">    custom_display_names (dict): A dictionary mapping componentPathId to custom display names.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">    DataFrame: DataFrame with columns renamed as &#39;CustomDisplayName_propertyName&#39;.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Retrieve the DataFrame and column information</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">data_response</span><span class="o">.</span><span class="n">dataframe</span>
+    <span class="n">column_information</span> <span class="o">=</span> <span class="n">data_response</span><span class="o">.</span><span class="n">column_information</span>
+
+    <span class="n">new_column_names</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="c1"># Loop through each column and its metadata</span>
+    <span class="k">for</span> <span class="n">col</span><span class="p">,</span> <span class="n">info</span> <span class="ow">in</span> <span class="n">column_information</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">component_path_id</span> <span class="o">=</span> <span class="n">info</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;componentPathId&#39;</span><span class="p">)</span>
+
+        <span class="c1"># Use custom display name if available; otherwise, fall back to displayName</span>
+        <span class="n">display_name</span> <span class="o">=</span> <span class="n">custom_display_names</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">component_path_id</span><span class="p">,</span> <span class="n">info</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;deviceInfo&#39;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;displayName&#39;</span><span class="p">,</span> <span class="s1">&#39;Unknown&#39;</span><span class="p">))</span>
+
+        <span class="c1"># Ensure &#39;propertyName&#39; exists</span>
+        <span class="n">property_name</span> <span class="o">=</span> <span class="n">info</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;propertyName&#39;</span><span class="p">,</span> <span class="s1">&#39;UnknownProperty&#39;</span><span class="p">)</span>
+
+        <span class="c1"># Construct new column name as &#39;CustomDisplayName_propertyName&#39;</span>
+        <span class="n">new_column_names</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">display_name</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">property_name</span><span class="si">}</span><span class="s2">&quot;</span>
+
+    <span class="c1"># Rename DataFrame columns</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">new_column_names</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">df</span>
+
+<span class="n">df_compressors</span> <span class="o">=</span> <span class="n">get_custom_display_names</span><span class="p">(</span><span class="n">data_response</span><span class="p">,</span> <span class="n">custom_display_names</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="timeframes-and-aggregations">Timeframes and Aggregations</h3>
+<p>BDXpy allows users to retrieve trend data for specific timeframes and aggregate the data based on desired intervals. This provides flexibility for analyzing trends over varying periods and resolutions.</p>
+<h4 id="timeframes">Timeframes</h4>
+<p>Timeframes define the duration of the data to retrieve. BDXpy provides several predefined options, such as:</p>
+<ul>
+<li><code>TimeFrame.last_7_days()</code> for data from the past seven days.</li>
+<li><code>TimeFrame.last_30_days()</code> for data from the past 30 days.</li>
+<li><code>TimeFrame.last_n_days()</code> for specifying a discrete number of days.</li>
+</ul>
+<p>Users can also define custom timeframes by specifying a start and end datetime that is covered in the examples below.</p>
+<h4 id="aggregations">Aggregations</h4>
+<p>Aggregations control how data is grouped or summarized over time. The default mode is point-level samples and doesn’t need called in the retrieval function. Aggregation options include for example:  </p>
+<ul>
+<li><code>AggregationLevel.POINT</code></li>
+<li><code>AggregationLevel.HOURLY</code></li>
+<li><code>AggregationLevel.DAILY</code></li>
+<li><code>AggregationLevel.WEEKLY</code></li>
+<li><code>AggregationLevel.MONTHLY</code></li>
+<li><code>AggregationLevel.YEARLY</code></li>
+</ul>
+<p>Combining timeframes and aggregation levels allows users to tailor their trend data queries to their specific needs.</p>
+<h5 id="example-retrieve-trend-data-with-timeframes-and-aggregations">Example: Retrieve Trend Data with Timeframes and Aggregations</h5>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">bdx.auth</span> <span class="kn">import</span> <span class="n">UsernameAndPasswordAuthenticator</span>
+<span class="kn">from</span> <span class="nn">bdx.core</span> <span class="kn">import</span> <span class="n">BDX</span>
+<span class="kn">from</span> <span class="nn">bdx.types</span> <span class="kn">import</span> <span class="n">TimeFrame</span><span class="p">,</span> <span class="n">AggregationLevel</span>
+
+<span class="c1"># Replace with your credentials and BDX URL</span>
+<span class="n">BDX_URL</span> <span class="o">=</span> <span class="s2">&quot;http://your-bdx-url.com&quot;</span>
+<span class="n">USERNAME</span> <span class="o">=</span> <span class="s2">&quot;your_username&quot;</span>
+<span class="n">PASSWORD</span> <span class="o">=</span> <span class="s2">&quot;your_password&quot;</span>
+
+<span class="n">authenticator</span> <span class="o">=</span> <span class="n">UsernameAndPasswordAuthenticator</span><span class="p">(</span><span class="n">USERNAME</span><span class="p">,</span> <span class="n">PASSWORD</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="n">BDX</span><span class="p">(</span><span class="n">BDX_URL</span><span class="p">,</span> <span class="n">authenticator</span><span class="p">)</span> <span class="k">as</span> <span class="n">bdx_instance</span><span class="p">:</span>
+    <span class="c1"># Retrieve a specific trend</span>
+    <span class="n">trend</span> <span class="o">=</span> <span class="n">bdx_instance</span><span class="o">.</span><span class="n">trending</span><span class="o">.</span><span class="n">trends</span><span class="p">(</span><span class="mi">635</span><span class="p">)</span>
+
+    <span class="c1"># Retrieve data for the last 7 days with daily aggregation</span>
+    <span class="n">trend_data1</span> <span class="o">=</span> <span class="n">trend</span><span class="o">.</span><span class="n">retrieve_data</span><span class="p">(</span>
+        <span class="n">timeframe</span><span class="o">=</span><span class="n">TimeFrame</span><span class="o">.</span><span class="n">last_7_days</span><span class="p">(),</span>
+        <span class="n">aggregation</span><span class="o">=</span><span class="n">AggregationLevel</span><span class="o">.</span><span class="n">DAILY</span>
+    <span class="p">)</span>
+    <span class="c1"># Retrieve data for the last 60 days with hourly aggregation</span>
+    <span class="n">trend_data2</span> <span class="o">=</span> <span class="n">trend</span><span class="o">.</span><span class="n">retrieve_data</span><span class="p">(</span>
+        <span class="n">timeframe</span><span class="o">=</span><span class="n">TimeFrame</span><span class="o">.</span><span class="n">last_n_days</span><span class="p">(</span><span class="mi">60</span><span class="p">),</span>
+        <span class="n">aggregation</span><span class="o">=</span><span class="n">AggregationLevel</span><span class="o">.</span><span class="n">HOURLY</span>
+    <span class="p">)</span>
+</code></pre></div>
+<h2 id="python-exception-errors">Python Exception Errors</h2>
+<p>The package includes custom exceptions for handling errors that might occur when running a python script with BDXpy:  </p>
+<ul>
+<li><code>AuthenticationError</code> → When calling BDXSession() or BDX() and login credentials fail.</li>
+<li><code>HttpRequestError</code> → When retrieving trends, buildings, or components from the BDX API.</li>
+<li><code>DataNotFoundError</code> → When requesting a component, trend, or time series that doesn’t exist.</li>
+<li><code>SecurityError</code> → When trying to access a restricted resource (e.g., a building component you don’t have access to).</li>
+</ul>
+<h2 id="bdxpy-modules-user-facing-only">BDXpy Modules (User-Facing Only)</h2>
+<ol>
+<li><code>auth.py</code> – Manages authentication, including username/password login.</li>
+<li><code>buildings.py</code> – Allows users to retrieve building data, including addresses, zones, and assigned components.</li>
+<li><code>components.py</code> – Enables component lookups, including retrieving information about HVAC systems, meters, sensors, and other building components.</li>
+<li><code>core.py</code> – Provides the main interface for interacting with BDX, wrapping session management and data retrieval.</li>
+<li><code>trending.py</code> – Handles trend data retrieval, allowing users to query, filter, and analyze time-series data from BDX.</li>
+<li><code>types.py</code> – Defines helper classes, enumerations, and error handling for API interactions.</li>
+</ol>
 
 
 
@@ -537,8 +2087,13 @@ def get_dates():
       </main>
       
         <footer class="md-footer">
-  <div class="md-footer-copyright" style="text-align: right;">
-    © 2025 BuildingLogiX. All rights reserved.
+  <div class="md-footer__inner">
+      <p>© 2025 BuildingLogiX. All Rights Reserved.</p>
+      <p>
+          <a href="https://github.com/BuildingLogiX">GitHub</a> |
+          <a href="https://buildinglogix.com">Website</a> |
+          <a href="https://linkedin.com/company/buildinglogix">LinkedIn</a>
+      </p>
   </div>
 </footer>
       
@@ -548,7 +2103,7 @@ def get_dates():
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "search.suggest", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../assets/javascripts/bundle.88dd0f4e.min.js"></script>

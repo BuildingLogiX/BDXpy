@@ -20,7 +20,7 @@
     
     
       
-        <title>Getting Started - TEST MODE - BDXPy (BuildingLogiX Data eXchange Python Hub)</title>
+        <title>Getting Started - BDXpy</title>
       
     
     
@@ -76,11 +76,9 @@
     
       
 
-  
-
-<header class="md-header md-header--shadow" data-md-component="header">
+<header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="TEST MODE - BDXPy (BuildingLogiX Data eXchange Python Hub)" class="md-header__button md-logo" aria-label="TEST MODE - BDXPy (BuildingLogiX Data eXchange Python Hub)" data-md-component="logo">
+    <a href=".." title="BDXpy" class="md-header__button md-logo" aria-label="BDXpy" data-md-component="logo">
       
   <img src="../assets/blx white.svg" alt="logo">
 
@@ -93,7 +91,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            TEST MODE - BDXPy (BuildingLogiX Data eXchange Python Hub)
+            BDXpy
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -134,6 +132,8 @@
         </button>
       </nav>
       
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
@@ -158,6 +158,120 @@
       
         
           
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+    
+  
+  Getting Started
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../examples/example1/" class="md-tabs__link">
+          
+  
+  Examples
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../reference/" class="md-tabs__link">
+        
+  
+    
+  
+  Reference
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../faq/" class="md-tabs__link">
+        
+  
+    
+  
+  FAQ
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../contributing/" class="md-tabs__link">
+        
+  
+    
+  
+  Contributing
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -171,15 +285,17 @@
                     
 
 
+  
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="TEST MODE - BDXPy (BuildingLogiX Data eXchange Python Hub)" class="md-nav__button md-logo" aria-label="TEST MODE - BDXPy (BuildingLogiX Data eXchange Python Hub)" data-md-component="logo">
+    <a href=".." title="BDXpy" class="md-nav__button md-logo" aria-label="BDXpy" data-md-component="logo">
       
   <img src="../assets/blx white.svg" alt="logo">
 
     </a>
-    TEST MODE - BDXPy (BuildingLogiX Data eXchange Python Hub)
+    BDXpy
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -257,9 +373,84 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#architecture-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Architecture Options
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Architecture Options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deployment-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deployment Cases
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#process-overview-from-bdx-to-bdxpy-and-python-outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Process Overview – From BDX to BDXpy and Python Outputs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Process Overview – From BDX to BDXpy and Python Outputs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#checking-the-bdx-license-for-bdxpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Checking the BDX license for BDXpy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#installation" class="md-nav__link">
     <span class="md-ellipsis">
       Installation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requirements-packaged-with-bdxpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requirements packaged with BDXpy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bdxpy-imports" class="md-nav__link">
+    <span class="md-ellipsis">
+      BDXpy Imports
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bdxpy-license" class="md-nav__link">
+    <span class="md-ellipsis">
+      BDXpy License
     </span>
   </a>
   
@@ -282,12 +473,19 @@
     
     
     
+      
+      
+        
+      
+    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -444,9 +642,84 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#architecture-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Architecture Options
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Architecture Options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deployment-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deployment Cases
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#process-overview-from-bdx-to-bdxpy-and-python-outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Process Overview – From BDX to BDXpy and Python Outputs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Process Overview – From BDX to BDXpy and Python Outputs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#checking-the-bdx-license-for-bdxpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Checking the BDX license for BDXpy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#installation" class="md-nav__link">
     <span class="md-ellipsis">
       Installation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requirements-packaged-with-bdxpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requirements packaged with BDXpy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bdxpy-imports" class="md-nav__link">
+    <span class="md-ellipsis">
+      BDXpy Imports
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bdxpy-license" class="md-nav__link">
+    <span class="md-ellipsis">
+      BDXpy License
     </span>
   </a>
   
@@ -468,10 +741,69 @@
 
 
 <h1 id="getting-started">Getting Started</h1>
-<h2 id="installation">Installation</h2>
-<p>To install BDXPy, use pip:</p>
-<pre><code class="language-python">pip install bdxpy
-</code></pre>
+<h2 id="architecture-options">Architecture Options</h2>
+<p>There are a couple different ways to run/deploy BDXpy depending on your needs and use cases. Technically multiple sources of BDXpy could be running simultaneously performing various tasks.<br />
+<strong>Disclaimer:</strong> BDXpy is intended for power users and rates of data collection should be reasonable and if too many requests of large quantities of data  are simultaneously taking place it could strain the BDX application and database servers as well as the local machine hosting BDXpy as large data frames can become memory intensive. BDXpy limitations are dependent both on the location of its operation but also the BDX instance it communicates with. It’s the responsibility of the user to make smart decisions with this knowledge.
+BDXpy (as the below image suggests) can be used on an existing BDX server, on a dedicated server, or run from a laptop/computer. In all cases the network path between the BDX instance and BDXpy needs to be active for scripts and processes using BDXpy to work.</p>
+<h3 id="deployment-cases">Deployment Cases</h3>
+<ol>
+<li><strong>On a laptop/personal computer:</strong> for engineers wanting to experiment, run reports from their machine, non-24/7 script deployments.<ul>
+<li>Easiest way to get started or pilot something before deploying elsewhere so long as user has access to BDX from laptop</li>
+</ul>
+</li>
+<li><strong>On an existing BDX server:</strong> likely for an on-premises installation where data is served back to BDX via Windows IIS and are publishing BDXpy internally with identical firewall rules to BDX.<ul>
+<li>Install here if you want BDXpy files to feedback to the kiosk or custom apps/widgets. Maybe require IT approval or cooperation</li>
+</ul>
+</li>
+<li><strong>On a dedicated BDXpy server:</strong> user who might have a cloud BDX but locally want to serve up private network, but internal (non-authenticated) dashboard/visuals/kiosks on a local network. Or users who have more powerful tasks or server resources or teams that shouldn’t/can’t access the BDX server RDP directly or who want to have scripts automatically run on a timed/automated schedule<ul>
+<li>Dedicated servers could also be cloud VMs if they have access to BDX where automated reports or new apps are created. Doesn’t require extra IT permissions or resources on the BDX server depending on the scope.</li>
+</ul>
+</li>
+<li><strong>Cloud Functions:</strong> BDXpy scripts can be run in serverless environments such as AWS Lambda or Azure Functions provided, they don’t entail long running or complex processes or other serverless constraints and have access to communicate with the BDX instance/server. See cloud provider for details</li>
+</ol>
+<p><img alt="Deployment Options" src="../assets/bdxpy%20arch.png" /></p>
+<h2 id="process-overview-from-bdx-to-bdxpy-and-python-outputs">Process Overview – From BDX to BDXpy and Python Outputs</h2>
+<p><img alt="Flowchart" src="../assets/bdxpy%20flow.png" /></p>
+<h3 id="checking-the-bdx-license-for-bdxpy">Checking the BDX license for BDXpy</h3>
+<p>BDXpy requires a license feature on the source BDX. These can be viewed in a BDX instance under <strong>Manage Licenses</strong> to ensure the feature is enabled as in the image below.✅</p>
+<p><img alt="License" src="../assets/bdx%20lic%20bdxpy.png" /></p>
+<h3 id="installation">Installation</h3>
+<p>Installing the BDX Python package is relatively simple. The first thing required is to download the Python language onto your device.</p>
+<ol>
+<li>BDXpy requires Python 3.12 or newer versions (newer versions are recommended). This can be done through the Python downloads website.</li>
+<li>Ensure BDX instance is licensed for API access.</li>
+<li>After installing the necessary packages and obtaining the correct licensing, install BDXpy just like any other Python package:</li>
+</ol>
+<p><div class="highlight"><pre><span></span><code><span class="n">pip</span> <span class="n">install</span> <span class="n">bdxpy</span>
+</code></pre></div>
+Information on pip <a href="https://pypi.org/">here</a>.</p>
+<h3 id="requirements-packaged-with-bdxpy">Requirements packaged with BDXpy</h3>
+<p>This package requires Python 3.12+ and the following dependencies:</p>
+<ul>
+<li>requests</li>
+<li>pandas</li>
+<li>nacl</li>
+<li>urllib3</li>
+<li>dacite</li>
+</ul>
+<h3 id="bdxpy-imports">BDXpy Imports</h3>
+<p>To make use of bdxpy functions python will need “imports” from the package. These imports reside before the code/functions are called in the python script and are all typically handled in the beginning lines of the code like below:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">bdx.auth</span> <span class="kn">import</span> <span class="n">UsernameAndPasswordAuthenticator</span>
+<span class="kn">from</span> <span class="nn">bdx.core</span> <span class="kn">import</span> <span class="n">BDX</span>
+<span class="kn">from</span> <span class="nn">bdx.types</span> <span class="kn">import</span> <span class="n">TimeFrame</span>
+<span class="kn">from</span> <span class="nn">bdx.components</span> <span class="kn">import</span> <span class="n">Components</span>
+
+<span class="c1">## examples of other python package imports (but not limited to) that can be used with data from BDXpy</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</code></pre></div>
+<h2 id="bdxpy-license">BDXpy License</h2>
+<p>This package is distributed under a proprietary license. Contact BuildingLogiX for licensing information.</p>
+<p>Learn more about BuildingLogiX Data Exchange (BDX) <a href="https://buildinglogix.net/connected-buildings/buildinglogix-data-exchange-bdx/">here</a>.</p>
 
 
 
@@ -495,8 +827,13 @@
       </main>
       
         <footer class="md-footer">
-  <div class="md-footer-copyright" style="text-align: right;">
-    © 2025 BuildingLogiX. All rights reserved.
+  <div class="md-footer__inner">
+      <p>© 2025 BuildingLogiX. All Rights Reserved.</p>
+      <p>
+          <a href="https://github.com/BuildingLogiX">GitHub</a> |
+          <a href="https://buildinglogix.com">Website</a> |
+          <a href="https://linkedin.com/company/buildinglogix">LinkedIn</a>
+      </p>
   </div>
 </footer>
       
@@ -506,7 +843,7 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "search.suggest", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../assets/javascripts/bundle.88dd0f4e.min.js"></script>

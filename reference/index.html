@@ -2129,8 +2129,8 @@ Use the following code to load the .env file and authenticate with BDX:</li>
 </ol>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
 <span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">from</span> <span class="nn">bdxpy.bdx.auth</span> <span class="kn">import</span> <span class="n">UsernameAndPasswordAuthenticator</span>
-<span class="kn">from</span> <span class="nn">bdxpy.bdx.core</span> <span class="kn">import</span> <span class="n">BDX</span>
+<span class="kn">from</span> <span class="nn">bdx.auth</span> <span class="kn">import</span> <span class="n">UsernameAndPasswordAuthenticator</span>
+<span class="kn">from</span> <span class="nn">bdx.core</span> <span class="kn">import</span> <span class="n">BDX</span>
 
 <span class="c1"># Specify the path to the environment variable file</span>
 <span class="n">load_dotenv</span><span class="p">(</span><span class="n">dotenv_path</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;C:\Users\your-path\.env&quot;</span><span class="p">)</span>

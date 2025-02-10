@@ -1,18 +1,48 @@
+/* Sticky Footer */
 .md-footer {
-    padding-top: 20px; /* Increase the top padding */
-    padding-bottom: 20px; /* Increase the bottom padding */
-    background-color: #000; /* Ensure it's black, if needed */
-    text-align: right;
-}
-.md-logo {
-    height: 40px; /* Adjust height as needed */
-}
-.md-header__links a {
-    text-decoration: none;
-    color: #0078D7; /* Adjust color to match your theme */
-    font-weight: bold;
+    position: fixed; /* Fix the footer at the bottom */
+    bottom: 0; /* Align to the bottom of the viewport */
+    left: 0; /* Align to the left */
+    width: 100%; /* Full width */
+    background-color: #000; /* Black background */
+    color: var(--md-primary-bg-color); /* Footer text color */
+    padding: 10px 20px; /* Padding for spacing */
+    display: flex; /* Enable flexbox */
+    align-items: center; /* Vertically center content */
+    justify-content: space-between; /* Push items to opposite sides */
+    box-sizing: border-box; /* Include padding in width calculation */
+    z-index: 1000; /* Ensure footer stays above other content */
 }
 
-.md-header__links a:hover {
-    text-decoration: underline;
+/* Left Section (Copyright) */
+.footer-left {
+    font-size: 14px; /* Adjust font size */
+    text-align: left; /* Align text to the left */
+    margin: 0; /* Remove any default margin */
+}
+
+/* Footer Icon Styling */
+.footer-icon {
+    width: 24px; /* Fixed width for all icons */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 25px; /* Double the spacing between icons */
+    vertical-align: middle; /* Align icons with text */
+}
+
+/* Remove the extra margin on the last icon */
+.footer-right .footer-icon:last-child {
+    margin-right: 0; /* Reset margin for the last icon */
+}
+
+/* Footer Links Layout */
+.footer-right {
+    display: flex; /* Arrange icons horizontally */
+    align-items: center; /* Vertically align icons */
+    gap: 25px; /* Double the gap between icons */
+}
+
+.footer-right a:hover img {
+    opacity: 0.8;
+    transform: scale(1.1);
+    transition: all 0.3s ease;
 }

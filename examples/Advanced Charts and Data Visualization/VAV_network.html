@@ -1,0 +1,163 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 1000px;
+                 background-color: #ffffff;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "#3e3e3e", "font": {"size": 50}, "id": "Building: K12", "label": "Building: K12", "physics": true, "shape": "dot", "size": 100}, {"color": "#f5d76e", "font": {"bold": true, "size": 40}, "id": "AHU_1", "label": "AHU 1", "physics": true, "shape": "dot", "size": 50}, {"color": "#7bb6d6", "font": {"size": 30}, "id": "VAV_1_2", "label": "VAV_1_2", "physics": true, "shape": "dot", "size": 47.842610700943396, "title": "VAV_1_2 - % Change: -28.42%, Airflow: 81512.26"}, {"color": "#8dc2dc", "font": {"size": 30}, "id": "VAV_1_1", "label": "VAV_1_1", "physics": true, "shape": "dot", "size": 41.55100292548174, "title": "VAV_1_1 - % Change: -25.66%, Airflow: 63092.90"}, {"color": "#65a9cf", "font": {"size": 30}, "id": "VAV_1_8", "label": "VAV_1_8", "physics": true, "shape": "dot", "size": 34.56847837840485, "title": "VAV_1_8 - % Change: -31.87%, Airflow: 42650.80"}, {"color": "#569fc9", "font": {"size": 30}, "id": "VAV_1_15", "label": "VAV_1_15", "physics": true, "shape": "dot", "size": 32.66963814458645, "title": "VAV_1_15 - % Change: -34.30%, Airflow: 37091.74"}, {"color": "#84bcd9", "font": {"size": 30}, "id": "VAV_1_9", "label": "VAV_1_9", "physics": true, "shape": "dot", "size": 35.92634521362696, "title": "VAV_1_9 - % Change: -26.89%, Airflow: 46626.10"}, {"color": "#96c7df", "font": {"size": 30}, "id": "VAV_1_10", "label": "VAV_1_10", "physics": true, "shape": "dot", "size": 37.96490648957191, "title": "VAV_1_10 - % Change: -23.88%, Airflow: 52594.21"}, {"color": "#b3d6e8", "font": {"size": 30}, "id": "VAV_1_14", "label": "VAV_1_14", "physics": true, "shape": "dot", "size": 35.17701325057644, "title": "VAV_1_14 - % Change: -18.20%, Airflow: 44432.35"}, {"color": "#a2cde3", "font": {"size": 30}, "id": "VAV_1_3", "label": "VAV_1_3", "physics": true, "shape": "dot", "size": 30.53747391265301, "title": "VAV_1_3 - % Change: -21.61%, Airflow: 30849.60"}, {"color": "#cce2ef", "font": {"size": 30}, "id": "VAV_1_13", "label": "VAV_1_13", "physics": true, "shape": "dot", "size": 37.68805586017754, "title": "VAV_1_13 - % Change: -13.42%, Airflow: 51783.70"}, {"color": "#b6d7e8", "font": {"size": 30}, "id": "VAV_1_4", "label": "VAV_1_4", "physics": true, "shape": "dot", "size": 32.45057941862057, "title": "VAV_1_4 - % Change: -17.80%, Airflow: 36450.42"}, {"color": "#75b2d4", "font": {"size": 30}, "id": "VAV_1_12", "label": "VAV_1_12", "physics": true, "shape": "dot", "size": 26.079567821891708, "title": "VAV_1_12 - % Change: -29.36%, Airflow: 17798.59"}, {"color": "#bbdaea", "font": {"size": 30}, "id": "VAV_1_7", "label": "VAV_1_7", "physics": true, "shape": "dot", "size": 31.320834742347536, "title": "VAV_1_7 - % Change: -16.64%, Airflow: 33142.97"}, {"color": "#ddebf2", "font": {"size": 30}, "id": "VAV_1_5", "label": "VAV_1_5", "physics": true, "shape": "dot", "size": 43.66915827684451, "title": "VAV_1_5 - % Change: -8.62%, Airflow: 69294.03"}, {"color": "#ddebf2", "font": {"size": 30}, "id": "VAV_1_6", "label": "VAV_1_6", "physics": true, "shape": "dot", "size": 42.27610007750964, "title": "VAV_1_6 - % Change: -8.32%, Airflow: 65215.70"}, {"color": "#90c4dd", "font": {"size": 30}, "id": "VAV_1_11", "label": "VAV_1_11", "physics": true, "shape": "dot", "size": 25.572418841797052, "title": "VAV_1_11 - % Change: -24.89%, Airflow: 16313.86"}, {"color": "#f5d76e", "font": {"bold": true, "size": 40}, "id": "AHU_2", "label": "AHU 2", "physics": true, "shape": "dot", "size": 50}, {"color": "#4997c5", "font": {"size": 30}, "id": "VAV_2_8", "label": "VAV_2_8", "physics": true, "shape": "dot", "size": 43.17461403799793, "title": "VAV_2_8 - % Change: -36.13%, Airflow: 67846.20"}, {"color": "#78b4d5", "font": {"size": 30}, "id": "VAV_2_1", "label": "VAV_2_1", "physics": true, "shape": "dot", "size": 43.152886664530556, "title": "VAV_2_1 - % Change: -29.17%, Airflow: 67782.59"}, {"color": "#3480b9", "font": {"size": 30}, "id": "VAV_2_4", "label": "VAV_2_4", "physics": true, "shape": "dot", "size": 32.47540022556142, "title": "VAV_2_4 - % Change: -42.73%, Airflow: 36523.09"}, {"color": "#5ca3cb", "font": {"size": 30}, "id": "VAV_2_12", "label": "VAV_2_12", "physics": true, "shape": "dot", "size": 37.08578257203687, "title": "VAV_2_12 - % Change: -33.50%, Airflow: 50020.48"}, {"color": "#78b4d5", "font": {"size": 30}, "id": "VAV_2_3", "label": "VAV_2_3", "physics": true, "shape": "dot", "size": 40.60995377359741, "title": "VAV_2_3 - % Change: -28.85%, Airflow: 60337.88"}, {"color": "#65a9cf", "font": {"size": 30}, "id": "VAV_2_13", "label": "VAV_2_13", "physics": true, "shape": "dot", "size": 37.755414865856864, "title": "VAV_2_13 - % Change: -31.85%, Airflow: 51980.90"}, {"color": "#90c4dd", "font": {"size": 30}, "id": "VAV_2_11", "label": "VAV_2_11", "physics": true, "shape": "dot", "size": 38.100111554891825, "title": "VAV_2_11 - % Change: -25.08%, Airflow: 52990.04"}, {"color": "#7bb6d6", "font": {"size": 30}, "id": "VAV_2_9", "label": "VAV_2_9", "physics": true, "shape": "dot", "size": 34.29701795166247, "title": "VAV_2_9 - % Change: -28.41%, Airflow: 41856.07"}, {"color": "#81bad8", "font": {"size": 30}, "id": "VAV_2_7", "label": "VAV_2_7", "physics": true, "shape": "dot", "size": 34.331239726032855, "title": "VAV_2_7 - % Change: -27.28%, Airflow: 41956.26"}, {"color": "#96c7df", "font": {"size": 30}, "id": "VAV_2_10", "label": "VAV_2_10", "physics": true, "shape": "dot", "size": 34.73261072724331, "title": "VAV_2_10 - % Change: -24.22%, Airflow: 43131.32"}, {"color": "#84bcd9", "font": {"size": 30}, "id": "VAV_2_6", "label": "VAV_2_6", "physics": true, "shape": "dot", "size": 31.721627179345813, "title": "VAV_2_6 - % Change: -27.20%, Airflow: 34316.34"}, {"color": "#d2e6f0", "font": {"size": 30}, "id": "VAV_2_14", "label": "VAV_2_14", "physics": true, "shape": "dot", "size": 50.68739668707019, "title": "VAV_2_14 - % Change: -11.88%, Airflow: 89840.68"}, {"color": "#8dc2dc", "font": {"size": 30}, "id": "VAV_2_5", "label": "VAV_2_5", "physics": true, "shape": "dot", "size": 30.55024853715059, "title": "VAV_2_5 - % Change: -25.45%, Airflow: 30887.00"}, {"color": "#81bad8", "font": {"size": 30}, "id": "VAV_2_2", "label": "VAV_2_2", "physics": true, "shape": "dot", "size": 24.634187038145008, "title": "VAV_2_2 - % Change: -27.45%, Airflow: 13567.09"}, {"color": "#f5d76e", "font": {"bold": true, "size": 40}, "id": "AHU_3", "label": "AHU 3", "physics": true, "shape": "dot", "size": 50}, {"color": "#053061", "font": {"size": 30}, "id": "VAV_3_3", "label": "VAV_3_3", "physics": true, "shape": "dot", "size": 43.456983031955325, "title": "VAV_3_3 - % Change: -62.25%, Airflow: 68672.86"}, {"color": "#4997c5", "font": {"size": 30}, "id": "VAV_3_2", "label": "VAV_3_2", "physics": true, "shape": "dot", "size": 41.09609576089436, "title": "VAV_3_2 - % Change: -36.41%, Airflow: 61761.11"}, {"color": "#4c99c6", "font": {"size": 30}, "id": "VAV_3_5", "label": "VAV_3_5", "physics": true, "shape": "dot", "size": 30.874802233552288, "title": "VAV_3_5 - % Change: -35.52%, Airflow: 31837.16"}, {"color": "#4c99c6", "font": {"size": 30}, "id": "VAV_3_4", "label": "VAV_3_4", "physics": true, "shape": "dot", "size": 29.70757438909991, "title": "VAV_3_4 - % Change: -35.93%, Airflow: 28419.98"}, {"color": "#a5cee3", "font": {"size": 30}, "id": "VAV_3_12", "label": "VAV_3_12", "physics": true, "shape": "dot", "size": 32.77946861219269, "title": "VAV_3_12 - % Change: -20.96%, Airflow: 37413.28"}, {"color": "#9dcbe1", "font": {"size": 30}, "id": "VAV_3_9", "label": "VAV_3_9", "physics": true, "shape": "dot", "size": 29.936763918768186, "title": "VAV_3_9 - % Change: -22.74%, Airflow: 29090.95"}, {"color": "#cce2ef", "font": {"size": 30}, "id": "VAV_3_10", "label": "VAV_3_10", "physics": true, "shape": "dot", "size": 34.61213770476001, "title": "VAV_3_10 - % Change: -13.53%, Airflow: 42778.62"}, {"color": "#a0cce2", "font": {"size": 30}, "id": "VAV_3_11", "label": "VAV_3_11", "physics": true, "shape": "dot", "size": 27.07766760247606, "title": "VAV_3_11 - % Change: -22.22%, Airflow: 20720.64"}, {"color": "#529dc8", "font": {"size": 30}, "id": "VAV_3_15", "label": "VAV_3_15", "physics": true, "shape": "dot", "size": 23.29368901565273, "title": "VAV_3_15 - % Change: -34.75%, Airflow: 9642.63"}, {"color": "#5ca3cb", "font": {"size": 30}, "id": "VAV_3_6", "label": "VAV_3_6", "physics": true, "shape": "dot", "size": 22.71958014774006, "title": "VAV_3_6 - % Change: -33.42%, Airflow: 7961.87"}, {"color": "#78b4d5", "font": {"size": 30}, "id": "VAV_3_14", "label": "VAV_3_14", "physics": true, "shape": "dot", "size": 23.103830425683782, "title": "VAV_3_14 - % Change: -28.91%, Airflow: 9086.80"}, {"color": "#87beda", "font": {"size": 30}, "id": "VAV_3_7", "label": "VAV_3_7", "physics": true, "shape": "dot", "size": 22.23550655532086, "title": "VAV_3_7 - % Change: -26.52%, Airflow: 6544.69"}, {"color": "#b3d6e8", "font": {"size": 30}, "id": "VAV_3_8", "label": "VAV_3_8", "physics": true, "shape": "dot", "size": 23.113566348255347, "title": "VAV_3_8 - % Change: -18.30%, Airflow: 9115.30"}, {"color": "#dbeaf2", "font": {"size": 30}, "id": "VAV_3_1", "label": "VAV_3_1", "physics": true, "shape": "dot", "size": 24.830587740969065, "title": "VAV_3_1 - % Change: -8.93%, Airflow: 14142.07"}, {"color": "#f0f4f6", "font": {"size": 30}, "id": "VAV_3_13", "label": "VAV_3_13", "physics": true, "shape": "dot", "size": 23.000071706386283, "title": "VAV_3_13 - % Change: -2.09%, Airflow: 8783.04"}, {"color": "#f5d76e", "font": {"bold": true, "size": 40}, "id": "AHU_4", "label": "AHU 4", "physics": true, "shape": "dot", "size": 50}, {"color": "#b1d5e7", "font": {"size": 30}, "id": "VAV_4_10", "label": "VAV_4_10", "physics": true, "shape": "dot", "size": 67.36718444675503, "title": "VAV_4_10 - % Change: -18.54%, Airflow: 138672.57"}, {"color": "#7eb8d7", "font": {"size": 30}, "id": "VAV_4_12", "label": "VAV_4_12", "physics": true, "shape": "dot", "size": 46.068808109006056, "title": "VAV_4_12 - % Change: -27.86%, Airflow: 76319.26"}, {"color": "#7eb8d7", "font": {"size": 30}, "id": "VAV_4_13", "label": "VAV_4_13", "physics": true, "shape": "dot", "size": 36.139381194971335, "title": "VAV_4_13 - % Change: -27.99%, Airflow: 47249.79"}, {"color": "#84bcd9", "font": {"size": 30}, "id": "VAV_4_2", "label": "VAV_4_2", "physics": true, "shape": "dot", "size": 36.16768724011463, "title": "VAV_4_2 - % Change: -26.80%, Airflow: 47332.66"}, {"color": "#9bc9e0", "font": {"size": 30}, "id": "VAV_4_17", "label": "VAV_4_17", "physics": true, "shape": "dot", "size": 39.24438616573571, "title": "VAV_4_17 - % Change: -23.34%, Airflow: 56340.03"}, {"color": "#78b4d5", "font": {"size": 30}, "id": "VAV_4_7", "label": "VAV_4_7", "physics": true, "shape": "dot", "size": 33.56601008959425, "title": "VAV_4_7 - % Change: -28.84%, Airflow: 39715.97"}, {"color": "#b1d5e7", "font": {"size": 30}, "id": "VAV_4_5", "label": "VAV_4_5", "physics": true, "shape": "dot", "size": 41.69135462347374, "title": "VAV_4_5 - % Change: -18.54%, Airflow: 63503.79"}, {"color": "#a7d0e4", "font": {"size": 30}, "id": "VAV_4_15", "label": "VAV_4_15", "physics": true, "shape": "dot", "size": 37.75133289560188, "title": "VAV_4_15 - % Change: -20.51%, Airflow: 51968.95"}, {"color": "#a7d0e4", "font": {"size": 30}, "id": "VAV_4_6", "label": "VAV_4_6", "physics": true, "shape": "dot", "size": 36.524118364977596, "title": "VAV_4_6 - % Change: -20.66%, Airflow: 48376.15"}, {"color": "#a5cee3", "font": {"size": 30}, "id": "VAV_4_1", "label": "VAV_4_1", "physics": true, "shape": "dot", "size": 35.83402183102632, "title": "VAV_4_1 - % Change: -21.02%, Airflow: 46355.82"}, {"color": "#98c8e0", "font": {"size": 30}, "id": "VAV_4_14", "label": "VAV_4_14", "physics": true, "shape": "dot", "size": 33.21263365977733, "title": "VAV_4_14 - % Change: -23.53%, Airflow: 38681.42"}, {"color": "#a9d1e5", "font": {"size": 30}, "id": "VAV_4_4", "label": "VAV_4_4", "physics": true, "shape": "dot", "size": 34.50044935494331, "title": "VAV_4_4 - % Change: -20.41%, Airflow: 42451.64"}, {"color": "#b8d8e9", "font": {"size": 30}, "id": "VAV_4_9", "label": "VAV_4_9", "physics": true, "shape": "dot", "size": 37.77546463673825, "title": "VAV_4_9 - % Change: -17.03%, Airflow: 52039.60"}, {"color": "#a0cce2", "font": {"size": 30}, "id": "VAV_4_3", "label": "VAV_4_3", "physics": true, "shape": "dot", "size": 31.708117086323348, "title": "VAV_4_3 - % Change: -22.17%, Airflow: 34276.78"}, {"color": "#b6d7e8", "font": {"size": 30}, "id": "VAV_4_16", "label": "VAV_4_16", "physics": true, "shape": "dot", "size": 33.294481394354435, "title": "VAV_4_16 - % Change: -17.69%, Airflow: 38921.04"}, {"color": "#d2e6f0", "font": {"size": 30}, "id": "VAV_4_18", "label": "VAV_4_18", "physics": true, "shape": "dot", "size": 37.798823292160684, "title": "VAV_4_18 - % Change: -11.82%, Airflow: 52107.99"}, {"color": "#d5e7f1", "font": {"size": 30}, "id": "VAV_4_8", "label": "VAV_4_8", "physics": true, "shape": "dot", "size": 39.28760131491039, "title": "VAV_4_8 - % Change: -10.72%, Airflow: 56466.55"}, {"color": "#67001f", "font": {"size": 30}, "id": "VAV_4_11", "label": "VAV_4_11", "physics": true, "shape": "dot", "size": 70.0, "title": "VAV_4_11 - % Change: 3.14%, Airflow: 146380.43"}, {"color": "#f5d76e", "font": {"bold": true, "size": 40}, "id": "AHU_6", "label": "AHU 6", "physics": true, "shape": "dot", "size": 50}, {"color": "#1e61a5", "font": {"size": 30}, "id": "VAV_6_9", "label": "VAV_6_9", "physics": true, "shape": "dot", "size": 33.42642045061111, "title": "VAV_6_9 - % Change: -50.88%, Airflow: 39307.30"}, {"color": "#96c7df", "font": {"size": 30}, "id": "VAV_6_1", "label": "VAV_6_1", "physics": true, "shape": "dot", "size": 46.51874552034649, "title": "VAV_6_1 - % Change: -23.88%, Airflow: 77636.50"}, {"color": "#569fc9", "font": {"size": 30}, "id": "VAV_6_4", "label": "VAV_6_4", "physics": true, "shape": "dot", "size": 34.93022382068918, "title": "VAV_6_4 - % Change: -34.29%, Airflow: 43709.85"}, {"color": "#87beda", "font": {"size": 30}, "id": "VAV_6_8", "label": "VAV_6_8", "physics": true, "shape": "dot", "size": 38.19221310754932, "title": "VAV_6_8 - % Change: -26.30%, Airflow: 53259.68"}, {"color": "#59a1ca", "font": {"size": 30}, "id": "VAV_6_5", "label": "VAV_6_5", "physics": true, "shape": "dot", "size": 32.33475375589068, "title": "VAV_6_5 - % Change: -33.65%, Airflow: 36111.33"}, {"color": "#a5cee3", "font": {"size": 30}, "id": "VAV_6_7", "label": "VAV_6_7", "physics": true, "shape": "dot", "size": 38.450846767323526, "title": "VAV_6_7 - % Change: -21.26%, Airflow: 54016.86"}, {"color": "#4695c4", "font": {"size": 30}, "id": "VAV_6_3", "label": "VAV_6_3", "physics": true, "shape": "dot", "size": 26.216173926352468, "title": "VAV_6_3 - % Change: -36.83%, Airflow: 18198.52"}, {"color": "#62a7ce", "font": {"size": 30}, "id": "VAV_6_6", "label": "VAV_6_6", "physics": true, "shape": "dot", "size": 26.913376429342623, "title": "VAV_6_6 - % Change: -32.23%, Airflow: 20239.66"}, {"color": "#8ac0db", "font": {"size": 30}, "id": "VAV_6_10", "label": "VAV_6_10", "physics": true, "shape": "dot", "size": 25.024747859341733, "title": "VAV_6_10 - % Change: -26.21%, Airflow: 14710.49"}, {"color": "#3c8abe", "font": {"size": 30}, "id": "VAV_6_2", "label": "VAV_6_2", "physics": true, "shape": "dot", "size": 21.57737383046505, "title": "VAV_6_2 - % Change: -39.83%, Airflow: 4617.93"}, {"color": "#2c75b4", "font": {"size": 30}, "id": "VAV_6_11", "label": "VAV_6_11", "physics": true, "shape": "dot", "size": 21.161328261774507, "title": "VAV_6_11 - % Change: -45.36%, Airflow: 3399.91"}, {"color": "#f5d76e", "font": {"bold": true, "size": 40}, "id": "AHU_8", "label": "AHU 8", "physics": true, "shape": "dot", "size": 50}, {"color": "#78b4d5", "font": {"size": 30}, "id": "VAV_8_2", "label": "VAV_8_2", "physics": true, "shape": "dot", "size": 47.089641543550535, "title": "VAV_8_2 - % Change: -29.08%, Airflow: 79307.87"}, {"color": "#529dc8", "font": {"size": 30}, "id": "VAV_8_3", "label": "VAV_8_3", "physics": true, "shape": "dot", "size": 34.84159147988741, "title": "VAV_8_3 - % Change: -34.87%, Airflow: 43450.37"}, {"color": "#d4e6f1", "font": {"size": 30}, "id": "VAV_8_1", "label": "VAV_8_1", "physics": true, "shape": "dot", "size": 30.143303968140756, "title": "VAV_8_1 - % Change: -11.67%, Airflow: 29695.62"}]);
+                  edges = new vis.DataSet([{"from": "Building: K12", "to": "AHU_1"}, {"from": "AHU_1", "title": "% Change: -28.42%", "to": "VAV_1_2", "width": 1}, {"from": "AHU_1", "title": "% Change: -25.66%", "to": "VAV_1_1", "width": 1}, {"from": "AHU_1", "title": "% Change: -31.87%", "to": "VAV_1_8", "width": 1}, {"from": "AHU_1", "title": "% Change: -34.30%", "to": "VAV_1_15", "width": 1}, {"from": "AHU_1", "title": "% Change: -26.89%", "to": "VAV_1_9", "width": 1}, {"from": "AHU_1", "title": "% Change: -23.88%", "to": "VAV_1_10", "width": 1}, {"from": "AHU_1", "title": "% Change: -18.20%", "to": "VAV_1_14", "width": 1}, {"from": "AHU_1", "title": "% Change: -21.61%", "to": "VAV_1_3", "width": 1}, {"from": "AHU_1", "title": "% Change: -13.42%", "to": "VAV_1_13", "width": 1}, {"from": "AHU_1", "title": "% Change: -17.80%", "to": "VAV_1_4", "width": 1}, {"from": "AHU_1", "title": "% Change: -29.36%", "to": "VAV_1_12", "width": 1}, {"from": "AHU_1", "title": "% Change: -16.64%", "to": "VAV_1_7", "width": 1}, {"from": "AHU_1", "title": "% Change: -8.62%", "to": "VAV_1_5", "width": 1}, {"from": "AHU_1", "title": "% Change: -8.32%", "to": "VAV_1_6", "width": 1}, {"from": "AHU_1", "title": "% Change: -24.89%", "to": "VAV_1_11", "width": 1}, {"from": "Building: K12", "to": "AHU_2"}, {"from": "AHU_2", "title": "% Change: -36.13%", "to": "VAV_2_8", "width": 1}, {"from": "AHU_2", "title": "% Change: -29.17%", "to": "VAV_2_1", "width": 1}, {"from": "AHU_2", "title": "% Change: -42.73%", "to": "VAV_2_4", "width": 1}, {"from": "AHU_2", "title": "% Change: -33.50%", "to": "VAV_2_12", "width": 1}, {"from": "AHU_2", "title": "% Change: -28.85%", "to": "VAV_2_3", "width": 1}, {"from": "AHU_2", "title": "% Change: -31.85%", "to": "VAV_2_13", "width": 1}, {"from": "AHU_2", "title": "% Change: -25.08%", "to": "VAV_2_11", "width": 1}, {"from": "AHU_2", "title": "% Change: -28.41%", "to": "VAV_2_9", "width": 1}, {"from": "AHU_2", "title": "% Change: -27.28%", "to": "VAV_2_7", "width": 1}, {"from": "AHU_2", "title": "% Change: -24.22%", "to": "VAV_2_10", "width": 1}, {"from": "AHU_2", "title": "% Change: -27.20%", "to": "VAV_2_6", "width": 1}, {"from": "AHU_2", "title": "% Change: -11.88%", "to": "VAV_2_14", "width": 1}, {"from": "AHU_2", "title": "% Change: -25.45%", "to": "VAV_2_5", "width": 1}, {"from": "AHU_2", "title": "% Change: -27.45%", "to": "VAV_2_2", "width": 1}, {"from": "Building: K12", "to": "AHU_3"}, {"from": "AHU_3", "title": "% Change: -62.25%", "to": "VAV_3_3", "width": 1}, {"from": "AHU_3", "title": "% Change: -36.41%", "to": "VAV_3_2", "width": 1}, {"from": "AHU_3", "title": "% Change: -35.52%", "to": "VAV_3_5", "width": 1}, {"from": "AHU_3", "title": "% Change: -35.93%", "to": "VAV_3_4", "width": 1}, {"from": "AHU_3", "title": "% Change: -20.96%", "to": "VAV_3_12", "width": 1}, {"from": "AHU_3", "title": "% Change: -22.74%", "to": "VAV_3_9", "width": 1}, {"from": "AHU_3", "title": "% Change: -13.53%", "to": "VAV_3_10", "width": 1}, {"from": "AHU_3", "title": "% Change: -22.22%", "to": "VAV_3_11", "width": 1}, {"from": "AHU_3", "title": "% Change: -34.75%", "to": "VAV_3_15", "width": 1}, {"from": "AHU_3", "title": "% Change: -33.42%", "to": "VAV_3_6", "width": 1}, {"from": "AHU_3", "title": "% Change: -28.91%", "to": "VAV_3_14", "width": 1}, {"from": "AHU_3", "title": "% Change: -26.52%", "to": "VAV_3_7", "width": 1}, {"from": "AHU_3", "title": "% Change: -18.30%", "to": "VAV_3_8", "width": 1}, {"from": "AHU_3", "title": "% Change: -8.93%", "to": "VAV_3_1", "width": 1}, {"from": "AHU_3", "title": "% Change: -2.09%", "to": "VAV_3_13", "width": 1}, {"from": "Building: K12", "to": "AHU_4"}, {"from": "AHU_4", "title": "% Change: -18.54%", "to": "VAV_4_10", "width": 1}, {"from": "AHU_4", "title": "% Change: -27.86%", "to": "VAV_4_12", "width": 1}, {"from": "AHU_4", "title": "% Change: -27.99%", "to": "VAV_4_13", "width": 1}, {"from": "AHU_4", "title": "% Change: -26.80%", "to": "VAV_4_2", "width": 1}, {"from": "AHU_4", "title": "% Change: -23.34%", "to": "VAV_4_17", "width": 1}, {"from": "AHU_4", "title": "% Change: -28.84%", "to": "VAV_4_7", "width": 1}, {"from": "AHU_4", "title": "% Change: -18.54%", "to": "VAV_4_5", "width": 1}, {"from": "AHU_4", "title": "% Change: -20.51%", "to": "VAV_4_15", "width": 1}, {"from": "AHU_4", "title": "% Change: -20.66%", "to": "VAV_4_6", "width": 1}, {"from": "AHU_4", "title": "% Change: -21.02%", "to": "VAV_4_1", "width": 1}, {"from": "AHU_4", "title": "% Change: -23.53%", "to": "VAV_4_14", "width": 1}, {"from": "AHU_4", "title": "% Change: -20.41%", "to": "VAV_4_4", "width": 1}, {"from": "AHU_4", "title": "% Change: -17.03%", "to": "VAV_4_9", "width": 1}, {"from": "AHU_4", "title": "% Change: -22.17%", "to": "VAV_4_3", "width": 1}, {"from": "AHU_4", "title": "% Change: -17.69%", "to": "VAV_4_16", "width": 1}, {"from": "AHU_4", "title": "% Change: -11.82%", "to": "VAV_4_18", "width": 1}, {"from": "AHU_4", "title": "% Change: -10.72%", "to": "VAV_4_8", "width": 1}, {"from": "AHU_4", "title": "% Change: 3.14%", "to": "VAV_4_11", "width": 1}, {"from": "Building: K12", "to": "AHU_6"}, {"from": "AHU_6", "title": "% Change: -50.88%", "to": "VAV_6_9", "width": 1}, {"from": "AHU_6", "title": "% Change: -23.88%", "to": "VAV_6_1", "width": 1}, {"from": "AHU_6", "title": "% Change: -34.29%", "to": "VAV_6_4", "width": 1}, {"from": "AHU_6", "title": "% Change: -26.30%", "to": "VAV_6_8", "width": 1}, {"from": "AHU_6", "title": "% Change: -33.65%", "to": "VAV_6_5", "width": 1}, {"from": "AHU_6", "title": "% Change: -21.26%", "to": "VAV_6_7", "width": 1}, {"from": "AHU_6", "title": "% Change: -36.83%", "to": "VAV_6_3", "width": 1}, {"from": "AHU_6", "title": "% Change: -32.23%", "to": "VAV_6_6", "width": 1}, {"from": "AHU_6", "title": "% Change: -26.21%", "to": "VAV_6_10", "width": 1}, {"from": "AHU_6", "title": "% Change: -39.83%", "to": "VAV_6_2", "width": 1}, {"from": "AHU_6", "title": "% Change: -45.36%", "to": "VAV_6_11", "width": 1}, {"from": "Building: K12", "to": "AHU_8"}, {"from": "AHU_8", "title": "% Change: -29.08%", "to": "VAV_8_2", "width": 1}, {"from": "AHU_8", "title": "% Change: -34.87%", "to": "VAV_8_3", "width": 1}, {"from": "AHU_8", "title": "% Change: -11.67%", "to": "VAV_8_1", "width": 1}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "barnesHut": {
+            "avoidOverlap": 0,
+            "centralGravity": 0.2,
+            "damping": 0.09,
+            "gravitationalConstant": -7000,
+            "springConstant": 0.03,
+            "springLength": 50
+        },
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>

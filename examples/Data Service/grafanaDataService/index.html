@@ -1,0 +1,1753 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../comingsoon/">
+      
+      
+        <link rel="next" href="../../../reference/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>Grafana Server API - BDXpy</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#setting-up-bdxpy-as-a-data-service-for-grafana" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="BDXpy" class="md-header__button md-logo" aria-label="BDXpy" data-md-component="logo">
+      
+  <img src="../../../assets/blx white.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            BDXpy
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Grafana Server API
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../getting-started/" class="md-tabs__link">
+        
+  
+    
+  
+  Getting Started
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  Examples
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../reference/" class="md-tabs__link">
+        
+  
+    
+  
+  Reference
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../pythonpackages/" class="md-tabs__link">
+        
+  
+    
+  
+  Recommended Companion Packages
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../faq/" class="md-tabs__link">
+        
+  
+    
+  
+  FAQ
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../contributing/" class="md-tabs__link">
+        
+  
+    
+  
+  Contributing
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="BDXpy" class="md-nav__button md-logo" aria-label="BDXpy" data-md-component="logo">
+      
+  <img src="../../../assets/blx white.svg" alt="logo">
+
+    </a>
+    BDXpy
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting-started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Examples
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Examples
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Example Gallery
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Data Visualization
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Data Visualization
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data%20Visualization/airflow_sankey/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Airflow Sankey
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data%20Visualization/VAV_network/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Building CFM Network
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data%20Visualization/staticDuration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Static Pressure Duration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data%20Visualization/staticCurve/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Static Pressure Distribution
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data%20Visualization/ahuEcono_ex/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AHU Economizer Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data%20Visualization/mapenergychart/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Campus Energy Map
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Dashboards
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Dashboards
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Dashboards/rtu_dash_ex/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RTU Monitor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Automated Reporting
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            Automated Reporting
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../comingsoon/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Coming Soon
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Calculations and Analysis
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            Calculations and Analysis
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../comingsoon/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Coming Soon
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Machine Learning
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            Machine Learning
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../comingsoon/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Coming Soon
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    LLM Integration
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            LLM Integration
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../comingsoon/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Coming Soon
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Public Kiosk App
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_8">
+            <span class="md-nav__icon md-icon"></span>
+            Public Kiosk App
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../comingsoon/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Coming Soon
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    BDXpy Data Service
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_9">
+            <span class="md-nav__icon md-icon"></span>
+            BDXpy Data Service
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Grafana Server API
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Grafana Server API
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-install-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Install Dependencies
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-set-up-environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Set Up Environment Variables
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-implement-the-fastapi-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Implement the FastAPI Service
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-run-the-api-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Run the API Service
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-configure-grafana" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Configure Grafana
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-verify-data-in-grafana" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Verify Data in Grafana
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-optional-enable-secondary-y-axis-in-grafana" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. (Optional) Enable Secondary Y-Axis in Grafana
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-optional-add-background-shading-for-boolean-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. (Optional) Add Background Shading for Boolean Points
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reference
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pythonpackages/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Recommended Companion Packages
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../contributing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contributing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-install-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Install Dependencies
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-set-up-environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Set Up Environment Variables
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-implement-the-fastapi-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Implement the FastAPI Service
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-run-the-api-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Run the API Service
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-configure-grafana" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Configure Grafana
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-verify-data-in-grafana" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Verify Data in Grafana
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-optional-enable-secondary-y-axis-in-grafana" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. (Optional) Enable Secondary Y-Axis in Grafana
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-optional-add-background-shading-for-boolean-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. (Optional) Add Background Shading for Boolean Points
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="setting-up-bdxpy-as-a-data-service-for-grafana">Setting Up BDXpy as a Data Service for Grafana</h1>
+<p>This guide walks you through setting up BDXpy as a FastAPI data service on a Grafana server and configuring it as a JSON API data source.</p>
+<p><img alt="Grafana Dashboard Config" src="" title="grafana_dash.png" /></p>
+<h2 id="1-install-dependencies">1. Install Dependencies</h2>
+<p>Ensure you have Python 3.12+ installed. Install the necessary dependencies:
+    <div class="highlight"><pre><span></span><code>    <span class="n">pip</span> <span class="n">install</span> <span class="n">fastapi</span> <span class="n">uvicorn</span> <span class="n">pandas</span> <span class="n">requests</span> <span class="n">python</span><span class="o">-</span><span class="n">dotenv</span>
+</code></pre></div></p>
+<h2 id="2-set-up-environment-variables">2. Set Up Environment Variables</h2>
+<p>Create a .env file to store your BDX credentials securely:
+    <div class="highlight"><pre><span></span><code>    <span class="n">BDX_URL</span><span class="o">=</span><span class="s2">&quot;https://your-bdx-instance.com&quot;</span>
+    <span class="n">BDX_USER</span><span class="o">=</span><span class="s2">&quot;your-username&quot;</span>
+    <span class="n">BDX_PASS</span><span class="o">=</span><span class="s2">&quot;your-password&quot;</span>
+</code></pre></div>
+<strong>Note:</strong> your server the data service is being run on will need access to reach the bdx URL
+<strong>Because BDXpy handles authentication on additional authentication is needed in grafana.</strong></p>
+<h2 id="3-implement-the-fastapi-service">3. Implement the FastAPI Service</h2>
+<p>Create a file bdx_service.py and define the API:</p>
+<div class="highlight"><pre><span></span><code>```python
+    from fastapi import FastAPI, Query, HTTPException, BackgroundTasks, Request
+    from fastapi.responses import JSONResponse 
+    import pandas as pd
+    import uvicorn
+    import os
+    import logging
+    import json
+    from datetime import datetime, timedelta, timezone
+    from dotenv import load_dotenv
+    from slowapi import Limiter
+    from slowapi.util import get_remote_address
+    from typing import List, Optional
+    from memory_profiler import profile
+
+    # Import BDXpy modules
+    from bdx.core import BDX
+    from bdx.auth import UsernameAndPasswordAuthenticator
+    from bdx.trending import PropertyDescriptor
+    from bdx.types import TimeFrame, AggregationLevel
+
+    # Configure Logging
+    logger = logging.getLogger(__name__)
+    log_handler = logging.handlers.RotatingFileHandler(&quot;api.log&quot;, maxBytes=100*1024*1024, backupCount=5)
+    logger.setLevel(logging.DEBUG)
+    log_handler.setFormatter(logging.Formatter(&quot;%(asctime)s - %(levelname)s - %(message)s&quot;))
+    logger.addHandler(log_handler)
+
+    def log_event(level, message, extra=None):
+        log_entry = {
+            &quot;level&quot;: level, 
+            &quot;message&quot;: message, 
+            &quot;timestamp&quot;: datetime.now(timezone.utc).isoformat()
+        }
+        if extra:
+            try:
+                json.dumps(extra)  # Ensure extra is JSON serializable
+                log_entry[&quot;extra&quot;] = extra
+            except TypeError:
+                log_entry[&quot;extra&quot;] = str(extra)  # Convert non-serializable objects to strings
+        logger.log(level, json.dumps(log_entry))
+
+    # Load environment variables
+    load_dotenv()
+    BDX_URL = os.getenv(&quot;BDX_URL&quot;)
+    BDX_USER = os.getenv(&quot;BDX_USER&quot;)
+    BDX_PASS = os.getenv(&quot;BDX_PASS&quot;)
+
+    # Initialize Rate Limiting
+    limiter = Limiter(key_func=get_remote_address)
+
+    # FastAPI app
+    app = FastAPI()
+
+    # Initialize BDX connection
+    authenticator = UsernameAndPasswordAuthenticator(BDX_USER, BDX_PASS)
+    bdx_instance = BDX(BDX_URL, authenticator)
+
+    @app.middleware(&quot;http&quot;)
+    async def error_middleware(request: Request, call_next):
+        try:
+            return await call_next(request)
+        except Exception as e:
+            log_event(logging.ERROR, f&quot;Unhandled error: {e}&quot;, {&quot;request_path&quot;: request.url.path})
+            return JSONResponse(
+                status_code=500,
+                content={&quot;message&quot;: &quot;Internal Server Error&quot;}
+            )
+
+    @app.get(&quot;/query&quot;)
+    @limiter.limit(&quot;20/minute&quot;)
+    async def query_grafana(
+        request: Request,
+        background_tasks: BackgroundTasks,
+        component_path_ids: str = Query(..., title=&quot;Comma-separated list of Component Path IDs&quot;),  
+        properties: str = Query(&quot;value&quot;, title=&quot;Comma-separated list of properties&quot;),  
+        start_time: Optional[str] = Query(None, title=&quot;Start Time (ISO 8601, default: 24h ago)&quot;),
+        end_time: Optional[str] = Query(None, title=&quot;End Time (ISO 8601, default: now)&quot;)
+    ):
+        log_event(logging.DEBUG, &quot;Raw query parameters&quot;, {&quot;query_params&quot;: dict(request.query_params)})
+
+        try:
+            component_path_ids_list = list(map(int, component_path_ids.split(&quot;,&quot;)))
+            properties_list = properties.split(&quot;,&quot;)
+
+            if not start_time:
+                start_time = (datetime.now(timezone.utc) - timedelta(hours=24)).isoformat()
+            if not end_time:
+                end_time = datetime.now(timezone.utc).isoformat()
+
+            log_event(logging.DEBUG, &quot;Parsed query parameters&quot;, {
+                &quot;component_path_ids&quot;: component_path_ids_list,
+                &quot;properties&quot;: properties_list,
+                &quot;start_time&quot;: start_time,
+                &quot;end_time&quot;: end_time
+            })
+
+            response = await get_bdxpy_trend_data(bdx_instance, component_path_ids_list, properties_list, start_time, end_time)
+            return response
+        except Exception as e:
+            log_event(logging.ERROR, f&quot;Unexpected error in query processing: {str(e)}&quot;)
+            raise HTTPException(status_code=500, detail=&quot;Internal server error&quot;)
+
+
+    async def get_bdxpy_trend_data(bdx_instance, component_path_ids: List[int], properties: List[str], start_time: str, end_time: str):
+        try:
+            log_event(logging.DEBUG, &quot;Fetching BDXpy data&quot;, {
+                &quot;component_path_ids&quot;: component_path_ids,
+                &quot;properties&quot;: properties,
+                &quot;start_time&quot;: start_time,
+                &quot;end_time&quot;: end_time
+            })
+
+            trending = bdx_instance.trending
+            start_dt = datetime.fromisoformat(start_time).astimezone(timezone.utc)
+            end_dt = datetime.fromisoformat(end_time).astimezone(timezone.utc)
+            timeframe = TimeFrame(start=start_dt, end=end_dt)
+
+            property_descriptors = [
+                PropertyDescriptor(componentPathId=comp_id, propertyName=prop)
+                for comp_id in component_path_ids
+                for prop in properties
+            ]
+
+            trend_data = trending.retrieve_data(properties=property_descriptors, timeframe=timeframe, aggregation_level=AggregationLevel.POINT)
+            df = trend_data.dataframe
+
+            log_event(logging.DEBUG, &quot;Received DataFrame&quot;, {&quot;df_shape&quot;: df.shape, &quot;df_columns&quot;: list(df.columns)})
+
+            if df.empty:
+                log_event(logging.WARNING, &quot;No data returned from BDXpy.&quot;)
+                return {&quot;message&quot;: &quot;No data available&quot;}
+
+            if &#39;time&#39; in df.columns:
+                df[&#39;time&#39;] = pd.to_datetime(df[&#39;time&#39;], utc=True)  # Ensure &#39;time&#39; column is datetime
+                df.set_index(&#39;time&#39;, inplace=True)  # Set &#39;time&#39; as the index
+
+            print(df)
+
+            response = [
+                {
+                    &quot;target&quot;: column.split(&#39;_&#39;)[-1],  # Remove component ID prefix to match Grafana target names
+                    &quot;datapoints&quot;: [
+                        [value, int(pd.Timestamp(timestamp).timestamp() * 1000)]
+                        for timestamp, value in df[column].items() if pd.notna(timestamp) and not pd.isnull(value)
+                    ]
+                }
+                for column in df.columns if column != &#39;time&#39;
+            ]
+            return response
+        except Exception as e:
+            log_event(logging.ERROR, f&quot;Error fetching BDXpy data: {e}&quot;)
+            raise HTTPException(status_code=500, detail=&quot;Internal Server Error&quot;)
+
+    @app.get(&quot;/&quot;)
+    async def root():
+        return {&quot;message&quot;: &quot;BDXpy API for Grafana&quot;}
+
+    if __name__ == &quot;__main__&quot;:
+        uvicorn.run(app, host=&quot;127.0.0.1&quot;, port=8000)
+```
+</code></pre></div>
+<h2 id="4-run-the-api-service">4. Run the API Service</h2>
+<p>Start the service:
+    <code>python  
+        python bdx_service.py</code>
+Your FastAPI service is now running on <strong>port 8000</strong>.
+<strong>Note:</strong> if this is a important process you will want to create additional monitoring and error checking and maybe expand service restart scenarios to ensure high uptime</p>
+<h2 id="5-configure-grafana">5. Configure Grafana</h2>
+<ul>
+<li>
+<p><strong>Install JSON API</strong></p>
+</li>
+<li>
+<p><strong>Add a New Data Source in Grafana</strong>:</p>
+</li>
+<li>Navigate to <strong>Configuration → Data Sources → Add Data Source</strong>.</li>
+<li>Select <strong>"JSON API"</strong>.</li>
+<li>Set:<ul>
+<li><strong>URL</strong>: <code>http://localhost:8000</code></li>
+<li><strong>Method</strong>: <code>GET</code></li>
+</ul>
+</li>
+<li>
+<p>Click <strong>Save &amp; Test</strong>.</p>
+</li>
+<li>
+<p><strong>Create a Panel</strong>:</p>
+</li>
+<li>Go to <strong>Dashboards → Create → New Panel</strong>.</li>
+<li>Choose the <strong>JSON API</strong> data source.</li>
+<li>Set the <strong>Query Path</strong> to <code>/query</code>.</li>
+<li>
+<p>Add <strong>Query Parameters</strong>:</p>
+<ul>
+<li><code>component_path_ids=21474864282</code></li>
+<li><code>properties=supplyAirTemp,ductStaticPressure</code></li>
+<li><code>start_time=${__from:date}</code></li>
+<li><code>end_time=${__to:date}</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Format Response in Grafana</strong>:</p>
+</li>
+<li>Use <strong>JSONPath Queries</strong> to extract data:
+    <div class="highlight"><pre><span></span><code><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;value&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;jsonPath&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;$[*].datapoints[*][0]&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;number&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;timestamp&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;jsonPath&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;$[*].datapoints[*][1]&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;time&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;metric&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;jsonPath&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;$[*].target&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">]</span>
+</code></pre></div></li>
+</ul>
+<h2 id="6-verify-data-in-grafana">6. Verify Data in Grafana</h2>
+<ul>
+<li>Ensure your <strong>panel correctly visualizes each series separately</strong>.</li>
+<li>If a <strong>boolean point</strong> (e.g., <code>supplyFanStatus</code>) is coming back <strong>null</strong>, check:</li>
+<li>The <strong>property name</strong> in BDX.</li>
+<li>The <strong>data type</strong> (it may need conversion to <code>1/0</code> instead of <code>true/false</code>).</li>
+</ul>
+<h2 id="7-optional-enable-secondary-y-axis-in-grafana">7. (Optional) Enable Secondary Y-Axis in Grafana</h2>
+<p>To plot <strong>multiple metrics</strong> with different scales:
+- Go to <strong>Panel Settings → Axes</strong>.
+- Under <strong>Y-Axis</strong>, set:
+  - <strong>Y-Axis 1</strong> for <code>supplyAirTemp</code>
+  - <strong>Y-Axis 2</strong> for <code>ductStaticPressure</code></p>
+<h2 id="8-optional-add-background-shading-for-boolean-points">8. (Optional) Add Background Shading for Boolean Points</h2>
+<p>To visualize a <strong>Boolean</strong> (<code>True/False</code>) metric:
+- Use <strong>Field Overrides</strong>:
+  - Set a <strong>Threshold</strong> (e.g., <code>1 = ON</code> / <code>0 = OFF</code>).
+  - Change <strong>background color</strong> dynamically based on status.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  <div class="footer-left">
+    <p>© 2025 BuildingLogiX. All Rights Reserved.</p>
+  </div>
+  <div class="footer-right">
+    <a href="https://github.com/BuildingLogiX" target="_blank">
+      <img src="../../../assets/github.svg" class="footer-icon">
+    </a>
+    <a href="https://buildinglogix.net" target="_blank">
+      <img src="../../../assets/blx white.svg" class="footer-icon">
+    </a>
+    <a href="https://linkedin.com/company/buildinglogix" target="_blank">
+      <img src="../../../assets/linkedin.svg" class="footer-icon">
+    </a>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.instant", "navigation.tracking", "content.tabs.link", "content.code.select", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "grid.adaptive", "grid.cards"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+    
+  </body>
+</html>

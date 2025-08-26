@@ -32,7 +32,7 @@ nav:
           - "Campus Energy Map": examples/Data Visualization/mapenergychart.md
           - "Hospital Network OR KPIs": examples/Data Visualization/operating_room_sankey_diagram.md
       - Dashboards:
-          - "AHu Cool Performance App": examples/Dashboards/ahu_cool_performance.md
+          - "AHU Cool Performance App": examples/Dashboards/ahu_cool_performance.md
           - "Campus Utilities": examples/Dashboards/campus_utl.md
           - "RTU Monitor": examples/Dashboards/rtu_dash_ex.md
       - Automated Reporting:

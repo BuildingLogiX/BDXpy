@@ -38,12 +38,12 @@ Click in the left navigation for more details on specific examples
 - :material-air-filter: **AHU Cooling Performance App**
  
 <div style="position: relative; text-align: center;">
-    <button onclick="toggleFullScreen()" style="margin-top: 10px;">🔍 Click for Fullscreen</button>
+    <button onclick="toggleFullScreenAHU()" style="margin-top: 10px;">🔍 Click for Fullscreen</button>
     <iframe id="ahu-dashboard" src="https://ahu-cool-performance-buildinglogix.plotly.app/" width="800" height="400" style="border: none;"></iframe>
 </div>
 
 <script>
-function toggleFullScreen() {
+function toggleFullScreenAHU() {
     var iframe = document.getElementById("ahu-dashboard");
     if (iframe.requestFullscreen) {
         iframe.requestFullscreen();
@@ -60,12 +60,12 @@ function toggleFullScreen() {
 - :material-air-filter: **Campus Utilities App**
  
 <div style="position: relative; text-align: center;">
-    <button onclick="toggleFullScreen()" style="margin-top: 10px;">🔍 Click for Fullscreen</button>
+    <button onclick="toggleFullScreenUTL()" style="margin-top: 10px;">🔍 Click for Fullscreen</button>
     <iframe id="utl-dashboard" src="https://energy-dashboard-xpwn.onrender.com/" width="800" height="400" style="border: none;"></iframe>
 </div>
 
 <script>
-function toggleFullScreen() {
+function toggleFullScreenUTL() {
     var iframe = document.getElementById("utl-dashboard");
     if (iframe.requestFullscreen) {
         iframe.requestFullscreen();
@@ -82,12 +82,12 @@ function toggleFullScreen() {
 - :material-air-filter: **RTU Dashboard**
  
 <div style="position: relative; text-align: center;">
-    <button onclick="toggleFullScreen()" style="margin-top: 10px;">🔍 Click for Fullscreen</button>
+    <button onclick="toggleFullScreenRTU()" style="margin-top: 10px;">🔍 Click for Fullscreen</button>
     <iframe id="rtu-dashboard" src="https://rtu-dash-bdxpy.onrender.com/" width="800" height="400" style="border: none;"></iframe>
 </div>
 
 <script>
-function toggleFullScreen() {
+function toggleFullScreenRTU() {
     var iframe = document.getElementById("rtu-dashboard");
     if (iframe.requestFullscreen) {
         iframe.requestFullscreen();

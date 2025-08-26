@@ -1,0 +1,73 @@
+site_name: BDXpy
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand    
+    - navigation.instant
+    - navigation.tracking
+    - content.tabs.link
+    - content.code.select
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+    - grid.adaptive
+    - grid.cards
+  custom_dir: overrides
+  logo: assets/blx white.svg
+nav:
+  - Home: index.md
+  - Getting Started: getting-started.md
+  - Examples:
+      - Example Gallery: examples.md
+      - Data Visualization:
+          - "Airflow Sankey": examples/Data Visualization/airflow_sankey.md
+          - "Building CFM Network": examples/Data Visualization/VAV_network.md
+          - "Static Pressure Duration": examples/Data Visualization/staticDuration.md
+          - "Static Pressure Distribution": examples/Data Visualization/staticCurve.md
+          - "AHU Economizer Analysis": examples/Data Visualization/ahuEcono_ex.md
+          - "Campus Energy Map": examples/Data Visualization/mapenergychart.md
+          - "Hospital Network OR KPIs": examples/Data Visualization/operating_room_sankey_diagram.md
+      - Dashboards:
+          - "RTU Monitor": examples/Dashboards/ahu_cool_performance.md
+          - "RTU Monitor": examples/Dashboards/campus_utl.md
+          - "RTU Monitor": examples/Dashboards/rtu_dash_ex.md
+      - Automated Reporting:
+          - "Automated Reporting": examples/Automated Reporting/automatedReporting.md
+      - LLM Integration:
+          - "LLM": examples/LLM Integration/LLM.md
+      - BDXpy Data Service:
+          - "Grafana Server API": examples/Data Service/grafanaDataService.md
+      - Public Kiosk App:
+          - "Coming Soon": examples/comingsoon.md
+      - Calculations and Analysis:
+          - "Coming Soon": examples/comingsoon.md
+      - Machine Learning:
+          - "Coming Soon": examples/comingsoon.md
+  - Reference: reference.md
+  - Recommended Companion Packages: pythonpackages.md
+  - FAQ: faq.md
+  - Contributing: contributing.md
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed
+  - pymdownx.snippets
+  - pymdownx.magiclink
+  - pymdownx.emoji
+  - attr_list
+  - md_in_html
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      use_pygments: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+extra_css:
+  - assets/extra.css
+
+

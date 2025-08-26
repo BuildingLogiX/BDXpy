@@ -1,0 +1,61 @@
+/* Sticky Footer */
+.md-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #000;
+    color: var(--md-primary-bg-color);
+    padding: 5px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    z-index: 1000;
+    height: 40px; /* Set a smaller height */
+}
+
+/* Left Section (Copyright) */
+.footer-left {
+    font-size: 14px;
+    text-align: left;
+    margin: 0;
+}
+
+/* Footer Icons */
+.footer-icon {
+    display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 24px !important;
+    height: auto !important;
+    vertical-align: middle;
+    filter: invert(1); /* Invert colors if necessary */
+}
+
+/* Footer Links Layout */
+.footer-right {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+/* Hover Effects */
+.footer-right a:hover img {
+    opacity: 0.8;
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+}
+/* Ensure footer icons are white */
+.footer-icon {
+    filter: brightness(0) invert(1); /* Converts black icons to white */
+}
+
+/* Alternative: Set explicit fill for inline SVGs */
+.footer-icon svg {
+    fill: white !important; /* Force fill color to white */
+}
+/* Ensure Page Content Doesn't Get Cut Off */
+.md-main {
+    padding-bottom: 50px; /* Add bottom padding equal to footer height */
+}

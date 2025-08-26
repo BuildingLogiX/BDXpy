@@ -9,20 +9,22 @@
       
       
       
+        <link rel="prev" href="../ahu_cool_performance/">
       
-        <link rel="next" href="getting-started/">
+      
+        <link rel="next" href="../rtu_dash_ex/">
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
     
     
       
-        <title>BDXpy</title>
+        <title>RTU Monitor - BDXpy</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.6f8fc17f.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6f8fc17f.min.css">
       
       
 
@@ -41,9 +43,9 @@
       
     
     
-      <link rel="stylesheet" href="assets/extra.css">
+      <link rel="stylesheet" href="../../../assets/extra.css">
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -62,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#welcome-to-bdxpy-documentation" class="md-skip">
+        <a href="#example-campus-utilities-app" class="md-skip">
           Skip to content
         </a>
       
@@ -76,9 +78,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="BDXpy" class="md-header__button md-logo" aria-label="BDXpy" data-md-component="logo">
+    <a href="../../.." title="BDXpy" class="md-header__button md-logo" aria-label="BDXpy" data-md-component="logo">
       
-  <img src="assets/blx white.svg" alt="logo">
+  <img src="../../../assets/blx white.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -95,7 +97,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              RTU Monitor
             
           </span>
         </div>
@@ -169,11 +171,9 @@
         
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="." class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
         
   
     
@@ -190,7 +190,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="getting-started/" class="md-tabs__link">
+      <a href="../../../getting-started/" class="md-tabs__link">
         
   
     
@@ -205,11 +205,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="examples/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
           
   
   Examples
@@ -225,7 +227,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="reference/" class="md-tabs__link">
+      <a href="../../../reference/" class="md-tabs__link">
         
   
     
@@ -242,7 +244,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="pythonpackages/" class="md-tabs__link">
+      <a href="../../../pythonpackages/" class="md-tabs__link">
         
   
     
@@ -259,7 +261,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="faq/" class="md-tabs__link">
+      <a href="../../../faq/" class="md-tabs__link">
         
   
     
@@ -276,7 +278,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="contributing/" class="md-tabs__link">
+      <a href="../../../contributing/" class="md-tabs__link">
         
   
     
@@ -310,9 +312,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="BDXpy" class="md-nav__button md-logo" aria-label="BDXpy" data-md-component="logo">
+    <a href="../../.." title="BDXpy" class="md-nav__button md-logo" aria-label="BDXpy" data-md-component="logo">
       
-  <img src="assets/blx white.svg" alt="logo">
+  <img src="../../../assets/blx white.svg" alt="logo">
 
     </a>
     BDXpy
@@ -324,30 +326,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Home
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -356,62 +338,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#key-features" class="md-nav__link">
-    <span class="md-ellipsis">
-      Key Features
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#summary-overview-and-concepts" class="md-nav__link">
-    <span class="md-ellipsis">
-      Summary Overview and Concepts
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
-    <span class="md-ellipsis">
-      References
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-use-cases" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example Use Cases
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -423,7 +349,7 @@
   
   
     <li class="md-nav__item">
-      <a href="getting-started/" class="md-nav__link">
+      <a href="../../../getting-started/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -440,27 +366,30 @@
       
   
   
+    
   
   
+  
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -471,7 +400,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Examples
@@ -485,7 +414,7 @@
   
   
     <li class="md-nav__item">
-      <a href="examples/" class="md-nav__link">
+      <a href="../../" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -511,10 +440,13 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -523,7 +455,7 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
         
           
-          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -548,7 +480,7 @@
   
   
     <li class="md-nav__item">
-      <a href="examples/Data%20Visualization/airflow_sankey/" class="md-nav__link">
+      <a href="../../Data%20Visualization/airflow_sankey/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -569,7 +501,7 @@
   
   
     <li class="md-nav__item">
-      <a href="examples/Data%20Visualization/VAV_network/" class="md-nav__link">
+      <a href="../../Data%20Visualization/VAV_network/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -590,7 +522,7 @@
   
   
     <li class="md-nav__item">
-      <a href="examples/Data%20Visualization/staticDuration/" class="md-nav__link">
+      <a href="../../Data%20Visualization/staticDuration/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -611,7 +543,7 @@
   
   
     <li class="md-nav__item">
-      <a href="examples/Data%20Visualization/staticCurve/" class="md-nav__link">
+      <a href="../../Data%20Visualization/staticCurve/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -632,7 +564,7 @@
   
   
     <li class="md-nav__item">
-      <a href="examples/Data%20Visualization/ahuEcono_ex/" class="md-nav__link">
+      <a href="../../Data%20Visualization/ahuEcono_ex/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -653,7 +585,7 @@
   
   
     <li class="md-nav__item">
-      <a href="examples/Data%20Visualization/mapenergychart/" class="md-nav__link">
+      <a href="../../Data%20Visualization/mapenergychart/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -674,7 +606,7 @@
   
   
     <li class="md-nav__item">
-      <a href="examples/Data%20Visualization/operating_room_sankey_diagram/" class="md-nav__link">
+      <a href="../../Data%20Visualization/operating_room_sankey_diagram/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -700,27 +632,30 @@
                 
   
   
+    
   
   
+  
     
     
     
       
       
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
         
           
+          
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3" >
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -731,7 +666,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_3">
             <span class="md-nav__icon md-icon"></span>
             Dashboards
@@ -745,7 +680,7 @@
   
   
     <li class="md-nav__item">
-      <a href="examples/Dashboards/ahu_cool_performance/" class="md-nav__link">
+      <a href="../ahu_cool_performance/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -763,10 +698,28 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="examples/Dashboards/campus_utl/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    RTU Monitor
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -775,6 +728,33 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#example-campus-utilities-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: Campus Utilities App
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -787,7 +767,7 @@
   
   
     <li class="md-nav__item">
-      <a href="examples/Dashboards/rtu_dash_ex/" class="md-nav__link">
+      <a href="../rtu_dash_ex/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -821,10 +801,13 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -833,7 +816,7 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_4" >
         
           
-          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -858,7 +841,7 @@
   
   
     <li class="md-nav__item">
-      <a href="examples/Automated%20Reporting/automatedReporting/" class="md-nav__link">
+      <a href="../../Automated%20Reporting/automatedReporting/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -892,10 +875,13 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -904,7 +890,7 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_5" >
         
           
-          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -929,7 +915,7 @@
   
   
     <li class="md-nav__item">
-      <a href="examples/LLM%20Integration/LLM/" class="md-nav__link">
+      <a href="../../LLM%20Integration/LLM/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -963,10 +949,13 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -975,7 +964,7 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_6" >
         
           
-          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -1000,7 +989,7 @@
   
   
     <li class="md-nav__item">
-      <a href="examples/Data%20Service/grafanaDataService/" class="md-nav__link">
+      <a href="../../Data%20Service/grafanaDataService/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1034,10 +1023,13 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -1046,7 +1038,7 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_7" >
         
           
-          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -1071,7 +1063,7 @@
   
   
     <li class="md-nav__item">
-      <a href="examples/comingsoon/" class="md-nav__link">
+      <a href="../../comingsoon/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1105,10 +1097,13 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -1117,7 +1112,7 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_8" >
         
           
-          <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -1142,7 +1137,7 @@
   
   
     <li class="md-nav__item">
-      <a href="examples/comingsoon/" class="md-nav__link">
+      <a href="../../comingsoon/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1176,10 +1171,13 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -1188,7 +1186,7 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_9" >
         
           
-          <label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -1213,7 +1211,7 @@
   
   
     <li class="md-nav__item">
-      <a href="examples/comingsoon/" class="md-nav__link">
+      <a href="../../comingsoon/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1249,7 +1247,7 @@
   
   
     <li class="md-nav__item">
-      <a href="reference/" class="md-nav__link">
+      <a href="../../../reference/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1269,7 +1267,7 @@
   
   
     <li class="md-nav__item">
-      <a href="pythonpackages/" class="md-nav__link">
+      <a href="../../../pythonpackages/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1289,7 +1287,7 @@
   
   
     <li class="md-nav__item">
-      <a href="faq/" class="md-nav__link">
+      <a href="../../../faq/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1309,7 +1307,7 @@
   
   
     <li class="md-nav__item">
-      <a href="contributing/" class="md-nav__link">
+      <a href="../../../contributing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1339,8 +1337,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1349,36 +1345,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#key-features" class="md-nav__link">
+  <a href="#example-campus-utilities-app" class="md-nav__link">
     <span class="md-ellipsis">
-      Key Features
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#summary-overview-and-concepts" class="md-nav__link">
-    <span class="md-ellipsis">
-      Summary Overview and Concepts
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
-    <span class="md-ellipsis">
-      References
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-use-cases" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example Use Cases
+      Example: Campus Utilities App
     </span>
   </a>
   
@@ -1399,40 +1368,30 @@
                   
 
 
-<h1 id="welcome-to-bdxpy-documentation">Welcome to BDXpy Documentation</h1>
-<p><img src="./assets/blx emoji.svg" width="24" height="24" />
-<code>bdxpy</code> is a Python package designed to interface with BuildingLogiX Data Exchange (BDX), a building analytics platform developed by BuildingLogiX.📊</p>
-<h2 id="key-features">Key Features</h2>
-<ul>
-<li><strong>Access BDX trends and analytics:</strong> Enables access to building information, trended data, equipment scores and energy analytics.</li>
-<li><strong>Handles BDX authentication:</strong> Hides the complexity of BDX authentication and authorization mechanisms.</li>
-<li><strong>Provides data in native format:</strong> Data series retrieved from BDX are available in Pandas DataFrame format, which enables intuitive processing in Python.</li>
-</ul>
-<p>Get started with <a href="getting-started/">installation instructions</a>.</p>
-<h2 id="summary-overview-and-concepts">Summary Overview and Concepts</h2>
-<p>This package allows users to interact with an API hosted on a BDX site. BDXpy is a Python library designed to facilitate interaction with BuildingLogiX's API for managing building data, trends, components, and hierarchies. This guide provides an overview of the library's features, including how to authenticate, retrieve data, and handle exceptions. It includes modules for authentication, session management, trend data retrieval, and component lookup.
-Our goals with BDXpy are:</p>
-<ul>
-<li>🔥 Allow a <em>new canvas of opportunities for partners</em> – almost endless with python and package features.</li>
-<li>🚀<em>Quicker development ideas with examples from partners</em> and internal BLX teams🚀</li>
-<li>More “power” or experimentation on the end user.✔️</li>
-<li>Take advantage of Open-Source capabilities and help 💡<em>define what the future of FDD and Optimization could become at a lower cost</em>.💡</li>
-<li>👍 Promote more advanced <em>Machine Learning and Energy savings outcomes</em> and grow the industry.</li>
-<li>✨✨Create a <em>library/standard of advanced visualization and analysis available to the greater community</em>.✨✨</li>
-</ul>
-<h2 id="references">References</h2>
-<ul>
-<li><a href="https://buildinglogix.github.io/BDXpy/">https://buildinglogix.github.io/BDXpy/</a></li>
-<li><a href="https://pypi.org/project/bdxpy/">https://pypi.org/project/bdxpy/</a></li>
-<li><a href="https://buildinglogix.net/">https://buildinglogix.net/</a></li>
-</ul>
-<h2 id="example-use-cases">Example Use Cases</h2>
-<ul>
-<li>Automated custom reports</li>
-<li>Machine Learning Applications</li>
-<li>🤖 AI integrations (OpenAI, Gemini, etc.)</li>
-<li>Advanced/Custom Dashboards and Visualizations 📉📉📉📉</li>
-</ul>
+  <h1>RTU Monitor</h1>
+
+<h2 id="example-campus-utilities-app">Example: Campus Utilities App</h2>
+<p>Example layout of a BDXpy app for reading/viewing campus utilities
+<strong>Note</strong> this may take a minute to load as the example is being hosted on a free tier service</p>
+<div style="position: relative; text-align: center;">
+    <button onclick="toggleFullScreen()" style="margin-top: 10px;">🔍 Click for Fullscreen</button>
+    <iframe id="utl-dashboard" src="https://energy-dashboard-xpwn.onrender.com/" width="800" height="400" style="border: none;"></iframe>
+</div>
+
+<script>
+function toggleFullScreen() {
+    var iframe = document.getElementById("utl-dashboard");
+    if (iframe.requestFullscreen) {
+        iframe.requestFullscreen();
+    } else if (iframe.mozRequestFullScreen) { // Firefox
+        iframe.mozRequestFullScreen();
+    } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari, Opera
+        iframe.webkitRequestFullscreen();
+    } else if (iframe.msRequestFullscreen) { // IE/Edge
+        iframe.msRequestFullscreen();
+    }
+}
+</script>
 
 
 
@@ -1463,13 +1422,13 @@ Our goals with BDXpy are:</p>
   </div>
   <div class="footer-right">
     <a href="https://github.com/BuildingLogiX" target="_blank">
-      <img src="./assets/github.svg" class="footer-icon">
+      <img src="../../../assets/github.svg" class="footer-icon">
     </a>
     <a href="https://buildinglogix.net" target="_blank">
-      <img src="./assets/blx white.svg" class="footer-icon">
+      <img src="../../../assets/blx white.svg" class="footer-icon">
     </a>
     <a href="https://linkedin.com/company/buildinglogix" target="_blank">
-      <img src="./assets/linkedin.svg" class="footer-icon">
+      <img src="../../../assets/linkedin.svg" class="footer-icon">
     </a>
   </div>
 </footer>
@@ -1480,10 +1439,10 @@ Our goals with BDXpy are:</p>
     </div>
     
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.instant", "navigation.tracking", "content.tabs.link", "content.code.select", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "grid.adaptive", "grid.cards"], "search": "assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.instant", "navigation.tracking", "content.tabs.link", "content.code.select", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "grid.adaptive", "grid.cards"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
       
     
   </body>

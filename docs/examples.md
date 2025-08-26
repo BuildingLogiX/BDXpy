@@ -36,59 +36,29 @@ Click in the left navigation for more details on specific examples
 ## Dashboards
 
 - :material-air-filter: **AHU Cooling Performance App**
- 
+
 <div style="position: relative; text-align: center;">
-    <button onclick="toggleFullScreenAHU()" style="margin-top: 10px;">🔍 Click for Fullscreen</button>
+    <button onclick="toggleFullScreen('ahu-dashboard')" style="margin-top: 10px;">🔍 Click for Fullscreen</button>
     <iframe id="ahu-dashboard" src="https://ahu-cool-performance-buildinglogix.plotly.app/" width="800" height="400" style="border: none;"></iframe>
 </div>
 
-<script>
-function toggleFullScreenAHU() {
-    var iframe = document.getElementById("ahu-dashboard");
-    if (iframe.requestFullscreen) {
-        iframe.requestFullscreen();
-    } else if (iframe.mozRequestFullScreen) { // Firefox
-        iframe.mozRequestFullScreen();
-    } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari, Opera
-        iframe.webkitRequestFullscreen();
-    } else if (iframe.msRequestFullscreen) { // IE/Edge
-        iframe.msRequestFullscreen();
-    }
-}
-</script>
-
 - :material-air-filter: **Campus Utilities App**
- 
+
 <div style="position: relative; text-align: center;">
-    <button onclick="toggleFullScreenUTL()" style="margin-top: 10px;">🔍 Click for Fullscreen</button>
+    <button onclick="toggleFullScreen('utl-dashboard')" style="margin-top: 10px;">🔍 Click for Fullscreen</button>
     <iframe id="utl-dashboard" src="https://energy-dashboard-xpwn.onrender.com/" width="800" height="400" style="border: none;"></iframe>
 </div>
 
-<script>
-function toggleFullScreenUTL() {
-    var iframe = document.getElementById("utl-dashboard");
-    if (iframe.requestFullscreen) {
-        iframe.requestFullscreen();
-    } else if (iframe.mozRequestFullScreen) { // Firefox
-        iframe.mozRequestFullScreen();
-    } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari, Opera
-        iframe.webkitRequestFullscreen();
-    } else if (iframe.msRequestFullscreen) { // IE/Edge
-        iframe.msRequestFullscreen();
-    }
-}
-</script>
-
 - :material-air-filter: **RTU Dashboard**
- 
+
 <div style="position: relative; text-align: center;">
-    <button onclick="toggleFullScreenRTU()" style="margin-top: 10px;">🔍 Click for Fullscreen</button>
+    <button onclick="toggleFullScreen('rtu-dashboard')" style="margin-top: 10px;">🔍 Click for Fullscreen</button>
     <iframe id="rtu-dashboard" src="https://rtu-dash-bdxpy.onrender.com/" width="800" height="400" style="border: none;"></iframe>
 </div>
 
 <script>
-function toggleFullScreenRTU() {
-    var iframe = document.getElementById("rtu-dashboard");
+function toggleFullScreen(iframeId) {
+    var iframe = document.getElementById(iframeId);
     if (iframe.requestFullscreen) {
         iframe.requestFullscreen();
     } else if (iframe.mozRequestFullScreen) { // Firefox

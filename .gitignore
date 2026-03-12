@@ -60,6 +60,8 @@ coverage.xml
 .vscode/
 # PyCharm
 .idea/
+# Claude Code
+.claude/
 *.iml
 
 # ──────────────

@@ -5,7 +5,7 @@ This guide walks you through using BDXpy to generate automated PDF reports from 
 
 ## Example PDF generation of monthly energy report
 
-<img src="energysummarypdf.PNG" style="width: 100%; height: auto;">
+<img src="../energysummarypdf.PNG" style="width: 100%; height: auto;">
 
 Below is example code where you can insert BDXpy code to generate a PDF from a combination of images and tables. In the second example these principles can be applied to create a PDF that gets emailed.
 

@@ -1,7 +1,5 @@
 # BDXpy: Building Data Exchange Python Package
 
-![PyPI](https://img.shields.io/pypi/v/bdxpy?color=blue) ![GitHub license](https://img.shields.io/github/license/yourgithub/bdxpy) ![GitHub stars](https://img.shields.io/github/stars/yourgithub/bdxpy?style=social)
-
 ## Overview
 **BDXpy** is a Python package for interacting with the **BuildingLogiX Data eXchange (BDX)** platform, providing access to building analytics, trending data, virtual hierarchies, and energy management insights. It simplifies **building data retrieval, trend analysis, and API integration** for smart buildings and energy efficiency applications.
 

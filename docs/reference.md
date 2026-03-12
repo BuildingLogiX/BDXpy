@@ -692,7 +692,7 @@ Timeframes define the duration of the data to retrieve. BDXpy provides several p
 
 Users can also define custom timeframes by specifying a start and end datetime that is covered in the examples below.
 #### Aggregations
-Aggregations control how data is grouped or summarized over time. The default mode is point-level samples and doesn’t need called in the retrieval function. Aggregation options include for example:  
+Aggregations control how data is grouped or summarized over time. The default mode is point-level samples and doesn’t need to be called in the retrieval function. Aggregation options include for example:  
 
 - `AggregationLevel.POINT`
 - `AggregationLevel.HOURLY`

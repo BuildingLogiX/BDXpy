@@ -30,7 +30,7 @@ Click in the left navigation for more details on specific examples
 
 -   :material-chart-scatter-plot: **Static Pressure Distribution**
    
-    <img src="Data Visualization/staticCurve.png" alt="AHU Economizer Analysis" width="100%">
+    <img src="Data Visualization/staticCurve.png" alt="Static Pressure Distribution" width="100%">
 
 
 ## Dashboards

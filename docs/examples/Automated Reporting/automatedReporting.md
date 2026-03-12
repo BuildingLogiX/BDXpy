@@ -1,11 +1,11 @@
 # Automated Reporting Examples
 
-This guide walks you through setting up BDXpy as a FastAPI data service on a Grafana server and configuring it as a JSON API data source.
+This guide walks you through using BDXpy to generate automated PDF reports from building data, including charts, tables, and email delivery.
 
 
 ## Example PDF generation of monthly energy report
 
-<img src="../energysummarypdf.png" style="width: 100%; height: auto;">
+<img src="energysummarypdf.PNG" style="width: 100%; height: auto;">
 
 Below is example code where you can insert BDXpy code to generate a PDF from a combination of images and tables. In the second example these principles can be applied to create a PDF that gets emailed.
 

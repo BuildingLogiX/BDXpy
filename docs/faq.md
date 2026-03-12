@@ -45,7 +45,7 @@ Supports inline plots (like matplotlib and seaborn).
 👉 Recommendation: Use .py for software development and .ipynb for analysis, documentation, or interactive work.
 
 ## Can BuildingLogiX help me develop in Python?
-Yes, BuildingLogiX has in-house developers and engineers who are happy to assist. IF you want to collarborate on BDXpy development it is considered custom development and involves working directly with our team! We will also likely have a series of small training seminars annual on BDXpy.
+Yes, BuildingLogiX has in-house developers and engineers who are happy to assist. IF you want to collaborate on BDXpy development it is considered custom development and involves working directly with our team! We will also likely have a series of small training seminars annual on BDXpy.
 Reach out to us if you are interested.
 
 

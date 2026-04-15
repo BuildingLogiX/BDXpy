@@ -1,7 +1,7 @@
 # 📊 Example Highlights Gallery
 Click in the left navigation for more details on specific examples
 
-## 🔥 Data Visualization
+## Data Visualization
 
 <div class="vertical-list" markdown>
 
@@ -64,7 +64,25 @@ function openInNewTab(url) {
 
 
 ## Machine Learning
-More examples coming soon!
+
+BuildingLogiX applies machine learning across the BDX dataset to forecast energy use, flag equipment issues before operators see them, mine years of historical trend data, and tune site-specific analytics rules. The previews below are **illustrative** — the underlying feature pipelines and models are part of our proprietary analytics stack.
+
+- :material-chart-line: **Energy Prediction Models** — day-ahead and M&V baselines ([details](examples/Machine Learning/energy_prediction.md))
+
+    <iframe src="Machine Learning/energy_prediction.html" width="800" height="400"></iframe>
+
+- :material-cog-outline: **Equipment Prediction Models** — fault risk and efficiency drift ([details](examples/Machine Learning/equipment_prediction.md))
+
+    <iframe src="Machine Learning/equipment_prediction.html" width="800" height="400"></iframe>
+
+- :material-history: **Historical Analysis** — clustering, seasonality, and anomaly detection ([details](examples/Machine Learning/historical_analysis.md))
+
+    <iframe src="Machine Learning/historical_analysis.html" width="800" height="400"></iframe>
+
+- :material-shield-check-outline: **Custom Analytics Rules** — hybrid engineering + ML rule library ([details](examples/Machine Learning/custom_analytics_rules.md))
+
+    <iframe src="Machine Learning/custom_analytics_rules.html" width="800" height="450"></iframe>
+
 
 
 ## Public Kiosk App

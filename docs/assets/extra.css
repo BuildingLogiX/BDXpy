@@ -59,3 +59,13 @@
 .md-main {
     padding-bottom: 50px; /* Add bottom padding equal to footer height */
 }
+
+/* The fixed 40px footer overlaps the bottom of the sticky sidebar, so the
+   last nav items get hidden under it. Adding bottom padding inside the
+   scroll container (without touching the sidebar height that Material
+   manages via JS) gives the final items room to scroll into view. */
+.md-sidebar__scrollwrap::after {
+    content: "";
+    display: block;
+    height: 60px;
+}

@@ -46,7 +46,10 @@ nav:
       - Calculations and Analysis:
           - "Coming Soon": examples/comingsoon.md
       - Machine Learning:
-          - "Coming Soon": examples/comingsoon.md
+          - "Energy Prediction Models": examples/Machine Learning/energy_prediction.md
+          - "Equipment Prediction Models": examples/Machine Learning/equipment_prediction.md
+          - "Historical Analysis": examples/Machine Learning/historical_analysis.md
+          - "Custom Analytics Rules": examples/Machine Learning/custom_analytics_rules.md
   - Reference: reference.md
   - Recommended Companion Packages: pythonpackages.md
   - FAQ: faq.md

@@ -17,6 +17,8 @@ load_dotenv()
 
 # OpenAI API Key
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+# Pin the specific model via env, not in source — so upgrades don't require a code change
+LLM_MODEL = os.getenv("LLM_MODEL")
 
 # BDX Credentials
 BDX_URL = os.getenv("BDX_URL")
@@ -136,7 +138,7 @@ def generate_summary(anomalies):
 # if using a specific role/content/assistant in OpenAI make sure to correction specify in the client.chat.completions.create()
 
     response = client.chat.completions.create(
-        model="gpt-4o",
+        model=LLM_MODEL,
         messages=[
             {"role": "system", "content": "You are an expert in HVAC systems analyzing airflow changes."},
             {"role": "user", "content": prompt_text}

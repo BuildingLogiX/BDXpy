@@ -2082,81 +2082,79 @@ plot_binned_duration_curve(duration_df, ahus)
 
 ---
 
-# LLM Integration
+# LLM Integrations
 
-Large Language Models (LLMs) can be used to summarize, interpret, and contextualize findings from BDX data. By processing HVAC and energy system data, LLMs can generate insights in a readable, action-oriented format, assisting building operators, facility managers, and analysts in making data-driven decisions.
+BDXpy is **LLM-agnostic.** Pipe live building data into the model of your choice — OpenAI, Claude, Gemini, or a self-hosted model — and turn raw HVAC and energy telemetry into decisions, narratives, and actions.
 
-**Example Use Case:** VAV Air System Analysis
+## Why Pair BDXpy With an LLM?
 
-There is an example using the OpenAI Python package to send BDX data for a VAV air system, prompting the model to generate a summary of airflow anomalies. The LLM can help highlight abnormal trends, suggest possible causes, and provide recommended actions based on the data.
+BDX gives you structured, high-fidelity building data. An LLM gives you reasoning, language, and summarization. Together they let a building "explain itself" — anomalies become recommendations, dashboards gain narrative, and operators get answers in plain English instead of spreadsheets.
 
-## Using BDXpy with OpenAI API
+**BDXpy acts as the bridge:** it authenticates, queries the building graph, pulls trend data at the right aggregation level, and hands the LLM a clean, token-efficient payload.
 
-This guide explains how to use `bdxpy` with an OpenAI API key to analyze HVAC airflow data. The script retrieves airflow data from a BDX instance, detects anomalies, and generates a summary using OpenAI's API.
+## What You Can Build
 
-Sending data to OpenAI is one piece that will be the focus of this example. But how you define data inputs, prompt engineering text, and select models is a crucial piece that each engineer or developer needs to review and account for.
+- **Data Analyst** — Feed BDXpy outputs (anomalies, utility spikes, equipment drift) to an LLM and get back a written summary, root-cause hypotheses, and prioritized actions. Replace the weekly report nobody reads with a targeted brief operators actually act on.
+- **Chatbot** — Wrap BDXpy in a chat interface so users can ask: *"Which VAVs are underperforming on AHU-3 this week?"* / *"Compare last month's chiller plant efficiency to the prior year."* The LLM handles intent; BDXpy handles the query; the user gets an answer grounded in real data — not hallucination.
+- **Data Scientist** — Use an LLM to scaffold analytics workflows: feature engineering on trend data, clustering similar equipment, drafting ML notebooks, interpreting model outputs.
+- **Agentic Workflows** — Give an agent tools (`list_buildings`, `get_trend_data`, `find_anomalies`) and let it plan multi-step analyses on its own. Ideal for nightly runs, commissioning sweeps, and portfolio-wide audits.
+- **Narrative Reporting** — Auto-generate monthly M&V reports, commissioning summaries, and stakeholder briefings.
+- **Copilot for Engineers** — Paste a tag, a trend, or an error into chat and let the LLM + BDXpy lookup return context: equipment, recent behavior, related alarms, and likely next steps.
 
-## OpenAI API Rate Limits
+## BDXpy + `bdxpy-skills` for Agents
 
-OpenAI imposes rate limits on API calls, which vary based on the model and subscription plan. As of recent updates, rate limits typically include:
-- **GPT-4o & GPT-4:** Limited to a set number of requests per minute (RPM) and tokens per minute (TPM).
-- **GPT-3.5:** More relaxed limits but still subject to RPM and TPM constraints.
-- Free-tier users have significantly lower limits compared to API subscription plans.
+For agent-driven workflows, **`bdxpy-skills`** (available upon request) packages BDXpy's capabilities into pre-built tool definitions and prompts optimized for modern LLM function-calling and tool-use APIs. Drop it into a Claude agent, an OpenAI Assistant, a Gemini function-calling flow, or a Claude Agent SDK / LangChain / CrewAI project and skip the plumbing.
 
-Refer to OpenAI's official rate limits documentation for the most up-to-date details: https://platform.openai.com/docs/guides/rate-limits
+What you get:
 
-## Why Sending Large Volumes of raw BDX Data is Not Recommended
+- Tool schemas for the most common BDX operations (components, trends, alarms, buildings)
+- Prompt scaffolding tuned for building-analytics reasoning
+- Guardrails for token-efficient queries against large BDX datasets
+- Examples for multi-provider deployment — same skills, different back-ends
 
-The example script retrieves extensive airflow data from a BDX instance, but sending large datasets to OpenAI is **inefficient** due to:
-1. **API Rate Limits:** Exceeding limits can result in throttling or failed requests.
-2. **High Token Costs:** Large payloads consume more tokens, increasing costs.
-3. **Performance Delays:** Processing large text blocks slows down response times and API calls.
+*Interested in `bdxpy-skills`?* Reach out to BuildingLogiX to discuss access and a fit for your use case.
 
-### Recommended Approach:
-- **Use OpenAI as a Framework:** Instead of processing large volumes, focus on targeted statistics and smaller timeframes.
-- **Pre-process Data Locally:** Summarize key metrics (e.g., top anomalies, AHU-wide trends) before sending to OpenAI.
-- **Batch Requests:** Instead of one large request, break it into smaller, meaningful prompts.
+## Supercharge with CLIs & IDE Extensions
 
-## Importance of Prompt Engineering
+You don't have to build chat UIs from scratch. The fastest way to get BDXpy + LLM value today is to meet engineers where they already work — the terminal and the editor.
 
-Prompt engineering plays a **critical** role in obtaining useful outputs from OpenAI models.
+**Terminal CLIs** — purpose-built coding agents that run in your shell, read your repo, and execute tools:
 
-### Key Strategies:
-- **Be Specific:** Provide context and constraints to guide responses.
-- **Use Formatting Cues:** Structure prompts using bullet points, tables, or numbered lists for better parsing.
-- **Avoid Ambiguity:** Clearly define what constitutes an anomaly or significant event in BDX data.
-- **Iterate and Refine:** Test different prompts to improve accuracy and relevance.
+- **Claude Code** — Anthropic's official CLI; strong at multi-file edits, long-context reasoning, and skill/agent workflows.
+- **OpenAI Codex CLI** — terminal agent for OpenAI models.
+- **Gemini CLI** — Google's open-source terminal agent.
 
-## Model Selection Impact
+**VS Code Extensions** — keep the LLM inside the editor where the code lives:
 
-Different OpenAI models produce varying results:
+- **Claude Code for VS Code** — native extension with inline diffs and agent sessions.
+- **GitHub Copilot / Copilot Chat** — in-editor completions and chat (OpenAI-powered, plus model picker).
+- **Gemini Code Assist** — Google's VS Code integration.
+- **Cline / Continue** — provider-agnostic extensions; bring your own API key for OpenAI, Claude, Gemini, or local models.
 
-- **GPT-4o** (Best for complex, structured data insights)
-- **GPT-3.5** (Faster and cheaper but less accurate for nuanced analysis)
-- **Fine-tuned Models** (Can be trained on historical BDX data for better contextual responses)
+**Why this matters for BDXpy users:** zero boilerplate, the agent sees your actual BDXpy code and `.env` structure, pair with `bdxpy-skills` to give the CLI a toolbox of BDX operations, and the same workflow works whether your org standardizes on OpenAI, Claude, or Gemini.
 
-### Choosing the Right Model
+> Tip: pair a CLI with a project-level `CLAUDE.md` (or equivalent instructions file) that documents your BDX conventions, preferred libraries, and data hygiene rules. The agent will follow them on every run.
 
-| **Use Case**          | **Recommended Model** |
-|----------------------|------------------|
-| Detailed anomaly detection | GPT-4o |
-| General HVAC summaries | GPT-3.5 |
-| Custom BDX optimizations | Fine-tuned model |
+## Working Principles (Provider-Agnostic)
 
-## Final Recommendations
+Regardless of which model you pick, a few rules keep LLM integrations fast, cheap, and useful:
 
-- Use OpenAI **strategically** to analyze key **data points**, not raw time-series data.
-- Fine-tune prompts to get **actionable insights** instead of general responses.
-- Optimize data selection **before API calls** to reduce costs and improve relevance.
-- Choose models based on complexity and budget.
+1. **Don't send raw time-series.** LLMs are reasoning engines, not log parsers. Pre-process in BDXpy first — compute deltas, top-N anomalies, AHU roll-ups — then send the summary.
+2. **Prompt engineering is the product.** Model choice matters less than prompt quality. Be specific, give formatting cues, define what "anomaly" means in your context, and iterate.
+3. **Respect rate limits and token budgets.** Every provider throttles. Batch requests, cache where possible, and keep payloads lean.
+4. **Choose the model to fit the job.** Use larger, reasoning-grade models for nuanced analysis and smaller, faster models for classification or routing. Most providers offer a tiered family — start cheap, escalate when the task demands it.
+5. **Keep a human in the loop.** LLM outputs are recommendations, not commands. Route suggestions through an operator before anything writes back to the BAS.
 
-By following these best practices, you can maximize OpenAI's value while efficiently leveraging BDX data for meaningful insights.
+## Example: VAV Air System Analysis
 
-## Example Code
+Below is a working example using the OpenAI Python package. The same pattern applies to Claude (via the `anthropic` SDK) and Gemini (via `google-genai`) — swap the client, keep the data pipeline.
 
-Below is example code where you can insert BDXpy code to generate chart on the left and an html summary of two difference responses back from OpenAI's API.
+What it does:
 
-**Note:** these are purely for API example purposes and need heavy modification for custom implementation elsewhere.
+1. Connects to BDX and pulls 7-day and 14-day airflow data for VAVs under selected AHUs
+2. Flags VAVs whose week-over-week airflow change exceeds ±20 %
+3. Sends *only the anomalies* to the LLM for a written summary
+4. Renders a PyVis network chart alongside the LLM's recommendations in a single HTML report
 
 ```python
 import openai
@@ -2173,61 +2171,44 @@ import os
 import markdown
 from dotenv import load_dotenv
 
-# Load environment variables
 load_dotenv()
 
-# OpenAI API Key
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+LLM_MODEL = os.getenv("LLM_MODEL")  # pin the exact model in your env, not in code
 
-# BDX Credentials
 BDX_URL = os.getenv("BDX_URL")
 USERNAME = os.getenv("BDX_USERNAME")
 PASSWORD = os.getenv("BDX_PASSWORD")
-BUILDING_NAME = "Apex Building" #building name to match component lookups on
-
-# AHUs to lookup VAVs on per matching logic below
+BUILDING_NAME = "Apex Building"
 AHU_NUMBERS = [1, 2, 3, 4, 6, 8]
 
-# Connect to BDX
 auth = UsernameAndPasswordAuthenticator(USERNAME, PASSWORD)
 with BDX(BDX_URL, auth) as bdx:
-    # ... (full BDX data retrieval code)
+    # ... (full BDX data retrieval code — see docs/examples/LLM Integration/AirSys_LLM_openai.py)
     pass
 
-# Generate Summary with OpenAI (Using GPT-4o)
 def generate_summary(anomalies):
     if not anomalies:
         return "<p>No significant anomalies detected in VAV airflow this week.</p>"
 
-    # Customize this prompt depending on your model, needs, performance of the response, etc.
     prompt_text = f"""
     Given the following data on airflow changes for VAVs in a building:
     {json.dumps(anomalies, indent=2)}
 
     ### **Summary Instructions**
-    - **Only report the most significant anomalies** (up to **5 individual VAVs**) OR if there is a **system-wide AHU issue** (total airflow of all VAVs under an AHU changes drastically).
-    - **Exclude moderate changes** - I only care about extreme cases that could indicate performance, comfort, or system inefficiencies.
+    - **Only report the most significant anomalies** (up to **5 individual VAVs**) OR if there is a **system-wide AHU issue**.
+    - **Exclude moderate changes** — focus on extreme cases that could indicate performance, comfort, or system inefficiencies.
     - **If there are no significant changes**, state: "No major anomalies detected this week."
-    - **Airflow data provided in an accumulation of CFM so units are CF
-    - **Format the response as concise bullet points**, using **Markdown formatting** for readability.
+    - **Airflow data is accumulated CFM, so units are CF.**
+    - **Format the response as concise bullet points** using **Markdown**.
 
-    ### **Response Format**
-    - **Key Findings**
-        - **VAV_3_3:** Airflow increased **+89.09%**
-        Likely cause: [Occupancy shift / Calibration issue / Setpoint change]
-        Recommended action: [Verify control settings / Check mechanical operation]
-
-    - **If AHU-wide issues exist, summarize them separately**
-        - **AHU-1 System-Wide Change:** Total airflow increased by **+250,000 CF**, possibly due to [scheduling changes / pressure setpoint shift].
-        Recommended action: [Check AHU damper settings / Review scheduling].
-
-    Make sure the response is **short, direct, and action-oriented**.
+    Keep the response **short, direct, and action-oriented.**
     """
 
     client = openai.OpenAI(api_key=OPENAI_API_KEY)
 
     response = client.chat.completions.create(
-        model="gpt-4o",
+        model=LLM_MODEL,  # set via env, e.g. your organization's approved model
         messages=[
             {"role": "system", "content": "You are an expert in HVAC systems analyzing airflow changes."},
             {"role": "user", "content": prompt_text}
@@ -2239,8 +2220,30 @@ def generate_summary(anomalies):
 
 summary_text = generate_summary(anomalies)
 
-print(f"Final version saved in 'VAV_network_summary_openai.html'. Open in a browser.")
+print("Final version saved. Open in a browser.")
 ```
+
+## Swapping Providers
+
+Same prompt, same BDXpy data pipeline, different back-end:
+
+| Provider | Python SDK | Env Var |
+|---|---|---|
+| OpenAI | `openai` | `OPENAI_API_KEY` |
+| Claude (Anthropic) | `anthropic` | `ANTHROPIC_API_KEY` |
+| Gemini (Google) | `google-genai` | `GOOGLE_API_KEY` |
+
+**Pin the specific model version in your environment config, not in source.** Models evolve fast — keeping the name out of code means you can upgrade without a PR.
+
+## Final Recommendations
+
+- Let BDXpy do the **data work**; let the LLM do the **reasoning**.
+- Pre-process before prompting — small, targeted payloads beat firehoses every time.
+- Treat prompts as **source code**: version them, test them, iterate on them.
+- Stay provider-agnostic where you can; it keeps options open and costs competitive.
+- Ask about **`bdxpy-skills`** if you're building agent workflows and want the tool definitions done for you.
+
+> Questions, use-case ideas, or want early access to `bdxpy-skills`? Reach out to the BuildingLogiX team.
 
 ---
 

@@ -2,7 +2,7 @@
 
 <div align="center" style="display:flex; justify-content:center; align-items:center; gap:40px; margin: 20px 0 30px 0; flex-wrap:wrap;">
   <div style="text-align:center;">
-    <img src="https://cdn.simpleicons.org/openai/412991" alt="OpenAI" width="60" height="60">
+    <img src="../../assets/openai.svg" alt="OpenAI" width="60" height="60">
     <div style="font-size:12px; margin-top:6px;"><strong>OpenAI</strong></div>
   </div>
   <div style="text-align:center;">

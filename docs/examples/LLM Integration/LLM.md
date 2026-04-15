@@ -1,17 +1,20 @@
 # LLM Integrations
 
-<div align="center" style="display:flex; justify-content:center; align-items:center; gap:40px; margin: 20px 0 30px 0; flex-wrap:wrap;">
+<div align="center" style="display:flex; justify-content:center; align-items:flex-start; gap:40px; margin: 20px 0 30px 0; flex-wrap:wrap;">
   <div style="text-align:center;">
-    <img src="../../../assets/openai.svg" alt="OpenAI" width="60" height="60">
+    <img src="https://cdn.simpleicons.org/openai/10A37F" alt="OpenAI" width="60" height="60">
     <div style="font-size:12px; margin-top:6px;"><strong>OpenAI</strong></div>
+    <div style="font-size:11px; color:#6c757d;">Codex</div>
   </div>
   <div style="text-align:center;">
     <img src="https://cdn.simpleicons.org/claude/D97757" alt="Claude" width="60" height="60">
-    <div style="font-size:12px; margin-top:6px;"><strong>Claude</strong></div>
+    <div style="font-size:12px; margin-top:6px;"><strong>Anthropic</strong></div>
+    <div style="font-size:11px; color:#6c757d;">Claude Code</div>
   </div>
   <div style="text-align:center;">
     <img src="https://cdn.simpleicons.org/googlegemini/4285F4" alt="Gemini" width="60" height="60">
-    <div style="font-size:12px; margin-top:6px;"><strong>Gemini</strong></div>
+    <div style="font-size:12px; margin-top:6px;"><strong>Google</strong></div>
+    <div style="font-size:11px; color:#6c757d;">Gemini CLI</div>
   </div>
 </div>
 

@@ -58,7 +58,8 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.inlinehilite
-  - pymdownx.tabbed
+  - pymdownx.tabbed:
+      alternate_style: true
   - pymdownx.snippets
   - pymdownx.magiclink
   - pymdownx.emoji

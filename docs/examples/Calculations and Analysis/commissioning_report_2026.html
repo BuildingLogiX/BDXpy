@@ -509,18 +509,19 @@ blockquote {
 </li>
 <li><a href="#4-energy-snapshot-7-day">4. Energy Snapshot (7-day)</a></li>
 <li><a href="#5-recommended-next-steps-priority-order">5. Recommended Next Steps (priority order)</a></li>
-<li><a href="#6-methodology">6. Methodology</a></li>
 </ul>
 </div>
 
   </aside>
   <main class="main">
 <h1 id="commissioning-style-assessment">Commissioning-Style Assessment — Academic Building</h1>
-<p><strong>Site:</strong> Sample University (demo-site.bdxcloud.com)
-<strong>Building:</strong> Academic Building
-<strong>Window:</strong> Last 7 days, hourly aggregation
-<strong>Report date:</strong> 2026-05-19
-<strong>Source:</strong> BDX TrendView via BDXpy, cached site inventory CSV</p>
+<ul>
+<li><strong>Site:</strong> Sample University (demo-site.bdxcloud.com)</li>
+<li><strong>Building:</strong> Academic Building</li>
+<li><strong>Window:</strong> Last 7 days, hourly aggregation</li>
+<li><strong>Report date:</strong> 2026-05-19</li>
+<li><strong>Source:</strong> BDX TrendView via BDXpy, cached site inventory CSV</li>
+</ul>
 <hr />
 <h2 id="1-equipment-inventory">1. Equipment Inventory</h2>
 <table>
@@ -1043,21 +1044,6 @@ blockquote {
 </ol>
 <p><strong>What is working correctly (worth noting):</strong>
 - SAT setpoint reset is active and cycling 55–60°F on all four AHUs in response to zone demand. Three of four AHUs track their setpoint within 0.5°F. The reheat usage observed at perimeter VAVs during occupied hours (56–68% on the top-20 reheat-saturated zones) is the expected design response, not a controls fault.</p>
-<hr />
-<h2 id="6-methodology">6. Methodology</h2>
-<ul>
-<li><strong>Discovery:</strong> cached site inventory CSV filtered to the target building by <code>building_name</code>.</li>
-<li><strong>Data window:</strong> rolling 7 days ending 2026-05-19, HOURLY aggregation (POINT/5-min aggregation skipped to keep response sizes manageable across 193 VAVs).</li>
-<li><strong>Property names:</strong> sourced from <code>bdxpy-skill/reference/device-properties.md</code> (ErwDrawThrough profile for AHUs, VAV profile, WaterPump, ExhaustFan, HeatExchanger, ElectricMeter).</li>
-<li><strong>Fan-on masking:</strong> every AHU metric except status booleans is masked by <code>supplyFanStatus &gt; 0</code> (or <code>supplyFanOn</code> when status is missing) to prevent off-cycle data contaminating averages.</li>
-<li><strong>Simultaneous heat+cool:</strong> flagged when both <code>coolOutput &gt; 5%</code> AND (<code>heatOutput &gt; 5%</code> OR <code>preheatOutput &gt; 5%</code>).</li>
-<li><strong>VAV pivot:</strong> per-device summary stats (min/max/mean/std/nonzero hours) computed for <code>spaceTemp</code>, <code>effectiveSetpoint</code>, <code>airFlow</code>, <code>airFlowSetpoint</code>, <code>minFlow</code>, <code>reheatOutput</code>, <code>damperPosition</code>, <code>occupancyStatus</code>.</li>
-<li><strong>TrendView URLs:</strong> built from <code>device_dto_id</code> (DynamicDashboardTrendProvider) and <code>component_instance_id</code> + <code>scorecard_trend_id</code> (ReportDynamicTrendProvider, Internal config trendId=101 preferred over Default trendId=11).</li>
-</ul>
-<p>Output CSVs at <code>analysis_outputs/cx/</code>:
-- <code>ahu_summary.csv</code>, <code>pump_summary.csv</code>, <code>ef_summary.csv</code>, <code>meter_summary.csv</code>
-- <code>vav_pivot.csv</code> (per-VAV stats), <code>vav_worst_cold.csv</code>, <code>vav_worst_hot.csv</code>, <code>vav_worst_reheat.csv</code>, <code>vav_worst_damper.csv</code>, <code>vav_worst_starved.csv</code>
-- AHU per-device parquet caches (<code>ahu_AHU_*.parquet</code>), pump/EF/HX/meter parquet caches</p>
   </main>
 </div>
 

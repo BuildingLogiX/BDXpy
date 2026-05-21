@@ -1,0 +1,2492 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../Automated%20Reporting/automatedReporting/">
+      
+      
+        <link rel="next" href="../../Data%20Service/grafanaDataService/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>LLM - BDXpy</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#llm-integrations" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="BDXpy" class="md-header__button md-logo" aria-label="BDXpy" data-md-component="logo">
+      
+  <img src="../../../assets/blx white.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            BDXpy
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              LLM
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../getting-started/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Getting Started
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+  Examples
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../reference/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Reference
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../pythonpackages/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Recommended Companion Packages
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../faq/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  FAQ
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../contributing/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Contributing
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="BDXpy" class="md-nav__button md-logo" aria-label="BDXpy" data-md-component="logo">
+      
+  <img src="../../../assets/blx white.svg" alt="logo">
+
+    </a>
+    BDXpy
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Examples
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Examples
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Example Gallery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Visualization
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data Visualization
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data%20Visualization/airflow_sankey/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Airflow Sankey
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data%20Visualization/VAV_network/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Building CFM Network
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data%20Visualization/staticDuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Static Pressure Duration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data%20Visualization/staticCurve/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Static Pressure Distribution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data%20Visualization/ahuEcono_ex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AHU Economizer Analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data%20Visualization/mapenergychart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Campus Energy Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data%20Visualization/operating_room_sankey_diagram/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hospital Network OR KPIs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboards
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Dashboards
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Dashboards/ahu_cool_performance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AHU Cool Performance App
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Dashboards/campus_utl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Campus Utilities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Dashboards/rtu_dash_ex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RTU Monitor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Automated Reporting
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Automated Reporting
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Automated%20Reporting/automatedReporting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Automated Reporting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LLM Integration
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    LLM Integration
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LLM
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LLM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-pair-bdxpy-with-an-llm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Pair BDXpy With an LLM?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-you-can-build" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What You Can Build
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bdxpy-bdxpy-skills-for-agents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BDXpy + bdxpy-skills for Agents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supercharge-with-clis-ide-extensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supercharge with CLIs &amp; IDE Extensions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#working-principles-provider-agnostic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Working Principles (Provider-Agnostic)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Working Principles (Provider-Agnostic)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-dont-send-raw-time-series" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Don't send raw time-series
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-prompt-engineering-is-the-product" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Prompt engineering is the product
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-respect-rate-limits-and-token-budgets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Respect rate limits and token budgets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-choose-the-model-to-fit-the-job" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Choose the model to fit the job
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-keep-a-human-in-the-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Keep a human in the loop
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-vav-air-system-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: VAV Air System Analysis
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#swapping-providers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Swapping Providers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final-recommendations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Final Recommendations
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BDXpy Data Service
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    BDXpy Data Service
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data%20Service/grafanaDataService/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Grafana Server API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Public Kiosk App
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Public Kiosk App
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../comingsoon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Coming Soon
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Calculations and Analysis
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Calculations and Analysis
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Calculations%20and%20Analysis/chiller_loading_report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chiller Loading Report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Calculations%20and%20Analysis/commissioning_assessment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Commissioning Assessment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Machine Learning
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Machine Learning
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Machine%20Learning/energy_prediction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Energy Prediction Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Machine%20Learning/equipment_prediction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Equipment Prediction Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Machine%20Learning/historical_analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Historical Analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Machine%20Learning/custom_analytics_rules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom Analytics Rules
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pythonpackages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recommended Companion Packages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-pair-bdxpy-with-an-llm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Pair BDXpy With an LLM?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-you-can-build" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What You Can Build
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bdxpy-bdxpy-skills-for-agents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BDXpy + bdxpy-skills for Agents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supercharge-with-clis-ide-extensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supercharge with CLIs &amp; IDE Extensions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#working-principles-provider-agnostic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Working Principles (Provider-Agnostic)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Working Principles (Provider-Agnostic)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-dont-send-raw-time-series" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Don't send raw time-series
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-prompt-engineering-is-the-product" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Prompt engineering is the product
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-respect-rate-limits-and-token-budgets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Respect rate limits and token budgets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-choose-the-model-to-fit-the-job" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Choose the model to fit the job
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-keep-a-human-in-the-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Keep a human in the loop
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-vav-air-system-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: VAV Air System Analysis
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#swapping-providers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Swapping Providers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final-recommendations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Final Recommendations
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="llm-integrations">LLM Integrations</h1>
+<div align="center" style="display:flex; justify-content:center; align-items:flex-start; gap:40px; margin: 20px 0 30px 0; flex-wrap:wrap;">
+  <div style="text-align:center;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="60" height="60" fill="#10A37F" aria-label="OpenAI">
+      <path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z"/>
+    </svg>
+    <div style="font-size:12px; margin-top:6px;"><strong>OpenAI</strong></div>
+    <div style="font-size:11px; color:#6c757d;">Codex</div>
+  </div>
+  <div style="text-align:center;">
+    <img src="https://cdn.simpleicons.org/claude/D97757" alt="Claude" width="60" height="60">
+    <div style="font-size:12px; margin-top:6px;"><strong>Anthropic</strong></div>
+    <div style="font-size:11px; color:#6c757d;">Claude Code</div>
+  </div>
+  <div style="text-align:center;">
+    <img src="https://cdn.simpleicons.org/googlegemini/4285F4" alt="Gemini" width="60" height="60">
+    <div style="font-size:12px; margin-top:6px;"><strong>Google</strong></div>
+    <div style="font-size:11px; color:#6c757d;">Gemini CLI</div>
+  </div>
+</div>
+
+<blockquote>
+<p><strong>BDXpy is LLM-agnostic.</strong> Pipe live building data into the model of your choice — OpenAI, Claude, Gemini, or a self-hosted model — and turn raw HVAC and energy telemetry into decisions, narratives, and actions.</p>
+</blockquote>
+<hr />
+<h2 id="why-pair-bdxpy-with-an-llm">Why Pair BDXpy With an LLM?</h2>
+<p>BDX gives you structured, high-fidelity building data. An LLM gives you reasoning, language, and summarization. Together they let a building "explain itself" — anomalies become recommendations, dashboards gain narrative, and operators get answers in plain English instead of spreadsheets.</p>
+<p><strong>BDXpy acts as the bridge:</strong> it authenticates, queries the building graph, pulls trend data at the right aggregation level, and hands the LLM a clean, token-efficient payload.</p>
+<hr />
+<h2 id="what-you-can-build">What You Can Build</h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:6"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><input id="__tabbed_1_6" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Data Analyst</label><label for="__tabbed_1_2">Chatbot</label><label for="__tabbed_1_3">Data Scientist</label><label for="__tabbed_1_4">Agentic Workflows</label><label for="__tabbed_1_5">Narrative Reporting</label><label for="__tabbed_1_6">Copilot for Engineers</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Feed BDXpy outputs — anomalies, utility spikes, equipment drift — to an LLM and get back a written summary, root-cause hypotheses, and prioritized actions. Replace the weekly report that nobody reads with a targeted brief that operators actually act on.</p>
+</div>
+<div class="tabbed-block">
+<p>Wrap BDXpy in a chat interface and let users ask:<br />
+<em>"Which VAVs are underperforming on AHU-3 this week?"</em><br />
+<em>"Compare last month's chiller plant efficiency to the prior year."</em><br />
+<em>"Why did the east wing setpoint drift overnight?"</em><br />
+The LLM handles intent; BDXpy handles the query; the user gets an answer grounded in real data — not hallucination.</p>
+</div>
+<div class="tabbed-block">
+<p>Use an LLM to scaffold analytics workflows: feature engineering on trend data, clustering similar equipment, drafting ML notebooks, and interpreting model outputs. BDXpy supplies the dataset; the LLM accelerates the exploratory loop.</p>
+</div>
+<div class="tabbed-block">
+<p>Give an agent tools — <code>list_buildings</code>, <code>get_trend_data</code>, <code>find_anomalies</code> — and let it plan multi-step analyses on its own. Ideal for nightly runs, commissioning sweeps, and portfolio-wide audits.</p>
+</div>
+<div class="tabbed-block">
+<p>Auto-generate monthly M&amp;V reports, commissioning summaries, and stakeholder briefings. The LLM writes; BDXpy supplies the numbers; the human reviews.</p>
+</div>
+<div class="tabbed-block">
+<p>Paste a tag, a trend, or an error into chat and let the LLM + BDXpy lookup return context: what equipment it belongs to, recent behavior, related alarms, and likely next steps.</p>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="bdxpy-bdxpy-skills-for-agents">BDXpy + <code>bdxpy-skills</code> for Agents</h2>
+<p>For agent-driven workflows, <strong><code>bdxpy-skills</code></strong> (available upon request) packages BDXpy's capabilities into pre-built tool definitions and prompts optimized for modern LLM function-calling and tool-use APIs. Drop it into a Claude agent, an OpenAI Assistant, a Gemini function-calling flow, or a Claude Agent SDK / LangChain / CrewAI project and skip the plumbing.</p>
+<p><strong>What you get:</strong></p>
+<ul>
+<li>Tool schemas for the most common BDX operations (components, trends, alarms, buildings)</li>
+<li>Prompt scaffolding tuned for building-analytics reasoning</li>
+<li>Guardrails for token-efficient queries against large BDX datasets</li>
+<li>Examples for multi-provider deployment — the same skills, different back-ends</li>
+</ul>
+<blockquote>
+<p><em>Interested in <code>bdxpy-skills</code>?</em> Reach out to BuildingLogiX to discuss access and a fit for your use case.</p>
+</blockquote>
+<hr />
+<h2 id="supercharge-with-clis-ide-extensions">Supercharge with CLIs &amp; IDE Extensions</h2>
+<p>You don't have to build chat UIs from scratch. The fastest way to get BDXpy + LLM value today is to meet engineers <strong>where they already work</strong> — the terminal and the editor.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Terminal CLIs</label><label for="__tabbed_2_2">VS Code Extensions</label><label for="__tabbed_2_3">Why this matters for BDXpy users</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Purpose-built coding agents that run right in your shell, read your repo, and execute tools:</p>
+<ul>
+<li><strong><a href="https://docs.claude.com/en/docs/claude-code/overview">Claude Code</a></strong> — Anthropic's official CLI; strong at multi-file edits, long-context reasoning, and skill/agent workflows</li>
+<li><strong><a href="https://github.com/openai/codex">OpenAI Codex CLI</a></strong> — terminal agent for OpenAI models</li>
+<li><strong><a href="https://github.com/google-gemini/gemini-cli">Gemini CLI</a></strong> — Google's open-source terminal agent</li>
+</ul>
+<p>Point any of these at a BDXpy project and ask: <em>"Write a script that pulls last week's chilled-water flow and flags sensors stuck at zero."</em> The agent reads your code, drafts it, and you review the diff.</p>
+</div>
+<div class="tabbed-block">
+<p>Keep the LLM inside the editor where the code lives:</p>
+<ul>
+<li><strong><a href="https://marketplace.visualstudio.com/items?itemName=anthropic.claude-code">Claude Code for VS Code</a></strong> — native extension with inline diffs and agent sessions</li>
+<li><strong><a href="https://marketplace.visualstudio.com/items?itemName=GitHub.copilot">GitHub Copilot</a></strong> / <strong>Copilot Chat</strong> — in-editor completions and chat (OpenAI-powered, plus model picker)</li>
+<li><strong><a href="https://marketplace.visualstudio.com/items?itemName=Google.geminicodeassist">Gemini Code Assist</a></strong> — Google's VS Code integration</li>
+<li><strong><a href="https://marketplace.visualstudio.com/items?itemName=saoudrizwan.claude-dev">Cline</a></strong> / <strong><a href="https://marketplace.visualstudio.com/items?itemName=Continue.continue">Continue</a></strong> — provider-agnostic extensions; bring your own API key for OpenAI, Claude, Gemini, or local models</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<ul>
+<li><strong>Zero boilerplate</strong> — no need to stand up a chat app to start getting value</li>
+<li><strong>Context-aware</strong> — the agent sees your actual BDXpy code, <code>.env</code> structure, and prior scripts</li>
+<li><strong>Skills &amp; agents</strong> — pair with <code>bdxpy-skills</code> to give the CLI a toolbox of BDX operations it can call directly</li>
+<li><strong>Consistent across providers</strong> — the same workflow whether your org standardizes on OpenAI, Claude, or Gemini</li>
+</ul>
+</div>
+</div>
+</div>
+<blockquote>
+<p><strong>Tip:</strong> pair a CLI with a project-level <code>CLAUDE.md</code> (or equivalent instructions file) that documents your BDX conventions, preferred libraries, and data hygiene rules. The agent will follow them on every run.</p>
+</blockquote>
+<hr />
+<h2 id="working-principles-provider-agnostic">Working Principles (Provider-Agnostic)</h2>
+<p>Regardless of which model you pick, a few rules keep LLM integrations fast, cheap, and useful:</p>
+<h3 id="1-dont-send-raw-time-series">1. Don't send raw time-series</h3>
+<p>LLMs are reasoning engines, not log parsers. Pre-process in BDXpy first — compute deltas, top-N anomalies, AHU roll-ups — then send the summary.</p>
+<h3 id="2-prompt-engineering-is-the-product">2. Prompt engineering is the product</h3>
+<p>Model choice matters less than prompt quality. Be specific, give formatting cues, define what "anomaly" means in your context, and iterate.</p>
+<h3 id="3-respect-rate-limits-and-token-budgets">3. Respect rate limits and token budgets</h3>
+<p>Every provider throttles. Batch requests, cache where possible, and keep payloads lean.</p>
+<h3 id="4-choose-the-model-to-fit-the-job">4. Choose the model to fit the job</h3>
+<p>Use larger, reasoning-grade models for nuanced analysis and smaller, faster models for classification or routing. Most providers offer a tiered family — start cheap, escalate when the task demands it.</p>
+<h3 id="5-keep-a-human-in-the-loop">5. Keep a human in the loop</h3>
+<p>LLM outputs are recommendations, not commands. Route suggestions through an operator before anything writes back to the BAS.</p>
+<hr />
+<h2 id="example-vav-air-system-analysis">Example: VAV Air System Analysis</h2>
+<p>Below is a working example using the OpenAI Python package. The same pattern applies to Claude (via the <code>anthropic</code> SDK) and Gemini (via <code>google-genai</code>) — swap the client, keep the data pipeline.</p>
+<p><strong>What it does:</strong></p>
+<ol>
+<li>Connects to BDX and pulls 7-day and 14-day airflow data for VAVs under selected AHUs</li>
+<li>Flags VAVs whose week-over-week airflow change exceeds ±20 %</li>
+<li>Sends <em>only the anomalies</em> to the LLM for a written summary</li>
+<li>Renders a PyVis network chart alongside the LLM's recommendations in a single HTML report</li>
+</ol>
+<details class="note">
+<summary>Show Code</summary>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">openai</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">networkx</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">nx</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyvis.network</span><span class="w"> </span><span class="kn">import</span> <span class="n">Network</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bdx.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">BDX</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bdx.auth</span><span class="w"> </span><span class="kn">import</span> <span class="n">UsernameAndPasswordAuthenticator</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bdx.types</span><span class="w"> </span><span class="kn">import</span> <span class="n">TimeFrame</span><span class="p">,</span> <span class="n">AggregationLevel</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.colors</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mcolors</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">markdown</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dotenv</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_dotenv</span>
+
+<span class="n">load_dotenv</span><span class="p">()</span>
+
+<span class="n">OPENAI_API_KEY</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;OPENAI_API_KEY&quot;</span><span class="p">)</span>
+<span class="n">LLM_MODEL</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;LLM_MODEL&quot;</span><span class="p">)</span>  <span class="c1"># pin the exact model in your env, not in code</span>
+
+<span class="n">BDX_URL</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;BDX_URL&quot;</span><span class="p">)</span>
+<span class="n">USERNAME</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;BDX_USERNAME&quot;</span><span class="p">)</span>
+<span class="n">PASSWORD</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;BDX_PASSWORD&quot;</span><span class="p">)</span>
+<span class="n">BUILDING_NAME</span> <span class="o">=</span> <span class="s2">&quot;Apex Building&quot;</span>
+<span class="n">AHU_NUMBERS</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+
+<span class="n">auth</span> <span class="o">=</span> <span class="n">UsernameAndPasswordAuthenticator</span><span class="p">(</span><span class="n">USERNAME</span><span class="p">,</span> <span class="n">PASSWORD</span><span class="p">)</span>
+<span class="k">with</span> <span class="n">BDX</span><span class="p">(</span><span class="n">BDX_URL</span><span class="p">,</span> <span class="n">auth</span><span class="p">)</span> <span class="k">as</span> <span class="n">bdx</span><span class="p">:</span>
+    <span class="n">buildings</span> <span class="o">=</span> <span class="n">bdx</span><span class="o">.</span><span class="n">buildings</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
+    <span class="n">matching_buildings</span> <span class="o">=</span> <span class="p">[</span><span class="n">b</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">buildings</span> <span class="k">if</span> <span class="n">b</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="n">BUILDING_NAME</span><span class="o">.</span><span class="n">lower</span><span class="p">()]</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">matching_buildings</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No building found with the name: </span><span class="si">{</span><span class="n">BUILDING_NAME</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">exit</span><span class="p">()</span>
+
+    <span class="n">BUILDING_ID</span> <span class="o">=</span> <span class="n">matching_buildings</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">componentInstanceId</span>
+    <span class="n">all_components</span> <span class="o">=</span> <span class="n">bdx</span><span class="o">.</span><span class="n">components</span><span class="o">.</span><span class="n">by_building</span><span class="p">(</span><span class="n">building_id</span><span class="o">=</span><span class="n">BUILDING_ID</span><span class="p">)</span>
+
+    <span class="n">ahu_names</span> <span class="o">=</span> <span class="p">{</span><span class="sa">f</span><span class="s2">&quot;AHU_</span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;AHU </span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">AHU_NUMBERS</span><span class="p">}</span>
+
+    <span class="n">vav_components</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">comp</span> <span class="k">for</span> <span class="n">comp</span> <span class="ow">in</span> <span class="n">all_components</span>
+        <span class="k">if</span> <span class="s2">&quot;VAV_&quot;</span> <span class="ow">in</span> <span class="n">comp</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">displayName</span> <span class="ow">and</span> <span class="nb">any</span><span class="p">(</span><span class="n">comp</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">displayName</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;VAV_</span><span class="si">{</span><span class="n">ahu</span><span class="si">}</span><span class="s2">_&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">ahu</span> <span class="ow">in</span> <span class="n">AHU_NUMBERS</span><span class="p">)</span>
+    <span class="p">]</span>
+
+    <span class="n">vav_to_ahu</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">vav</span> <span class="ow">in</span> <span class="n">vav_components</span><span class="p">:</span>
+        <span class="n">ahu_number</span> <span class="o">=</span> <span class="n">vav</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">displayName</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">if</span> <span class="sa">f</span><span class="s2">&quot;AHU_</span><span class="si">{</span><span class="n">ahu_number</span><span class="si">}</span><span class="s2">&quot;</span> <span class="ow">in</span> <span class="n">ahu_names</span><span class="p">:</span>
+            <span class="n">vav_to_ahu</span><span class="p">[</span><span class="n">vav</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">displayName</span><span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;AHU_</span><span class="si">{</span><span class="n">ahu_number</span><span class="si">}</span><span class="s2">&quot;</span>
+
+    <span class="n">timeframe_current</span> <span class="o">=</span> <span class="n">TimeFrame</span><span class="o">.</span><span class="n">last_7_days</span><span class="p">()</span>
+    <span class="n">timeframe_previous</span> <span class="o">=</span> <span class="n">TimeFrame</span><span class="o">.</span><span class="n">last_n_days</span><span class="p">(</span><span class="mi">14</span><span class="p">)</span>
+
+    <span class="n">properties</span> <span class="o">=</span> <span class="p">[{</span><span class="s2">&quot;componentPathId&quot;</span><span class="p">:</span> <span class="n">vav</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">componentPathId</span><span class="p">,</span> <span class="s2">&quot;propertyName&quot;</span><span class="p">:</span> <span class="s2">&quot;airFlow&quot;</span><span class="p">}</span> <span class="k">for</span> <span class="n">vav</span> <span class="ow">in</span> <span class="n">vav_components</span><span class="p">]</span>
+
+    <span class="n">trend_data_current</span> <span class="o">=</span> <span class="n">bdx</span><span class="o">.</span><span class="n">trending</span><span class="o">.</span><span class="n">retrieve_data</span><span class="p">(</span><span class="n">properties</span><span class="p">,</span> <span class="n">timeframe_current</span><span class="p">,</span> <span class="n">AggregationLevel</span><span class="o">.</span><span class="n">HOURLY</span><span class="p">)</span>
+    <span class="n">trend_data_previous</span> <span class="o">=</span> <span class="n">bdx</span><span class="o">.</span><span class="n">trending</span><span class="o">.</span><span class="n">retrieve_data</span><span class="p">(</span><span class="n">properties</span><span class="p">,</span> <span class="n">timeframe_previous</span><span class="p">,</span> <span class="n">AggregationLevel</span><span class="o">.</span><span class="n">HOURLY</span><span class="p">)</span>
+
+    <span class="n">df_current</span> <span class="o">=</span> <span class="n">trend_data_current</span><span class="o">.</span><span class="n">dataframe</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;time&quot;</span><span class="p">)</span>
+    <span class="n">df_previous</span> <span class="o">=</span> <span class="n">trend_data_previous</span><span class="o">.</span><span class="n">dataframe</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;time&quot;</span><span class="p">)</span>
+    <span class="n">df_previous</span> <span class="o">=</span> <span class="n">df_previous</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="nb">len</span><span class="p">(</span><span class="n">df_current</span><span class="p">)]</span>
+
+    <span class="n">anomalies</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">all_percent_diffs</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">all_current_airflows</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">for</span> <span class="n">vav</span> <span class="ow">in</span> <span class="n">vav_components</span><span class="p">:</span>
+        <span class="n">comp_id</span> <span class="o">=</span> <span class="n">vav</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">componentPathId</span>
+        <span class="n">display_name</span> <span class="o">=</span> <span class="n">vav</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">displayName</span>
+
+        <span class="n">current_airflow</span> <span class="o">=</span> <span class="n">df_current</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">comp_id</span><span class="si">}</span><span class="s2">_airFlow&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">previous_airflow</span> <span class="o">=</span> <span class="n">df_previous</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">comp_id</span><span class="si">}</span><span class="s2">_airFlow&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">previous_airflow</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">percent_diff</span> <span class="o">=</span> <span class="p">((</span><span class="n">current_airflow</span> <span class="o">-</span> <span class="n">previous_airflow</span><span class="p">)</span> <span class="o">/</span> <span class="n">previous_airflow</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">percent_diff</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="n">all_percent_diffs</span><span class="p">[</span><span class="n">display_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">percent_diff</span>
+        <span class="n">all_current_airflows</span><span class="p">[</span><span class="n">display_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">current_airflow</span>
+
+        <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">percent_diff</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">20</span><span class="p">:</span>
+            <span class="n">anomalies</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+                <span class="s2">&quot;VAV&quot;</span><span class="p">:</span> <span class="n">display_name</span><span class="p">,</span>
+                <span class="s2">&quot;Current Airflow&quot;</span><span class="p">:</span> <span class="nb">round</span><span class="p">(</span><span class="n">current_airflow</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
+                <span class="s2">&quot;Previous Airflow&quot;</span><span class="p">:</span> <span class="nb">round</span><span class="p">(</span><span class="n">previous_airflow</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
+                <span class="s2">&quot;Change (%)&quot;</span><span class="p">:</span> <span class="nb">round</span><span class="p">(</span><span class="n">percent_diff</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+            <span class="p">})</span>
+
+<span class="c1"># -------------------</span>
+<span class="c1"># Generate Summary with an LLM</span>
+<span class="c1"># Swap providers by replacing the client — prompt and data pipeline stay identical.</span>
+<span class="c1"># -------------------</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">generate_summary</span><span class="p">(</span><span class="n">anomalies</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">anomalies</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;&lt;p&gt;No significant anomalies detected in VAV airflow this week.&lt;/p&gt;&quot;</span>
+
+    <span class="n">prompt_text</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    Given the following data on airflow changes for VAVs in a building:</span>
+<span class="s2">    </span><span class="si">{</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">anomalies</span><span class="p">,</span><span class="w"> </span><span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="si">}</span>
+
+<span class="s2">    ### **Summary Instructions**</span>
+<span class="s2">    - **Only report the most significant anomalies** (up to **5 individual VAVs**) OR if there is a **system-wide AHU issue**.</span>
+<span class="s2">    - **Exclude moderate changes** – focus on extreme cases that could indicate performance, comfort, or system inefficiencies.</span>
+<span class="s2">    - **If there are no significant changes**, state: &quot;No major anomalies detected this week.&quot;</span>
+<span class="s2">    - **Airflow data is accumulated CFM, so units are CF.**</span>
+<span class="s2">    - **Format the response as concise bullet points** using **Markdown**.</span>
+
+<span class="s2">    ### **Response Format**</span>
+<span class="s2">    - **Key Findings**</span>
+<span class="s2">        - **VAV_3_3:** Airflow increased **+89.09%**</span>
+<span class="s2">          🔹 Likely cause: [Occupancy shift / Calibration issue / Setpoint change]</span>
+<span class="s2">          🔹 Recommended action: [Verify control settings / Check mechanical operation]</span>
+
+<span class="s2">    - **If AHU-wide issues exist, summarize them separately.**</span>
+
+<span class="s2">    Keep the response **short, direct, and action-oriented.**</span>
+<span class="s2">    &quot;&quot;&quot;</span>
+
+    <span class="n">client</span> <span class="o">=</span> <span class="n">openai</span><span class="o">.</span><span class="n">OpenAI</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="n">OPENAI_API_KEY</span><span class="p">)</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+        <span class="n">model</span><span class="o">=</span><span class="n">LLM_MODEL</span><span class="p">,</span>  <span class="c1"># set via env, e.g. your organization&#39;s approved model</span>
+        <span class="n">messages</span><span class="o">=</span><span class="p">[</span>
+            <span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;system&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;You are an expert in HVAC systems analyzing airflow changes.&quot;</span><span class="p">},</span>
+            <span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="n">prompt_text</span><span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">)</span>
+
+    <span class="n">markdown_summary</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span>
+    <span class="k">return</span> <span class="n">markdown</span><span class="o">.</span><span class="n">markdown</span><span class="p">(</span><span class="n">markdown_summary</span><span class="p">)</span>
+
+<span class="n">summary_text</span> <span class="o">=</span> <span class="n">generate_summary</span><span class="p">(</span><span class="n">anomalies</span><span class="p">)</span>
+
+<span class="c1"># -------------------</span>
+<span class="c1"># Generate PyVis Network Chart</span>
+<span class="c1"># -------------------</span>
+<span class="n">html_path</span> <span class="o">=</span> <span class="s2">&quot;VAV_network_summary.html&quot;</span>
+<span class="n">net</span> <span class="o">=</span> <span class="n">Network</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="s2">&quot;100vh&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="s2">&quot;100%&quot;</span><span class="p">,</span> <span class="n">notebook</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">directed</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">net</span><span class="o">.</span><span class="n">barnes_hut</span><span class="p">(</span><span class="n">gravity</span><span class="o">=-</span><span class="mi">7000</span><span class="p">,</span> <span class="n">central_gravity</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">spring_length</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">spring_strength</span><span class="o">=</span><span class="mf">0.03</span><span class="p">)</span>
+
+<span class="n">net</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s2">&quot;Building&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#3e3e3e&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Building: </span><span class="si">{</span><span class="n">BUILDING_NAME</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;size&quot;</span><span class="p">:</span> <span class="mi">50</span><span class="p">})</span>
+
+<span class="k">for</span> <span class="n">ahu</span><span class="p">,</span> <span class="n">ahu_label</span> <span class="ow">in</span> <span class="n">ahu_names</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">net</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">ahu</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#f5d76e&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">ahu_label</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;size&quot;</span><span class="p">:</span> <span class="mi">40</span><span class="p">})</span>
+    <span class="n">net</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">&quot;Building&quot;</span><span class="p">,</span> <span class="n">ahu</span><span class="p">)</span>
+
+<span class="n">overall_max_airflow</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">all_current_airflows</span><span class="o">.</span><span class="n">values</span><span class="p">(),</span> <span class="n">default</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">colormap</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s2">&quot;RdBu_r&quot;</span><span class="p">)</span>
+<span class="n">vmin</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">all_percent_diffs</span><span class="o">.</span><span class="n">values</span><span class="p">(),</span> <span class="n">default</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">vmax</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">all_percent_diffs</span><span class="o">.</span><span class="n">values</span><span class="p">(),</span> <span class="n">default</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">norm</span> <span class="o">=</span> <span class="n">mcolors</span><span class="o">.</span><span class="n">TwoSlopeNorm</span><span class="p">(</span><span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vcenter</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">vav_name</span><span class="p">,</span> <span class="n">ahu_name</span> <span class="ow">in</span> <span class="n">vav_to_ahu</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">percent_diff</span> <span class="o">=</span> <span class="n">all_percent_diffs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">vav_name</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">current_airflow</span> <span class="o">=</span> <span class="n">all_current_airflows</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">vav_name</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">rgba_color</span> <span class="o">=</span> <span class="n">colormap</span><span class="p">(</span><span class="n">norm</span><span class="p">(</span><span class="n">percent_diff</span><span class="p">))</span>
+    <span class="n">hex_color</span> <span class="o">=</span> <span class="n">mcolors</span><span class="o">.</span><span class="n">to_hex</span><span class="p">(</span><span class="n">rgba_color</span><span class="p">)</span>
+    <span class="n">node_size</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">+</span> <span class="p">(</span><span class="mi">50</span> <span class="o">*</span> <span class="p">(</span><span class="n">current_airflow</span> <span class="o">/</span> <span class="n">overall_max_airflow</span><span class="p">))</span>
+
+    <span class="n">net</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span>
+        <span class="n">vav_name</span><span class="p">,</span>
+        <span class="n">size</span><span class="o">=</span><span class="n">node_size</span><span class="p">,</span>
+        <span class="n">color</span><span class="o">=</span><span class="n">hex_color</span><span class="p">,</span>
+        <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">vav_name</span><span class="si">}</span><span class="s2"> - % Change: </span><span class="si">{</span><span class="n">percent_diff</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%, Airflow: </span><span class="si">{</span><span class="n">current_airflow</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="n">font</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;size&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">}</span>
+    <span class="p">)</span>
+    <span class="n">net</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">ahu_name</span><span class="p">,</span> <span class="n">vav_name</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">net</span><span class="o">.</span><span class="n">save_graph</span><span class="p">(</span><span class="n">html_path</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">html_path</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    &lt;html&gt;</span>
+<span class="s2">    &lt;head&gt;</span>
+<span class="s2">        &lt;style&gt;</span>
+<span class="s2">            body </span><span class="se">{{</span><span class="s2"> font-size: 12px; </span><span class="se">}}</span>
+<span class="s2">            .container </span><span class="se">{{</span><span class="s2"> display: flex; height: 100vh; width: 100%; </span><span class="se">}}</span>
+<span class="s2">            .left </span><span class="se">{{</span><span class="s2"> width: 50%; height: 100%; overflow-y: hidden; </span><span class="se">}}</span>
+<span class="s2">            .right </span><span class="se">{{</span><span class="s2"> width: 50%; background: #f4f4f4; padding: 20px; overflow-y: auto;</span>
+<span class="s2">                      font-size: 10px !important; line-height: 1.5; box-sizing: border-box; </span><span class="se">}}</span>
+<span class="s2">            .right h1 </span><span class="se">{{</span><span class="s2"> font-size: 16px !important; </span><span class="se">}}</span>
+<span class="s2">            .right h2 </span><span class="se">{{</span><span class="s2"> font-size: 14px !important; </span><span class="se">}}</span>
+<span class="s2">            .right h3 </span><span class="se">{{</span><span class="s2"> font-size: 12px !important; </span><span class="se">}}</span>
+<span class="s2">            .right * </span><span class="se">{{</span><span class="s2"> font-size: 10px !important; </span><span class="se">}}</span>
+<span class="s2">        &lt;/style&gt;</span>
+<span class="s2">    &lt;/head&gt;</span>
+<span class="s2">    &lt;body&gt;</span>
+<span class="s2">        &lt;div class=&quot;container&quot;&gt;</span>
+<span class="s2">            &lt;div class=&quot;left&quot;&gt;</span><span class="si">{</span><span class="n">net</span><span class="o">.</span><span class="n">generate_html</span><span class="p">()</span><span class="si">}</span><span class="s2">&lt;/div&gt;</span>
+<span class="s2">            &lt;div class=&quot;right&quot;&gt;</span><span class="si">{</span><span class="n">summary_text</span><span class="si">}</span><span class="s2">&lt;/div&gt;</span>
+<span class="s2">        &lt;/div&gt;</span>
+<span class="s2">    &lt;/body&gt;</span>
+<span class="s2">    &lt;/html&gt;</span>
+<span class="s2">    &quot;&quot;&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Final version saved in &#39;</span><span class="si">{</span><span class="n">html_path</span><span class="si">}</span><span class="s2">&#39;. Open in a browser.&quot;</span><span class="p">)</span>
+</code></pre></div>
+</details>
+<hr />
+<h2 id="swapping-providers">Swapping Providers</h2>
+<p>The same prompt, same BDXpy data pipeline, different back-end:</p>
+<table>
+<thead>
+<tr>
+<th>Provider</th>
+<th>Python SDK</th>
+<th>Env Var</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OpenAI</td>
+<td><code>openai</code></td>
+<td><code>OPENAI_API_KEY</code></td>
+</tr>
+<tr>
+<td>Claude (Anthropic)</td>
+<td><code>anthropic</code></td>
+<td><code>ANTHROPIC_API_KEY</code></td>
+</tr>
+<tr>
+<td>Gemini (Google)</td>
+<td><code>google-genai</code></td>
+<td><code>GOOGLE_API_KEY</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Pin the specific model version in your environment config, not in source.</strong> Models evolve fast — keeping the name out of code means you can upgrade without a PR.</p>
+<hr />
+<h2 id="final-recommendations">Final Recommendations</h2>
+<ul>
+<li>Let BDXpy do the <strong>data work</strong>; let the LLM do the <strong>reasoning</strong>.</li>
+<li>Pre-process before prompting — small, targeted payloads beat firehoses every time.</li>
+<li>Treat prompts as <strong>source code</strong>: version them, test them, iterate on them.</li>
+<li>Stay provider-agnostic where you can; it keeps options open and costs competitive.</li>
+<li>Ask about <strong><code>bdxpy-skills</code></strong> if you're building agent workflows and want the tool definitions done for you.</li>
+</ul>
+<blockquote>
+<p>Questions, use-case ideas, or want early access to <code>bdxpy-skills</code>? Reach out to the BuildingLogiX team.</p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  <div class="footer-left">
+    <p>© 2025 BuildingLogiX. All Rights Reserved.</p>
+  </div>
+  <div class="footer-right">
+    <a href="https://github.com/BuildingLogiX" target="_blank">
+      <img src="../../../assets/github.svg" class="footer-icon">
+    </a>
+    <a href="https://buildinglogix.net" target="_blank">
+      <img src="../../../assets/blx white.svg" class="footer-icon">
+    </a>
+    <a href="https://linkedin.com/company/buildinglogix" target="_blank">
+      <img src="../../../assets/linkedin.svg" class="footer-icon">
+    </a>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.instant", "navigation.tracking", "content.tabs.link", "content.code.select", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "grid.adaptive", "grid.cards"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -2,6 +2,9 @@
 
 This guide walks you through using BDXpy to generate automated PDF reports from building data, including charts, tables, and email delivery.
 
+## Sample Report
+
+[Open an example weekly digest PDF](weekly_digest_example.pdf){:target="_blank"} — opens full-screen in your browser's PDF viewer.
 
 ## Example PDF generation of monthly energy report
 

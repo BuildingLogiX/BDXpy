@@ -45,6 +45,7 @@ nav:
           - "Coming Soon": examples/comingsoon.md
       - Calculations and Analysis:
           - "Chiller Loading Report": examples/Calculations and Analysis/chiller_loading_report.md
+          - "Commissioning Assessment": examples/Calculations and Analysis/commissioning_assessment.md
       - Machine Learning:
           - "Energy Prediction Models": examples/Machine Learning/energy_prediction.md
           - "Equipment Prediction Models": examples/Machine Learning/equipment_prediction.md
